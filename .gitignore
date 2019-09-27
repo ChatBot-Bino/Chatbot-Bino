@@ -2,8 +2,6 @@
 bot/models
 rasa_core.log
 errors.json
-models/dialogue/
-models/nlu/current/
 
 ### Rasa evaluation ###
 .ipynb_checkpoints/
@@ -37,11 +35,10 @@ notebooks/stories/matrix.pdf
 /data
 uploads
 
-### database ###
+
+### database
 web/postegres-data
 
-### PyCharm ###
-.idea/
 
 # Created by https://www.gitignore.io/api/vim,linux,macos,python
 
@@ -201,3 +198,6 @@ tags
 
 # End of https://www.gitignore.io/api/vim,linux,macos,python
 
+models/dialogue/
+
+models/nlu/current/
