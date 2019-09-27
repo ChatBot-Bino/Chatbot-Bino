@@ -2,7 +2,7 @@ image: python:3.6-slim
 
 before_script:
   - apt-get update --yes
-  - apt-get install gcc
+  - apt-get install gcc --yes
 
 variables:
   BOT_IMAGE: $DOCKERHUB_USER/bot
