@@ -8,5 +8,5 @@ class ActionTest(Action):
     def run(self, dispatcher, tracker, domain):
         try:
             dispatcher.utter_message("Mensagem enviada por uma custom action.")
-        except ValueError:
-            dispatcher.utter_message(ValueError)
+        except Exception as error:
+            dispatcher.utter_message(error)
