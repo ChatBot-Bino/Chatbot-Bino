@@ -40,7 +40,7 @@ docker run -v $(pwd):/app rasa/rasa:latest-full train --domain ./Rasa/domain.yml
 **Atenção**: Necessario possuir o docker.  
 
 
-Depois upe o bot para telegram:
+Depois dê up o bot para telegram:
 
 ```sh
 sudo docker-compose up
