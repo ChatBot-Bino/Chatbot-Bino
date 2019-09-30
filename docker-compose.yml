@@ -1,66 +1,17 @@
-version: '2'
+version: '3.0'
 
 services:
-  # =============================== Mongo =====================================
-  mongo:
-    image: mongo:3.2
-    restart: unless-stopped
-    volumes:
-      - ./data/db:/data/db
-    command: mongod --smallfiles --oplogSize 128
-
-  # =============================== Coach =====================================  
-  coach:
-    container_name: coach
-    image: lappis/coach:boilerplate
-    command: sh -c "cp -r /src_models/*"
-
-  # ================================= Bot =====================================
-  bot:
-    image: lappis/bot:boilerplate
-    container_name: rasaShell
-    build:
-      context: .
-      dockerfile: ./docker/bot.Dockerfile
-    restart: unless-stopped
+  rasa:
+    image: rasa/rasa:latest-full
     ports:
-      - 5002:5002
-    depends_on:
-      - actions
+      - 5005:5005
     volumes:
-      - ./bot:/bot
+      - ./Rasa/:/app
+    command:
+      - run
 
-  # ============================ Telegram Bot =================================
-  bot_telegram:
-      container_name: bot_telegram
-      build:
-        context: .
-        dockerfile: ./docker/bot.Dockerfile
-      env_file:
-        - docker/bot-telegram.env
-      ports:
-        - 5001:5001
-      depends_on:
-        - actions
-      volumes:
-        - ./bot:/bot
-      command: sh -c "make run-telegram"
 
-  # ================================= Actions =================================
-  actions:
-    container_name: actions
-    build:
-      context: .
-      dockerfile: ./docker/actions.Dockerfile
-    ports:
-      - 5055:5055
+  action_server:
+    image: rasa/rasa-sdk:latest
     volumes:
-      - ./bot/actions:/bot/actions
-      - ./bot/Makefile:/bot/Makefile
-    command: sh -c "make run-actions"
-
-volumes:
-  notebook_models:
-  esbackup:
-  esdata:
-    driver: local
+      - ./Rasa/actions:/app/actions

@@ -1,0 +1,154 @@
+intents: 
+  - cumprimentar
+  - tudo_bem
+  - preocupacao
+  - animar
+  - otimista
+  - negar
+  - concordar
+  - repita
+  - recomendar
+  - despedir 
+  - explicacao
+  - teste
+  
+  - moda
+  - animes
+  - filmes
+  - curiosidades
+  - poliglota
+
+entities:
+  - moda
+  - animes
+  - filmes
+  - curiosidades
+  - poliglota 
+
+templates:
+  utter_default:
+    - text: |
+  
+  utter_cumprimentar:
+    - text: |
+        Olá, eu sou o Bino, seu assistente virtual!
+    
+    - text: |
+        Fala, camarada!
+    
+    - text: |
+        Só falar que eu te respondo
+    
+    - text: |
+        Eae, o que você quer saber?
+
+  utter_tudo_bem:
+    - text: |
+        Comigo está tudo bem
+    
+    - text: |
+        Estou na paz até o momento
+    
+    - text: |
+        Diria que estou na deboagem
+    
+    - text: |
+        Estou bem
+    
+    - text: |
+        Tranquilo
+    
+    - text: |
+        Estou sem problemas e procupações
+  
+  utter_preocupacao:
+    - text: |
+        Mas e você, como está?
+
+    - text: |
+        Então, como você anda ultimamente?
+    
+    - text: |    
+        Você está bem?
+    
+    - text: |  
+        Está tudo bem com você?
+    
+    - text: |
+        Na calmaria do dia a dia?
+
+  utter_otimista:
+    - text: |
+
+  utter_negar:
+    - text: |
+
+  utter_concordar:
+    - text: |
+        Concordo com você
+    
+    - text: |
+        Realmente
+    
+    - text: |
+        Também concordo
+      
+    - text: |
+        Tenho certeza disso
+
+    - text: |
+        Aham
+
+  utter_animar:
+    - text: |
+        Acredite no seu potencial!
+
+    - text: |
+        Você é, o seu melhor 
+
+    - text: |
+        Você consegue!
+
+  utter_recomendar:
+    - text: |
+
+  utter_despedir:
+    - text: |
+        Até logo
+    
+    - text: |
+        Até mais
+      
+    - text: |
+        Tchau!
+
+  utter_repita:
+    - text: |
+        Desculpe, não entendi o que você escreveu
+        Você poderia repetir a pergunta ?
+    
+    - text: |
+        Não entendi bulhufas do que você escreveu
+        Por favor, escreva de uma forma que eu entenda 
+  
+  utter_explicacao:
+    - text: |
+        Caso eu tenha esquecido de apresentar meu nome é Bino, e eu sou um assistente virtual, sendo chamado comumente de bot, é um prazer conhecê-lo usuário.
+        Eu só entendo perguntas completas, então não poupe palavras para me perguntar.
+        Também não se preocupe com os acentos, sou um bot, e não professor de português.
+  
+actions:
+  - utter_default
+  - utter_cumprimentar
+  - utter_despedir
+  - utter_tudo_bem
+  - utter_repita
+  - utter_preocupacao
+  - utter_animar
+  - utter_otimista
+  - utter_negar
+  - utter_concordar
+  - utter_recomendar
+  - utter_explicacao
+  - action_test
+  - custom_start

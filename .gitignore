@@ -1,7 +1,10 @@
 ### Rasa ###
-bot/models
+Rasa/models
 rasa_core.log
 errors.json
+
+###DB###
+telegramDB/
 
 ### Rasa evaluation ###
 .ipynb_checkpoints/
