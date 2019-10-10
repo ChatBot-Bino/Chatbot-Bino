@@ -1,166 +1,17 @@
-version: '2'
+version: '3.0'
 
 services:
-  # ============================= Rocketchat ==================================
-  rocketchat:
-    container_name: rocketchat
-    image: rocket.chat:0.69.2
-    restart: unless-stopped
-    env_file:
-      - docker/rocketchat.env
+  rasa:
+    image: rasa/rasa:latest-full
     ports:
-      - 3000:3000
-    depends_on:
-      - mongo
-
-  mongo:
-    image: mongo:3.2
-    restart: unless-stopped
+      - 5005:5005
     volumes:
-      - ./data/db:/data/db
-    command: mongod --smallfiles --oplogSize 128
+      - ./Rasa/:/app
+    command:
+      - run
 
-  # =============================== Coach =================================  
-  coach:
-    container_name: coach
-    image: lappis/coach:boilerplate
+
+  action_server:
+    image: rasa/rasa-sdk:latest
     volumes:
-      - notebook_models:/notebook_models
-    command: sh -c "cp -r /src_models/* /notebook_models"
-
-  # ================================= Bot =====================================
-  bot:
-    image: lappis/bot:boilerplate
-    container_name: bot_rocketchat
-    build:
-      context: .
-      dockerfile: ./docker/bot.Dockerfile
-    restart: unless-stopped
-    command: make run-rocketchat 
-    env_file:
-      - docker/bot-rocketchat.env
-    ports:
-      - 5002:5002
-    depends_on:
-      - actions
-    volumes:
-      - ./bot:/bot
-      - ./scripts:/scripts
-
-  # =============================== Analytics =================================
-  elasticsearch:
-    build:
-      context: .
-      dockerfile: ./docker/elasticsearch.Dockerfile
-    restart: unless-stopped
-    ports:
-      - 9200:9200
-      - 9300:9300
-    environment:
-      - discovery.type=single-node
-    volumes:
-      - esbackup:/usr/share/elasticsearch/backup
-      - ./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      - esdata:/usr/share/elasticsearch/data
-
-  kibana:
-    build:
-      context: .
-      dockerfile: ./docker/kibana.Dockerfile
-    restart: unless-stopped
-    ports:
-      - 5601:5601
-    environment:
-      - SERVER_PORT=5601
-      - ELASTICSEARCH_URL=http://elasticsearch:9200
-      - KIBANA_URL=http://kibana:5601
-    depends_on:
-      - elasticsearch
-
-  # =============================== Broker ====================================
-  rabbitmq:
-    image: rabbitmq:3-management
-    restart: unless-stopped
-    volumes:
-      - ./data/rabbitmq:/var/lib/rabbitmq
-    ports:
-      - 15672:15672
-    environment:
-      - RABBITMQ_DEFAULT_USER=admin
-      - RABBITMQ_DEFAULT_PASS=admin
-
-  rabbitmq-consumer:
-    build:
-      context: .
-      dockerfile: ./docker/rabbitmq/consumer.Dockerfile
-    restart: unless-stopped
-    volumes:
-      - ./rabbitmq/consumer/:/opt/scripts/
-    depends_on:
-      - rabbitmq
-    environment:
-      - RABBITMQ_DEFAULT_USER=admin
-      - RABBITMQ_DEFAULT_PASS=admin
-
-      # Analytics config
-      - ELASTICSEARCH_URL=elasticsearch:9200
-      - ENVIRONMENT_NAME=localhost
-      - BOT_VERSION=last-bot-commit-hash
-      # - ELASTICSEARCH_USER=admin
-      # - ELASTICSEARCH_PASSWORD=admin
-      # - ELASTICSEARCH_HTTP_SCHEME=https
-      # - ELASTICSEARCH_PORT=443
-    command: python3 /opt/scripts/consume_bot_messages.py
-
-  # ============================ Telegram Bot =================================
-  bot_telegram:
-      container_name: bot_telegram
-      build:
-        context: .
-        dockerfile: ./docker/bot.Dockerfile
-      env_file:
-        - docker/bot-telegram.env
-      ports:
-        - 5001:5001
-      depends_on:
-        - actions
-      volumes:
-        - ./bot:/bot
-        - ./scripts:/scripts
-      command: sh -c "make run-telegram"
-
-  # ================================= Actions =================================
-  actions:
-    container_name: actions
-    build:
-      context: .
-      dockerfile: ./docker/actions.Dockerfile
-    ports:
-      - 5055:5055
-    volumes:
-      - ./bot/actions:/bot/actions
-      - ./bot/Makefile:/bot/Makefile
-    command: sh -c "make run-actions"
-
-  # =============================== Notebooks =================================
-  notebooks:
-    container_name: notebooks
-    build:
-      context: .
-      dockerfile: ./docker/notebooks.Dockerfile
-    env_file:
-      - docker/notebooks.env
-    volumes:
-      - ./coach:/work/coach
-      - ./notebooks:/work/notebooks
-      - notebook_models:/models:ro
-    ports:
-      - 8888:8888
-    depends_on:
-      - coach
-  
-volumes:
-  notebook_models:
-  esbackup:
-  esdata:
-    driver: local
+      - ./Rasa/actions:/app/actions
