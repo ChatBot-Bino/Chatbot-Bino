@@ -52,7 +52,7 @@ docker run -v $(pwd):/app rasa/rasa:latest-full train --domain ./Rasa/domain.yml
 
 Depois execute o bot pelo shell:
 ```sh
-docker run -it -v $(pwd):/app rasa/rasa shell --domain ./Rasa/domain.yml --data ./Rasa/data --out ./Rasa/models --config ./Rasa/config.yml
+docker run -it -v $(pwd):/app rasa/rasa shell --m ./Rasa/models --endpoints ./Rasa/endpoints.yml
 ```
 
 # Licença
