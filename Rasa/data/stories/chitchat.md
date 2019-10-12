@@ -57,3 +57,7 @@
 ## Start
 * start{"command":"start"}
     - utter_start
+
+## Series
+* series
+    - utter_series

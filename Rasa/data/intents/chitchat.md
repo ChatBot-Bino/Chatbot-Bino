@@ -97,7 +97,6 @@
 - como vai voce
 - como vao as coisas
 - opa tudo bem
-- tudo bem e você
 - tudo bem
 - tudo bom
 - como voce esta
@@ -222,6 +221,8 @@
 - Tranquilo
 - Estou otimo
 - estou otimo
+- Tudo certo
+- tudo certo
 - Tudo tranquilo
 - tudo tranquilo
 - Dboa
@@ -270,3 +271,14 @@
 ## intent:start
 - start
 - /start
+
+## intent:series
+-serie
+-Serie
+-seriado
+-Seriado
+-series
+-Series
+- gosto de series
+- assistir series
+- ver series

@@ -16,6 +16,7 @@ actions:
   - utter_reacao_triste
   - teste1
   - utter_start
+  - utter_series
   
 entities: 
   - feliz
@@ -200,16 +201,29 @@ templates:
       text: "Gostaria de ter mais tempo para assistir séries, é um excelente hobby!"
     - 
       text: |-
-          Fica aqui uma recomendação pra você
+          Fica aqui uma recomendação pra você,
           Game of Thrones é sensacional, só não espere muito da última temporada.
     - 
       text: |-
-          Essa você deve assistir
+          Essa você deve assistir,
           The flash é uma obrigação pra quem gosta de um pouquinho de ciência.
     - 
       text: |-
-          Uma séria que esta em alta no momento 
+          Uma série que esta em alta no momento,
           La casa de papel é uma excelente opção pra quem gosta de adrenalina.
+    - 
+     text: |-
+          Essa daqui é uma clássica,
+          Friends é ótima pra quem gosta de dar risadas e de uma boa história.
+    - 
+      text: |-
+          Com uma qualidade inegável,
+          Breaking Bad é uma das melhores séries já feitas!  
+    - 
+      text: |-
+          Se você quer ficar intrigado com o futuro,
+          Black mirror é ideal para fazer você pensar sobre os pŕoximos passos da humanidade!
+        
   utter_tudo_bem: 
     - 
       text: "Comigo está tudo bem.
