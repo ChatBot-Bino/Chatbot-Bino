@@ -1,3 +1,6 @@
+## Default
+ * default
+    - utter_default
 ## Cumprimentar
 * cumprimentar
     - utter_cumprimentar
@@ -42,3 +45,11 @@
 ## Xingamento
 * xingamento
     - utter_xingamento
+
+## Reacao_triste
+* reacao_triste
+    - utter_reacao_triste
+
+## Reacao_feliz
+* reacao_feliz
+    - utter_reacao_feliz

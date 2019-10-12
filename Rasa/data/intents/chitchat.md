@@ -94,21 +94,12 @@
 - Flw
 
 ## intent:tudo_bem
-- tudo bem
-- tudo bem
 - como vai voce
 - como vao as coisas
 - opa tudo bem
-- to bem
-- tranquilo
-- estou bem
-- estou otimo
 - tudo bem e você
 - tudo bem
 - tudo bom
-- tá bem
-- ta bem
-- como vocês esta
 - como voce esta
 - como voce ta
 - como vai você
@@ -116,8 +107,6 @@
 - como vai vc
 - como vai
 - como ta
-- joia
-- joinha
 
 ## intent:preocupacao
 - oi, tudo bem
@@ -136,10 +125,6 @@
 - Eae, beleza
 - Eae, blz
 - eae, blz
-- oi,
-- Oi,
-- Eae,
-- eae,
 
 ## intent:explicacao
 - como funciona
@@ -221,3 +206,63 @@
 - Seu desgraçado
 - desgraçado
 - seu desgraçado
+
+## intent:reacao_feliz
+- sim
+- Sim
+- Estou bem
+- estou bem
+- bem
+- Bem
+- Bom
+- bom
+- Bonzin
+- bonzin
+- tranquilo
+- Tranquilo
+- Estou otimo
+- estou otimo
+- Tudo tranquilo
+- tudo tranquilo
+- Dboa
+- dboa
+- de boa
+- De boa
+- Sussa
+- sussa
+- tranks
+- Tranks
+- Suave
+- suave
+- joia
+- joinha
+
+## intent:reacao_triste
+- Nao
+- nao
+- estou pessimo
+- Estou pessimo
+- Nao estou bem
+- Nao estou bem
+- Queria estar melhor
+- queria estar melhor
+- estou mal
+- Estou mal
+- estou triste
+- Estou triste
+- mais ou menos
+- Mais ou menos
+- cansado
+- Cansado
+- Cansada
+- cansada
+- infeliz
+- Infeliz
+- ja tive dias melhores
+- Ja tive dias melhores
+- muito triste
+- Muito triste
+- desanimado
+- Desanimado
+- desanimada
+- Desanimada

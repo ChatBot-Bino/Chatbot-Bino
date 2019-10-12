@@ -12,9 +12,13 @@ actions:
   - utter_animes1
   - utter_animes2
   - utter_xingamento
+  - utter_reacao_feliz
+  - utter_reacao_triste
   - teste1
   
 entities: 
+  - feliz
+  - triste
   - animes1
   - animes2
   - filmes
@@ -28,7 +32,10 @@ entities:
   - segredo
   - risada
   - xingamento
-intents: 
+intents:
+  - default 
+  - reacao_feliz
+  - reacao_triste
   - cumprimentar
   - tudo_bem
   - preocupacao
@@ -70,7 +77,7 @@ templates:
       text: Nani?!
   utter_animes2: 
     - 
-      text: "Eu diria que sou um fanático \n\
+      text: "Eu diria que sou um fanático
           e que Full Metal Alchemist Brotherhood é melhor que Full Metal Alchemist Clássico "
     - 
       text: "Sou um grande apreciador de Animes e Mangás."
@@ -203,11 +210,14 @@ templates:
           La casa de papel é uma excelente opção pra quem gosta de adrenalina.
   utter_tudo_bem: 
     - 
-      text: "Comigo está tudo bem."
+      text: "Comigo está tudo bem.
+             e você, como esta?"
     - 
-      text: "Estou bem."
+      text: "Estou bem.
+             como você anda?"
     - 
-      text: "Estou sem problemas e preocupações."
+      text: "Estou sem problemas e preocupações.
+             E você?"
   utter_xingamento: 
     - 
       text: "Nossa usuário, para que usar palavras tão feias?!"
@@ -215,3 +225,28 @@ templates:
       text: "Por favor, não xingue."
     - 
       text: "Uma boca tão bonita, falando palavras tão chulas."
+  
+  utter_reacao_feliz:
+    -
+      text: "Que ótimo!
+            e em que posso ajuda-lo?"
+    -
+      text: "Fico feliz em ler isso!
+            e como posso ser útil?"
+    -
+      text: "Legal!
+            e em que posso ajuda-lo?"
+
+  utter_reacao_triste:
+    -
+      text: "Poxa, espero que você melhore, estou aqui para ajudar!"
+    -
+      text: "Sempre existem dias ruins, temos que seguir de cabeça erguida!"
+    -
+      text: "Não desanime, dias melhores virão!"
+    -
+      text: "Nunca desista, tudo faz parte de uma grande aprendizagem!"
+    -
+      text: "Se realmente não estiver bem, veja um seriado legal! Podemos conversar sobre isso se você quiser."
+    -
+      text: "Estou aqui caso você precise! Podemos conversar sobre diversar coisas para te animar."
