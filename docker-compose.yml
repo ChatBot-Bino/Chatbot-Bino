@@ -1,17 +1,107 @@
 version: '3.0'
-
 services:
   rasa:
-    image: rasa/rasa:latest-full
+    image: rasa/rasa:1.2.7
+    container_name: rasa
+    networks: ['rasa-network']
+    links:
+      - action_server
+    depends_on:
+      - mongo
     ports:
-      - 5005:5005
+      - "5005:5005"
+    environment:
+      rasa_endpoint: "http://localhost:5005"
     volumes:
-      - ./Rasa/:/app
-    command:
-      - run
-
-
+      - "./Rasa/models:/app/models"
+      - "./Rasa/config:/app/config"
+    command: "run --enable-api --debug --credentials /app/config/credentials.yml --endpoints /app/config/endpoints.yml"
+  
   action_server:
     image: rasa/rasa-sdk:latest
+    container_name: action_server
+    networks: ['rasa-network']
+    ports:
+      - "5055:5055"
     volumes:
-      - ./Rasa/actions:/app/actions
+      - "./Rasa/actions:/app/actions"
+
+  
+  duckling:
+    image: rasa/duckling:latest
+    networks: ['rasa-network']
+    ports:
+      - "8000:8000"
+
+
+  # mariadb:
+  #   image: mariadb:10.2
+  #   networks: ['rasa-network']
+  #   environment:
+  #     DB_HOST: mariadb
+  #     MYSQL_ROOT_PASSWORD: rasa
+  #     MYSQL_DATABASE: rasa
+  #     MYSQL_USER: rasa
+  #     MYSQL_PASSWORD: rasa
+  #   volumes:
+  #    - mariadbdata:/var/lib/mysql
+  #   ports:
+  #     - 32773:3306
+  #   restart: always
+
+
+  adminer:
+    image: adminer
+    restart: always
+    networks: ['rasa-network']
+    ports:
+      - 8080:8080
+
+  
+  rasa_ui:       
+    image: paschmann/rasa-ui:latest
+    container_name: rasa_ui
+    networks: ['rasa-network']
+    volumes:
+      - "./Rasa/rasa-ui-data:/opt/rasaui/server/data"
+    ports:
+      - "5001:5001"
+    depends_on:
+      - "rasa"
+    environment:
+      rasa_endpoint: "http://rasa:5005"
+  
+  mongo:
+    image: mongo
+    restart: always
+    container_name: mongo
+    hostname: mongo
+    volumes:
+      - "mongodbdata:/data/db"
+    environment:
+      MONGO_HOST: 'mongo'
+      MONGO_INITDB_ROOT_USERNAME: rasa
+      MONGO_INITDB_ROOT_PASSWORD: example
+    expose:
+     - "27017"
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: rasa
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+
+
+volumes:
+  mongodbdata:
+    driver: local
+
+
+networks: {rasa-network: {}}
