@@ -93,9 +93,6 @@
 - flw
 - Flw
 
-## intent:default
-
-
 ## intent:tudo_bem
 - tudo bem
 - tudo bem

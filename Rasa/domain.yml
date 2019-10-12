@@ -5,19 +5,15 @@ actions:
   - utter_tudo_bem
   - utter_preocupacao
   - utter_animar
-  - utter_otimista
-  - utter_negar
   - utter_concordar
-  - utter_recomendar
   - utter_explicacao
   - utter_segredo
   - utter_risada
-  - utter_repita
   - utter_animes1
   - utter_animes2
   - utter_xingamento
-  - utter_cumprimentar_tudo_bem
-  - action_test
+  - teste1
+  
 entities: 
   - animes1
   - animes2
@@ -42,8 +38,6 @@ intents:
   - repita
   - despedir
   - explicacao
-  - default
-  - cumprimentar_tudo_bem
   - animes1
   - animes2
   - filmes
@@ -57,7 +51,13 @@ intents:
   - segredo
   - risada
   - xingamento
-templates: 
+  - teste
+templates:
+  utter_default: 
+    - 
+      text: |-
+          Desculpe, não entendi o que você escreveu.
+          Você poderia reformular a pergunta?
   utter_animar: 
     - 
       text: "Acredite no seu potencial!"
@@ -132,11 +132,6 @@ templates:
       text: "Olá, eu sou o Bino, seu assistente virtual! Precisa de algo?"
     - 
       text: "Oi, o que você gostaria de saber?"
-  utter_default: 
-    - 
-      text: |-
-          Desculpe, não entendi o que você escreveu.
-          Você poderia reformular a pergunta?
   utter_despedir: 
     - 
       text: "Até logo!"

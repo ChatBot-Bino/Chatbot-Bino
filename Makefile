@@ -1,6 +1,6 @@
 train:
 	docker run \
-	-v $(pwd):/app \
+	-v "$(pwd)":/app \
 	rasa/rasa:latest-full \
 	train \
 		--domain ./Rasa/domain.yml \
