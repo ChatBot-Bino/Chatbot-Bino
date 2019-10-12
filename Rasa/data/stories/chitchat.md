@@ -53,3 +53,7 @@
 ## Reacao_feliz
 * reacao_feliz
     - utter_reacao_feliz
+
+## Start
+* start{"command":"start"}
+    - utter_start

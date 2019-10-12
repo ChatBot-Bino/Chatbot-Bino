@@ -15,6 +15,7 @@ actions:
   - utter_reacao_feliz
   - utter_reacao_triste
   - teste1
+  - utter_start
   
 entities: 
   - feliz
@@ -59,6 +60,7 @@ intents:
   - risada
   - xingamento
   - teste
+  - start
 templates:
   utter_default: 
     - 
@@ -250,3 +252,14 @@ templates:
       text: "Se realmente não estiver bem, veja um seriado legal! Podemos conversar sobre isso se você quiser."
     -
       text: "Estou aqui caso você precise! Podemos conversar sobre diversar coisas para te animar."
+
+  utter_start:
+    - text: |-
+          Olá, eu sou o Bino, seu assistente virtual!
+          
+          Estou aqui para te ajudar a se organizar, por exemplo:
+
+            - Gerencio suas faltas
+            - Aviso sobre suas atividades na faculdade
+
+          Se você precisar saber mais, é só me mandar um /help para mim, que estou disposto a lhe ajudar.

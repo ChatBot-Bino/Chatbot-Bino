@@ -266,3 +266,7 @@
 - Desanimado
 - desanimada
 - Desanimada
+
+## intent:start
+- start
+- /start
