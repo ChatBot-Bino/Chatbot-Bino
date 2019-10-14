@@ -133,6 +133,16 @@
 - não entendi
 - nao entendi
 
+## intent:funcionalidades
+- o que voce faz
+- funções
+- funcoes
+- utilidade
+- funcionalidades
+- usos
+- o que voce oferece
+
+
 ## intent:segredo
 - é uma cilada
 - É uma cilada
@@ -273,12 +283,12 @@
 - /start
 
 ## intent:series
--serie
--Serie
--seriado
--Seriado
--series
--Series
+- serie
+- Serie
+- seriado
+- Seriado
+- series
+- Series
 - gosto de series
 - assistir series
 - ver series

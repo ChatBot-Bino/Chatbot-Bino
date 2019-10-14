@@ -17,8 +17,10 @@ actions:
   - teste1
   - utter_start
   - utter_series
+  - utter_funcionalidades
   
 entities: 
+  - funcionalidades
   - feliz
   - triste
   - animes1
@@ -35,6 +37,7 @@ entities:
   - risada
   - xingamento
 intents:
+  - funcionalidades
   - default 
   - reacao_feliz
   - reacao_triste
@@ -277,3 +280,16 @@ templates:
             - Aviso sobre suas atividades na faculdade
 
           Se você precisar saber mais, é só me mandar um /help para mim, que estou disposto a lhe ajudar.
+
+  utter_funcionalidades:
+    - text : |-
+            Posso lhe ajudar de duas formas:
+              - Consigo agendar seus compromissos acadêmicos e lembra-lo das datas para você não perder o controle da sua rotina!
+                Para isso basta você digitar *comando ainda não estabelecido* e seguir o passo a passo que irei te mandar.
+                Depois disso é só ficar ligado nas notificações que eu faço o resto do trabalho!
+
+              - Posso também gerenciar as suas faltas, é super importante pra você não perder o controle e acabar faltando mais do que pode!
+                Assim como o anterior basta você digitar *comando ainda não estabelecido* e seguir o passo a passo que irei te mandar.
+                E então eu vou te auxiliando com todas as matérias para você fugir daquele SR!
+
+          
