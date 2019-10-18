@@ -133,16 +133,6 @@
 - não entendi
 - nao entendi
 
-## intent:funcionalidades
-- o que voce faz
-- funções
-- funcoes
-- utilidade
-- funcionalidades
-- usos
-- o que voce oferece
-
-
 ## intent:segredo
 - é uma cilada
 - É uma cilada
@@ -277,10 +267,6 @@
 - Desanimado
 - desanimada
 - Desanimada
-
-## intent:start
-- start
-- /start
 
 ## intent:series
 - serie

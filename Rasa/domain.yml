@@ -17,10 +17,9 @@ actions:
   - teste1
   - utter_start
   - utter_series
-  - utter_funcionalidades
+  - utter_help
   
 entities: 
-  - funcionalidades
   - feliz
   - triste
   - animes1
@@ -37,7 +36,6 @@ entities:
   - risada
   - xingamento
 intents:
-  - funcionalidades
   - default 
   - reacao_feliz
   - reacao_triste
@@ -65,6 +63,7 @@ intents:
   - xingamento
   - teste
   - start
+  - help
 templates:
   utter_default: 
     - 
@@ -276,20 +275,24 @@ templates:
           
           Estou aqui para te ajudar a se organizar, por exemplo:
 
+            - Aviso sobre suas atividades da faculdade
             - Gerencio suas faltas
-            - Aviso sobre suas atividades na faculdade
 
           Se você precisar saber mais, é só me mandar um /help para mim, que estou disposto a lhe ajudar.
 
-  utter_funcionalidades:
+  utter_help:
     - text : |-
-            Posso lhe ajudar de duas formas:
-              - Consigo agendar seus compromissos acadêmicos e lembra-lo das datas para você não perder o controle da sua rotina!
-                Para isso basta você digitar *comando ainda não estabelecido* e seguir o passo a passo que irei te mandar.
-                Depois disso é só ficar ligado nas notificações que eu faço o resto do trabalho!
+            Posso lhe com algumas funcionalidades:
 
-              - Posso também gerenciar as suas faltas, é super importante pra você não perder o controle e acabar faltando mais do que pode!
-                Assim como o anterior basta você digitar *comando ainda não estabelecido* e seguir o passo a passo que irei te mandar.
-                E então eu vou te auxiliando com todas as matérias para você fugir daquele SR!
+              Gerenciamento de atividades acadêmicas:
+
+                  Consigo agendar seus compromissos acadêmicos e lembra-lo das datas para você não perder o controle da sua rotina!
+                  Depois disso é só ficar ligado nas notificações para ficar preparado para a prova ou para não esquecer de fazer algum trabalho!
+
+              Gerenciamento de faltas:
+
+                Posso também gerenciar as suas faltas, é super importante pra você não perder o controle e acabar faltando mais do que pode!
+                Então eu vou te auxiliando com todas as matérias, sempre te enviando uma notificação, para saber se você foi para a aula ou não!
+                Desse jeito, você pode ficar mais tranquilo durante o semestre.    
 
           

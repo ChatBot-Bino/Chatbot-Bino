@@ -54,14 +54,6 @@
 * reacao_feliz
     - utter_reacao_feliz
 
-## Start
-* start{"command":"start"}
-    - utter_start
-
 ## Series
 * series
     - utter_series
-
-## Funcionalidades
-* funcionalidades
-    - utter_funcionalidades
