@@ -14,12 +14,12 @@ actions:
   - utter_xingamento
   - utter_reacao_feliz
   - utter_reacao_triste
-  - teste1
   - utter_start
   - utter_series
   - utter_help
 
   - action_test
+  - action_pca
   
 entities: 
   - feliz
@@ -63,11 +63,11 @@ intents:
   - segredo
   - risada
   - xingamento
-  - teste
   - start
   - help
 
   - action_test
+  - action_pca
   
 templates:
   utter_default: 
@@ -287,7 +287,7 @@ templates:
 
   utter_help:
     - text : |-
-            Posso lhe com algumas funcionalidades:
+            Posso lhe ajudar com algumas funcionalidades:
 
               Gerenciamento de atividades acadêmicas:
 
