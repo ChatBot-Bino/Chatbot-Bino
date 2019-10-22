@@ -1,19 +1,11 @@
-FROM python:3.6-slim
+FROM lappis/botrequirements:boilerplate
 
-RUN apt update && apt install -y gcc make curl
+ADD ./Rasa/bot/actions/actions.py /bot/actions/actions.py
+ADD ./Rasa/bot/Makefile /bot/Makefile
 
-ADD ./docker/actions.requirements.txt /tmp/
-
-RUN pip install --upgrade pip && \
-    pip install -r /tmp/actions.requirements.txt
-
-ADD ./rasa/actions/ /rasa/actions/
-ADD ./rasa/Makefile /rasa/Makefile
-
-WORKDIR /rasa/
+WORKDIR bot/
 
 EXPOSE 5055
-
 HEALTHCHECK --interval=300s --timeout=60s --retries=5 \
   CMD curl -f http://0.0.0.0:5055/health || exit 1
 

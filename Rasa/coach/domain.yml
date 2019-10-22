@@ -18,6 +18,8 @@ actions:
   - utter_start
   - utter_series
   - utter_help
+
+  - action_test
   
 entities: 
   - feliz
@@ -64,6 +66,9 @@ intents:
   - teste
   - start
   - help
+
+  - action_test
+  
 templates:
   utter_default: 
     - 
@@ -294,5 +299,3 @@ templates:
                 Posso também gerenciar as suas faltas, é super importante pra você não perder o controle e acabar faltando mais do que pode!
                 Então eu vou te auxiliando com todas as matérias, sempre te enviando uma notificação, para saber se você foi para a aula ou não!
                 Desse jeito, você pode ficar mais tranquilo durante o semestre.    
-
-          
