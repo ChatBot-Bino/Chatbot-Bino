@@ -1,26 +1,26 @@
 #Gerenciador de Faltas
 
-##1. Requisitos
+## 1. Requisitos
 
-###Objetivo
+### Objetivo
 
 O ChatBot Bino tem como objetivo otimizar o tempo do universitário, aumentando a facilidade do mesmo em organizar seus horários. Através do controle de faltas nas disciplinas nas quais o aluno está matriculado, o aluno será notificado de acordo com o limite permitido por cada matéria.
 
-###Razão
+### Razão
 Evitar reprovações mantendo o controle sobre as faltas do usuário.
 
-###Tecnologias
+### Tecnologias
 
 - Python 3
 
-##2. Arquitetura
+## 2. Arquitetura
 
-###1. *Input*
+### 1. *Input*
 
-####Grade horária
+#### Grade horária
 A entrada inicial de dados será principalmente pelo arquivo PDF, obtido no Matrícula Web e enviado pelo usuário, contendo sua grade horária de disciplinas. Ele também poderá ser enviado manualmente (digitado), como segunda opção.
 
-####Verificação de presença
+#### Verificação de presença
 
 - O bot saberá se o usuário compareceu ou não às aulas através dos botões "sim" e "não" mostrados no chat do Telegram.
 
@@ -32,7 +32,7 @@ A entrada inicial de dados será principalmente pelo arquivo PDF, obtido no Matr
 
 - Será possível alterar a presença em uma aula sempre que desejado.
 
-###2. Processamento
+### 2. Processamento
 O bot ficará responsável por:
 
 - Armazenar todas as presenças e faltas;
@@ -41,5 +41,5 @@ O bot ficará responsável por:
 - Gerar relatórios de presença;
 - Alertar e prevenir as faltas.
 
-###3. *Output*
-A saída de dados do gerenciador de faltas será através de mensagens, alertas e notificações.
+### 3. *Output*
+A saída de dados do gerenciador de faltas será através de mensagens, alertas e notificações. notificações.
