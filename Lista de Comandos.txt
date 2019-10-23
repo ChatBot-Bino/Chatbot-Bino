@@ -1,0 +1,9 @@
+Lista de comandos:
+
+1- start - começa o bot
+
+2- help - mostra funcionalidades
+
+3- compromissos - mostra os primeiros 5 compromissos
+
+ 

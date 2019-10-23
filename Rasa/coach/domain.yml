@@ -278,7 +278,7 @@ templates:
     - text: |-
           Olá, eu sou o Bino, seu assistente virtual!
           
-          Estou aqui para te ajudar a se organizar, por exemplo:
+          Estou aqui para te ajudar a se organizar, por exemplo
 
             - Aviso sobre suas atividades da faculdade
             - Gerencio suas faltas
@@ -287,15 +287,18 @@ templates:
 
   utter_help:
     - text : |-
-            Posso lhe ajudar com algumas funcionalidades:
+          Posso lhe ajudar com algumas funcionalidades
 
-              Gerenciamento de atividades acadêmicas:
+            Gerenciamento de atividades acadêmicas
 
-                  Consigo agendar seus compromissos acadêmicos e lembra-lo das datas para você não perder o controle da sua rotina!
-                  Depois disso é só ficar ligado nas notificações para ficar preparado para a prova ou para não esquecer de fazer algum trabalho!
+                Consigo agendar seus compromissos acadêmicos e lembra-lo das datas para você não perder o controle da sua rotina!
 
-              Gerenciamento de faltas:
+                Depois disso é só ficar ligado nas notificações para ficar preparado para a prova ou para não esquecer de fazer algum trabalho!
+
+            Gerenciamento de faltas 
 
                 Posso também gerenciar as suas faltas, é super importante pra você não perder o controle e acabar faltando mais do que pode!
+    
                 Então eu vou te auxiliando com todas as matérias, sempre te enviando uma notificação, para saber se você foi para a aula ou não!
-                Desse jeito, você pode ficar mais tranquilo durante o semestre.    
+                
+                Desse jeito, você pode ficar mais tranquilo durante o semestre.   
