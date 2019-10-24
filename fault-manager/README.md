@@ -1,4 +1,4 @@
-#Gerenciador de Faltas
+# Gerenciador de Faltas
 
 ## 1. Requisitos
 
@@ -43,3 +43,22 @@ O bot ficará responsável por:
 
 ### 3. *Output*
 A saída de dados do gerenciador de faltas será através de mensagens, alertas e notificações. notificações.
+
+## 3. Linha do tempo
+
+### 1. Leitor de PDF
+Para melhorar a usabilidade, basta que o usuário envie sua grade horária em formato PDF, obtida no Matrícula Web, no chat do bot. O Bino ficará responsável por extrair todos os dados presentes no documento. É necessário escolher entre as várias ferramentas e bibliotecas em Pyhton a que melhor se encaixa para o nosso uso.
+
+### 2. Armazenamento de dados
+
+Para o armazenamento, vamos utilizar o banco de dados MongoDB.
+
+### 3. Comunicação
+
+#### Notificações
+
+O usuário receberá notificações para responder sobre sua presença sempre a partir do horário de início da aula. Também serão enviados alertas para a prevenção de faltas.
+
+### 4. Relatório 
+
+Os relatórios serão periódicos enviados diariamente, semanalmente e/ou mensalmente para que o usuário sempre esteja ciente de seus limites de faltas.
