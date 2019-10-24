@@ -18,8 +18,8 @@ actions:
   - utter_series
   - utter_help
 
-  - action_test
-  - action_pca
+  - action_start
+  
   
 entities: 
   - feliz
@@ -66,8 +66,7 @@ intents:
   - start
   - help
 
-  - action_test
-  - action_pca
+  - action_start
   
 templates:
   utter_default: 
@@ -301,4 +300,4 @@ templates:
     
                 Então eu vou te auxiliando com todas as matérias, sempre te enviando uma notificação, para saber se você foi para a aula ou não!
                 
-                Desse jeito, você pode ficar mais tranquilo durante o semestre.   
+                Desse jeito, você pode ficar mais tranquilo durante o semestre.

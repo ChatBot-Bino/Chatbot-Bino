@@ -2,12 +2,38 @@ version: '3.0'
 
 services:
   # =============================== Mongo =====================================
+  # mongo:
+  #   image: mongo:3.2
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./data/db:/data/db
+  #   command: mongod --smallfiles --oplogSize 128
   mongo:
-    image: mongo:3.2
-    restart: unless-stopped
+    image: mongo
+    restart: always
+    container_name: mongo
+    hostname: mongo
     volumes:
-      - ./data/db:/data/db
-    command: mongod --smallfiles --oplogSize 128
+      - "telegram_db"
+    environment:
+      MONGO_HOST: 'mongo'
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: "1234"
+    expose:
+     - "27017"
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: "1234"
 
   # =============================== Coach =====================================  
   coach:
@@ -54,6 +80,9 @@ services:
       dockerfile: ./docker/actions.Dockerfile
     ports:
       - 5055:5055
+    depends_on:
+      - mongo
+      - mongo-express
     volumes:
       - ./Rasa/bot/actions:/bot/actions
       - ./Rasa/bot/Makefile:/bot/Makefile

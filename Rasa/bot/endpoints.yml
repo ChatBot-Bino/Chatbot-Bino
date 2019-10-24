@@ -1,8 +1,9 @@
 action_endpoint:
   url: "http://actions:5055/webhook"
 
-# event_broker:
-#   url: rabbitmq
-#   username: admin
-#   password: admin
-#   queue: bot_messages
+tracker_store:
+    type: mongod
+    url: mongodb://mongo:27017
+    db: telegram_db
+    username: admin
+    password: "1234"
