@@ -3,7 +3,7 @@ action_endpoint:
 
 tracker_store:
     type: mongod
-    url: mongodb://mongo:27017
+    url: mongodb://mongo:27017/telegram_db
     db: telegram_db
     username: admin
     password: "1234"

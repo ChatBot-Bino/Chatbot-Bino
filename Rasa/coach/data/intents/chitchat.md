@@ -278,3 +278,9 @@
 - gosto de series
 - assistir series
 - ver series
+
+## intent:futebol
+- futebol
+- Futebol
+- gosta futebol
+- esporte

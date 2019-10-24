@@ -14,7 +14,7 @@ services:
     container_name: mongo
     hostname: mongo
     volumes:
-      - "telegram_db"
+      - ./telegram_db:/telegram_db
     environment:
       MONGO_HOST: 'mongo'
       MONGO_INITDB_ROOT_USERNAME: admin

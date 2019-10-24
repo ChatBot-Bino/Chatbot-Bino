@@ -17,9 +17,12 @@ actions:
   - utter_start
   - utter_series
   - utter_help
+  - utter_atividades
+  - utter_futebol
+  - utter_provas
+  - utter_trabalhos
 
   - action_start
-  
   
 entities: 
   - feliz
@@ -38,6 +41,7 @@ entities:
   - risada
   - xingamento
 intents:
+  - futebol
   - default 
   - reacao_feliz
   - reacao_triste
@@ -65,6 +69,9 @@ intents:
   - xingamento
   - start
   - help
+  - atividades
+  - provas
+  - trabalhos
 
   - action_start
   
@@ -278,26 +285,40 @@ templates:
           Olá, eu sou o Bino, seu assistente virtual!
           
           Estou aqui para te ajudar a se organizar, por exemplo
-
             - Aviso sobre suas atividades da faculdade
             - Gerencio suas faltas
-
           Se você precisar saber mais, é só me mandar um /help para mim, que estou disposto a lhe ajudar.
-
   utter_help:
     - text : |-
           Posso lhe ajudar com algumas funcionalidades
-
             Gerenciamento de atividades acadêmicas
-
                 Consigo agendar seus compromissos acadêmicos e lembra-lo das datas para você não perder o controle da sua rotina!
-
                 Depois disso é só ficar ligado nas notificações para ficar preparado para a prova ou para não esquecer de fazer algum trabalho!
-
             Gerenciamento de faltas 
-
                 Posso também gerenciar as suas faltas, é super importante pra você não perder o controle e acabar faltando mais do que pode!
     
                 Então eu vou te auxiliando com todas as matérias, sempre te enviando uma notificação, para saber se você foi para a aula ou não!
                 
                 Desse jeito, você pode ficar mais tranquilo durante o semestre.
+
+  utter_atividades:
+      - text : |-
+          Aqui você pode gerenciar sua atividades acadêmicas!
+          Digite "/provas" para verificar sua agenda de provas dos próximos dias
+          Ou digite "/trabalhos" para consultar a data de entrega dos seus pŕoximos trabalhos!
+
+  utter_provas:
+      - text : |-
+          No dia XX/XX você vai ter uma prova de XXXXX. É melhor estudar, hein!
+      - text : |-
+          Não se esqueça que dia XX/XX você tem prova de XXXXX. Cuidado pra não deixar os estudos pra última hora.
+      - text : |-
+          A prova de XXXXX vai ser no dia XX/XX. faltam apenas X dias!
+          
+  utter_trabalhos:
+      - text : |-
+         A data final de entrega do seu trabalho de XXXXX é dia XX/XX. Como está indo?
+      - text : |-
+         Você tem um trabalho de XXXXX para o dia XX/XX. Não deixe para o último dia, hein!
+      - text : |-
+         O dia XX/XX está chegando! Não se esqueça do trabalho de XXXXX.
