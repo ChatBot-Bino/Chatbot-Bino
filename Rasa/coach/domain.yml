@@ -19,6 +19,8 @@ actions:
   - utter_help
   - utter_atividades
   - utter_futebol
+  - utter_provas
+  - utter_trabalhos
 
   - action_test
   - action_pca
@@ -69,6 +71,8 @@ intents:
   - start
   - help
   - atividades
+  - provas
+  - trabalhos
 
   - action_test
   - action_pca
@@ -308,4 +312,22 @@ templates:
                 Desse jeito, você pode ficar mais tranquilo durante o semestre.
   utter_atividades:
       - text : |-
-            teste.
+          Aqui você pode gerenciar sua atividades acadêmicas!
+          Digite "/provas" para verificar sua agenda de provas dos próximos dias
+          Ou digite "/trabalhos" para consultar a data de entrega dos seus pŕoximos trabalhos!
+
+  utter_provas:
+      - text : |-
+          No dia XX/XX você vai ter uma prova de XXXXX. É melhor estudar, hein!
+      - text : |-
+          Não se esqueça que dia XX/XX você tem prova de XXXXX. Cuidado pra não deixar os estudos pra última hora.
+      - text : |-
+          A prova de XXXXX vai ser no dia XX/XX. faltam apenas X dias!
+
+  utter_trabalhos:
+      - text : |-
+         A data final de entrega do seu trabalho de XXXXX é dia XX/XX. Como está indo?
+      - text : |-
+         Você tem um trabalho de XXXXX para o dia XX/XX. Não deixe para o último dia, hein!
+      - text : |-
+         O dia XX/XX está chegando! Não se esqueça do trabalho de XXXXX.
