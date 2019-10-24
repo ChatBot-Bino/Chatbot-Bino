@@ -51,7 +51,7 @@ services:
     container_name: actions
     build:
       context: .
-      dockerfile: ./docker/actions.Dockerfile
+      dockerfile: ./docker/actionServer.Dockerfile
     ports:
       - 5055:5055
     volumes:

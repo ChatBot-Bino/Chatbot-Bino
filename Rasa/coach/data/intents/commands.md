@@ -5,3 +5,7 @@
 ## intent:help
 - help
 - /help
+
+## intent:atividades
+- atividades
+- /atividades
