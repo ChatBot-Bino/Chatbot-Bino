@@ -19,6 +19,7 @@ services:
       MONGO_HOST: 'mongo'
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: "1234"
+    networks: ['rasa-network']
     expose:
      - "27017"
 
@@ -31,12 +32,14 @@ services:
       - mongo
     ports:
       - 8081:8081
+    networks: ['rasa-network']
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: admin
       ME_CONFIG_MONGODB_ADMINPASSWORD: "1234"
 
   # =============================== Coach =====================================  
   coach:
+    networks: ['rasa-network']
     container_name: coach
     image: lappis/coach:boilerplate
     command: sh -c "cp -r /src_models/*"
@@ -45,6 +48,7 @@ services:
   bot:
     image: lappis/bot:boilerplate
     container_name: rasaShell
+    networks: ['rasa-network']
     build:
       context: .
       dockerfile: ./docker/bot.Dockerfile
@@ -64,6 +68,7 @@ services:
         dockerfile: ./docker/bot.Dockerfile
       env_file:
         - docker/bot-telegram.env
+      networks: ['rasa-network']
       ports:
         - 5001:5001
       depends_on:
@@ -75,6 +80,7 @@ services:
   # ================================= Actions =================================
   actions:
     container_name: actions
+    networks: ['rasa-network']
     build:
       context: .
       dockerfile: ./docker/actionServer.Dockerfile
@@ -89,7 +95,13 @@ services:
     command: sh -c "make run-actions"
 
 volumes:
+  mongodbdata:
+    driver: local
   notebook_models:
   esbackup:
   esdata:
     driver: local
+
+
+
+networks: {rasa-network: {}}
