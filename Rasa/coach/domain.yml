@@ -21,7 +21,9 @@ actions:
   - utter_futebol
   - utter_provas
   - utter_trabalhos
+  
 
+  - action_test
   - action_start
   
 entities: 
@@ -73,6 +75,7 @@ intents:
   - provas
   - trabalhos
 
+  - teste
   - action_start
   
 templates:

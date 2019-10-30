@@ -15,6 +15,10 @@ build-bot:
 train:
 	docker build . -f docker/coach.Dockerfile -t lappis/coach:boilerplate
 	docker-compose build bot
+reset-train:
+	docker
+	docker build . -f docker/coach.Dockerfile -t lappis/coach:boilerplate
+	docker-compose build bot
 
 run-telegram:
 	docker-compose up bot_telegram
