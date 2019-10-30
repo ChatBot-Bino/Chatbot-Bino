@@ -1,9 +1,11 @@
 user: {
+    Telegramid: 
     first_name: 
     last_name
     classes: {
-        class1: {
+        md: {
             schedules: [segunda,quarta,sexta]
+        }
     }
     exams: {
         exam1{

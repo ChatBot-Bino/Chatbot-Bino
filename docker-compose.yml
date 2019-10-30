@@ -1,4 +1,4 @@
-version: '3.0'
+version: '3.7'
 
 services:
   # =============================== Mongo =====================================
@@ -11,18 +11,17 @@ services:
   mongo:
     image: mongo
     restart: always
-    container_name: mongodb
-    hostname: mongo
-    volumes:
+    container_name: mongo
+    volumes: 
       - ./telegram_db:/data/db
+    hostname: mongo
     # environment:
     #   MONGO_INITDB_ROOT_USERNAME: 'admin'
     #   MONGO_INITDB_ROOT_PASSWORD: '1234'
-    networks: 
-      ['rasa-network']:
-        ipv4_address: 172.17.0.2
+    networks: ['rasa-network']
     expose:
      - "27017"
+
 
   mongo-express:
     image: mongo-express
@@ -58,6 +57,7 @@ services:
       - 5002:5002
     depends_on:
       - actions
+      - mongo
     volumes:
       - ./Rasa/bot:/bot
 
@@ -96,7 +96,7 @@ services:
     command: sh -c "make run-actions"
 
 volumes:
-  mongodbdata:
+  mongo:
     driver: local
   notebook_models:
   esbackup:

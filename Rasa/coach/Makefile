@@ -5,7 +5,8 @@ train-nlu:
 train-core:
 	python3 train.py
 
-train: train-nlu train-core
+train: 
+  rasa train -vv --out models
 
 train-online:
 	python -m rasa_core.train        \

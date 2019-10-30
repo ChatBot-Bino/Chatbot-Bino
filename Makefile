@@ -1,22 +1,8 @@
-# train:
-# 	docker run \
-# 	-v "$(pwd)":/app \
-# 	rasa/rasa:latest-full \
-# 	train \
-# 		--domain ./Rasa/domain.yml \
-# 		--data ./Rasa/data \
-# 		--out ./Rasa/models \
-# 		--c ./Rasa/config.yml
-
 build-bot:
-	./docker/build-base.sh
+	docker build . -f docker/requirements.Dockerfile -t lappis/botrequirements:boilerplate
 	make train
 
 train:
-	docker build . -f docker/coach.Dockerfile -t lappis/coach:boilerplate
-	docker-compose build bot
-reset-train:
-	docker
 	docker build . -f docker/coach.Dockerfile -t lappis/coach:boilerplate
 	docker-compose build bot
 
