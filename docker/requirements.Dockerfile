@@ -1,6 +1,6 @@
 FROM python:3.6-slim
 
-RUN apt-get update && apt-get install -y gcc make && apt-get install -y git
+RUN apt update && apt install -y gcc make
 
 RUN python -m pip install --upgrade pip
 

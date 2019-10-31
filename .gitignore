@@ -1,13 +1,30 @@
 ### Rasa ###
-Rasa/models
-rasa_core.log
-errors.json
+bot/models
 
-###DB###
-telegram_db/
+### Rasa visualize ###
+graph.html
+
+### Rasa evaluation ###
+.ipynb_checkpoints/
+modules/notebooks/intents/models/
+modules/notebooks/intents/results/
+modules/notebooks/stories/models/
+modules/notebooks/stories/results/
+bot/.ipython/
+bot/.keras/
+bot/.local/
+bot/results/
+
+### database ###
+db/
+
+### Rabbitmq ###
+data/
+
+### PyCharm ###
+.idea/
 
 # Created by https://www.gitignore.io/api/vim,linux,macos,python
-
 ### Linux ###
 *~
 
@@ -131,7 +148,6 @@ celerybeat-schedule.*
 # Environments
 .env
 .venv
-env/
 venv/
 ENV/
 env.bak/
@@ -164,6 +180,3 @@ tags
 
 # End of https://www.gitignore.io/api/vim,linux,macos,python
 
-models/dialogue/
-
-models/nlu/current/

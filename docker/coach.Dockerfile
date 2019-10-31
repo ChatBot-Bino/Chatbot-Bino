@@ -1,7 +1,7 @@
-FROM lappis/botrequirements:boilerplate
+FROM botrequirements
 
-COPY ./Rasa/ /Rasa
+COPY ./bot /bot
 
-WORKDIR /Rasa
+WORKDIR /bot
 
 RUN make train
