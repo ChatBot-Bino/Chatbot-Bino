@@ -1,22 +1,28 @@
-version: '2'
+version: '3.0'
 
 services:
-
-
-  # =============================== Mongo =================================
+  # =============================== Mongo =====================================
+  # mongo:
+  #   image: mongo:3.2
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./data/db:/data/db
+  #   command: mongod --smallfiles --oplogSize 128
   mongo:
     image: mongo
     restart: always
-    container_name: mongo
-    volumes: 
-      - ./db/telegram_db:/data/db
+    container_name: mongodb
     hostname: mongo
+    volumes:
+      - ./telegram_db:/data/db
     # environment:
     #   MONGO_INITDB_ROOT_USERNAME: 'admin'
     #   MONGO_INITDB_ROOT_PASSWORD: '1234'
+    networks: 
+      ['rasa-network']:
+        ipv4_address: 172.17.0.2
     expose:
      - "27017"
-
 
   mongo-express:
     image: mongo-express
@@ -27,68 +33,76 @@ services:
       - mongo
     ports:
       - 8081:8081
+    networks: ['rasa-network']
     # environment:
     #   ME_CONFIG_MONGODB_ADMINUSERNAME: admin
     #   ME_CONFIG_MONGODB_ADMINPASSWORD: "1234"
 
-  # =============================== Coach =================================
-  # All the models are trained by this coach.
+  # =============================== Coach =====================================  
   coach:
-    build:
-      context: .
-      dockerfile: ./docker/coach.Dockerfile
-    volumes:
-      - ./bot/models/:/bot/models/
-    command: sh -c "make train"
-
+    networks: ['rasa-network']
+    container_name: coach
+    image: lappis/coach:boilerplate
+    command: sh -c "cp -r /src_models/*"
 
   # ================================= Bot =====================================
-  # Generic Rasa bot, used to run console for example.
   bot:
     image: lappis/bot:boilerplate
+    container_name: rasaShell
+    networks: ['rasa-network']
     build:
       context: .
       dockerfile: ./docker/bot.Dockerfile
     restart: unless-stopped
     ports:
-      - 5004:5004
+      - 5002:5002
     depends_on:
       - actions
-      - mongo
-      - mongo-express
-
-  # ================================= Actions =================================
-  # Rasa middleware used to connect with external APIs.
-  actions:
-    build:
-      context: .
-      dockerfile: ./docker/actions.Dockerfile
-    ports:
-      - 5055:5055
     volumes:
-      - ./bot/actions:/bot/actions
-    command: sh -c "make run-actions"
+      - ./Rasa/bot:/bot
 
   # ============================ Telegram Bot =================================
-  # Specific Rasa bot integrated with Telegram.
   bot_telegram:
+      container_name: bot_telegram
       build:
         context: .
         dockerfile: ./docker/bot.Dockerfile
       env_file:
-        - env/bot-telegram.env
+        - docker/bot-telegram.env
+      networks: ['rasa-network']
       ports:
         - 5001:5001
       depends_on:
         - actions
-        - mongo
-        - mongo-express
       volumes:
-        - ./bot:/bot
-        
-      command: sh -c "make telegram"
+        - ./Rasa/bot:/bot
+      command: sh -c "make run-telegram"
+
+  # ================================= Actions =================================
+  actions:
+    container_name: actions
+    networks: ['rasa-network']
+    build:
+      context: .
+      dockerfile: ./docker/actionServer.Dockerfile
+    ports:
+      - 5055:5055
+    depends_on:
+      - mongo
+      - mongo-express
+    volumes:
+      - ./Rasa/bot/actions:/bot/actions
+      - ./Rasa/bot/Makefile:/bot/Makefile
+    command: sh -c "make run-actions"
 
 volumes:
-  mongo_data:
+  mongodbdata:
+    driver: local
+  notebook_models:
+  esbackup:
   esdata:
     driver: local
+
+
+
+networks: {rasa-network: {}}

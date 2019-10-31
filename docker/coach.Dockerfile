@@ -1,7 +1,11 @@
-FROM botrequirements
+FROM lappis/botrequirements:boilerplate
 
-COPY ./bot /bot
+COPY ./Rasa/coach /coach
 
-WORKDIR /bot
+RUN mkdir /src_models
+
+WORKDIR /coach
 
 RUN make train
+
+RUN find /. | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf

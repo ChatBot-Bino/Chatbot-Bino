@@ -1,34 +1,30 @@
-current_dir := $(shell pwd)
-
-clean:
-	sudo docker-compose down
-
-############################## BOILERPLATE ############################## 
-build:
-	make build-requirements
-	make build-coach
-	make build-bot
-
-build-requirements:
-	docker build . -f docker/requirements.Dockerfile -t botrequirements
+# train:
+# 	docker run \
+# 	-v "$(pwd)":/app \
+# 	rasa/rasa:latest-full \
+# 	train \
+# 		--domain ./Rasa/domain.yml \
+# 		--data ./Rasa/data \
+# 		--out ./Rasa/models \
+# 		--c ./Rasa/config.yml
 
 build-bot:
-	docker-compose build bot
-	
-build-coach:
-	docker-compose build coach
-
-run-console:
-	docker-compose run --rm --service-ports bot make shell
-
-
-run-telegram:
-	docker-compose run -d --rm --service-ports bot_telegram make telegram
+	./docker/build-base.sh
+	make train
 
 train:
-	docker-compose up coach
+	docker build . -f docker/coach.Dockerfile -t lappis/coach:boilerplate
+	docker-compose build bot
+reset-train:
+	docker
+	docker build . -f docker/coach.Dockerfile -t lappis/coach:boilerplate
 	docker-compose build bot
 
-visualize:
-	docker-compose run --rm  -v $(current_dir)/bot:/coach coach rasa visualize --domain domain.yml --stories data/stories.md --config config.yml --nlu data/nlu.md --out ./graph.html -vv
-	sensible-browser --no-sandbox bot/graph.html
+run-telegram:
+	docker-compose up bot_telegram
+
+run-console:
+	docker-compose run bot make run-console
+
+test-dialogue:
+	docker-compose run --rm bot make e2e

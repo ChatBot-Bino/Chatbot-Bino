@@ -6,17 +6,14 @@ class ActionStart(Action):
         return "action_start"
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("Rasa-network")
         try:
-            client = MongoClient("192.168.112.2:27017")
+            client = MongoClient("172.17.0.2:27017")
             print(client.list_database_names())
-            db = client.telegramDB 
+            db = client.telegramdb
             collectionsUsers = db.user
             collectionsUsers._insert({
                 "firstName": "testes",
-                "lastName": "Unicode",
-                "me mama": "me da uma mamada tripla filha da putaaaa"
-
+                "lastName": "Unicode"
             })
             print(client.list_database_names())
         except ValueError:
