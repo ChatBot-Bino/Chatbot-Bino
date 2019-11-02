@@ -4,7 +4,7 @@ rasa_core.log
 errors.json
 
 ###DB###
-telegram_db/
+telegramdb/
 
 # Created by https://www.gitignore.io/api/vim,linux,macos,python
 
