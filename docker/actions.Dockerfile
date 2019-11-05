@@ -1,6 +1,6 @@
 FROM botrequirements
 
-COPY ./bot/actions/ /bot/actions/
+COPY ./bot/actions /bot/actions
 COPY ./bot/Makefile /bot/Makefile
 
 WORKDIR /bot

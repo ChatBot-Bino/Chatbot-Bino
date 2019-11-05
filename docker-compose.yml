@@ -5,6 +5,8 @@ services:
   mongo:
     container_name: mongodb
     image: mongo
+    depends_on:
+      - mongo-express
     ports: 
       - 27017:27017
     volumes: 
@@ -12,8 +14,6 @@ services:
 
   mongo-express:
     image: mongo-express
-    links: 
-      - mongo
     container_name: mongo-express
     ports:
       - 8081:8081
@@ -155,6 +155,11 @@ services:
       - ./bot/:/bot/
     ports:
       - 8888:8888
+
+
+networks:
+  default:
+
 
 volumes:
   notebook_models:

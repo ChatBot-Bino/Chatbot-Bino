@@ -1,7 +1,10 @@
 current_dir := $(shell pwd)
 
-clean:
+bot-clean:
 	sudo docker-compose down
+	rm -rf bot/graph.html bot/results/ bot/models/*
+	sudo make train
+	sudo make run-shell
 
 ############################## BOILERPLATE ############################## 
 first-run:
