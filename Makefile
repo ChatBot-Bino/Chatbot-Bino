@@ -6,6 +6,12 @@ bot-clean:
 	sudo make train
 	sudo make run-shell
 
+bot-telegram:
+	sudo docker-compose down
+	rm -rf bot/graph.html bot/results/ bot/models/*
+	sudo make train
+	sudo make run-telegram
+
 ############################## BOILERPLATE ############################## 
 first-run:
 	make build
@@ -53,7 +59,7 @@ run-webchat:
 	sensible-browser --no-sandbox modules/webchat/index.html
 
 run-telegram:
-	docker-compose run -d --rm --service-ports bot_telegram make telegram
+	docker-compose run --rm --service-ports bot_telegram make telegram
 
 run-notebooks:
 	docker-compose up -d notebooks

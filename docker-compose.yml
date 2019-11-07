@@ -43,6 +43,8 @@ services:
     depends_on:
       - actions
       - mongo
+    env_file:
+      - env/bot-telegram.env
 
   # ================================= Actions =================================
   # Rasa middleware used to connect with external APIs.
@@ -159,6 +161,7 @@ services:
 
 networks:
   default:
+    
 
 
 volumes:
