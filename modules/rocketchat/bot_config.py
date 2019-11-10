@@ -138,7 +138,10 @@ def configure_livechat():
 
     # Change Livechat Color
     api_post(
-        "settings/Livechat_title_color", {"value": "#039046", "editor": "color"}
+        "settings/Livechat_title_color", {
+            "value": "#039046",
+            "editor": "color"
+        }
     )
 
     # Change Livechat Title

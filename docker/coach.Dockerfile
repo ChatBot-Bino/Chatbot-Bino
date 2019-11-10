@@ -1,4 +1,4 @@
-FROM botrequirements
+FROM botbino/botrequirements
 
 WORKDIR /bot
 

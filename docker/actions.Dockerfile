@@ -1,4 +1,4 @@
-FROM botrequirements
+FROM botbino/botrequirements
 
 COPY ./bot/actions /bot/actions
 COPY ./bot/Makefile /bot/Makefile
