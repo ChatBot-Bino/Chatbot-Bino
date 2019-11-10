@@ -1,4 +1,4 @@
-FROM botrequirements
+FROM botbino/botrequirements
 
 RUN apt-get update && apt-get install -y graphviz libgraphviz-dev pkg-config
 

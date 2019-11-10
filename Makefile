@@ -3,13 +3,15 @@ current_dir := $(shell pwd)
 bot-clean:
 	sudo docker-compose down
 	rm -rf bot/graph.html bot/results/ bot/models/*
-	sudo make train
+	make build-requirements
+	make build-coach
 	sudo make run-shell
 
 bot-telegram:
 	sudo docker-compose down
 	rm -rf bot/graph.html bot/results/ bot/models/*
-	sudo make train
+	make build-requirements
+	make build-coach
 	sudo make run-telegram
 
 ############################## BOILERPLATE ############################## 
@@ -23,7 +25,7 @@ build:
 	make build-bot
 
 build-requirements:
-	docker build . -f docker/requirements.Dockerfile -t botrequirements
+	docker build . -f docker/requirements.Dockerfile -t botbino/botrequirements
 
 build-bot:
 	docker-compose build bot

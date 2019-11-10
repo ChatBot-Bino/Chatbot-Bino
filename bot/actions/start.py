@@ -1,6 +1,7 @@
 from rasa_core_sdk import Action
 from pymongo import MongoClient
 
+
 class ActionStart(Action):
     def name(self):
         return "action_start"
