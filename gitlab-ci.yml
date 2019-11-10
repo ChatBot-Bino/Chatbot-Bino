@@ -1,0 +1,92 @@
+image: python:3.6-slim
+
+stages:
+  - test style
+  - build requirements
+  - build coach
+  - build
+  - test stories
+
+
+#############################################################
+#################### TEST STYLE #############################
+#############################################################
+test style:
+  stage: test style
+  script:
+    - apt-get update --yes
+    - apt-get install gcc --yes
+    - pip -V
+    - python -V
+    - pip install -r requirements.txt
+    - flake8 --exclude venv
+
+#############################################################
+############### BUILD REQUIREMENTS ##########################
+#############################################################
+build requirements:
+  stage: build requirements
+  image: docker
+  tags:
+    - docker
+  services:
+    - docker:dind
+  script:
+    - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
+    - docker build . -f docker/requirements.Dockerfile -t botbino/botrequirements
+    - docker push botbino/botrequirements
+    
+#############################################################
+############### BUILD COACH #################################
+#############################################################
+build coach:
+  stage: build coach
+  image: docker
+  tags:
+    - docker
+  services:
+    - docker:dind
+  script:
+    - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
+    - docker build -f docker/coach.Dockerfile -t botbino/coach:latest .
+    - docker push botbino/coach:latest
+  only:
+    - master
+  environment: homolog
+
+
+#############################################################
+############### BUILD BOT ###################################
+#############################################################
+build bot:
+  stage: build
+  image: docker
+  tags:
+    - docker
+  services:
+    - docker:dind
+  script:
+    - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
+    - docker build -f docker/bot.Dockerfile -t botbino/bot:latest .
+    - docker push botbino/bot:latest
+  only:
+    - master
+  environment: homolog
+  
+  
+#############################################################
+############### TEST STORIES ################################
+#############################################################
+test stories:
+  stage: test stories
+  image: docker
+  tags:
+    - docker
+  services:
+    - docker:dind
+  script:
+    - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
+    - docker run botbino/bot make validate .
+  only:
+    - master
+  environment: homolog
