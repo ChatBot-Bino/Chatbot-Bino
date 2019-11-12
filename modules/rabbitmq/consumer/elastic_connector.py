@@ -90,10 +90,7 @@ class ElasticConnector:
             .replace(")", "")
             .split(" ")
         ):
-            if (
-                word.lower() not in stopwords.words("portuguese")
-                and len(word) > 1
-            ):
+            if (word.lower() not in stopwords.words("portuguese") and len(word) > 1):
                 tags.append(word)
 
         message = {
