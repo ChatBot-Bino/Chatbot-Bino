@@ -62,6 +62,3 @@
 * futebol
     - utter_futebol
 
-## Testes
-* teste
-    - action_test

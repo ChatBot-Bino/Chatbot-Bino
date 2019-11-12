@@ -22,8 +22,6 @@ actions:
   - utter_provas
   - utter_trabalhos
   
-
-  - action_test
   - action_start
   
 entities: 
@@ -61,7 +59,6 @@ intents:
   - provas
   - trabalhos
 
-  - teste
   - action_start
   
 templates:
@@ -270,10 +267,8 @@ templates:
       text: "Estou aqui caso você precise! Podemos conversar sobre diversar coisas para te animar."
 
   utter_start:
-    - text: |-
-          Olá, eu sou o Bino, seu assistente virtual!
-          
-          Estou aqui para te ajudar a se organizar, por exemplo
+    - text: |-          
+          Estou aqui para te fuder a se organizar, por exemplo
             - Aviso sobre suas atividades da faculdade
             - Gerencio suas faltas
           Se você precisar saber mais, é só me mandar um /help para mim, que estou disposto a lhe ajudar.
