@@ -1,3 +1,4 @@
+
 # Chatbot - Bino
 <!-- badges -->
 <a href="https://www.gnu.org/licenses/gpl-3.0.pt-br.html"><img src="https://img.shields.io/badge/licence-GPL3-green.svg"/></a>
@@ -14,47 +15,50 @@ As *models* utilizadas para a conversação foram geradas pela junção e treina
 modelos podem ser versionados e evoluídos entre bots.  
 
 ### Telegram
-
-1. Trocar as variaveis de acesso do telegram.
-        1.1. no arquivo Rasa/credentials.yml.
-2. Executar o comando ./ngrok http 5005 para conseguir um endereço https.
-3. Trocar o endereço
-    3.1. webhook_url:endereço_https/webhooks/telegram/webhook
-4. Desse modo o seu arquivo credentials.yml deve ficar assim:
-```yml
- telegram:
-  access_token: "Token gerado pelo bot father"
-  verify: "Usuario do seu bot"
-  webhook_url: "https://endereço_https/webhooks/telegram/webhook"
-```
+<ol>     
+  <li>Baixar o ngrok para poder abrir o link localhost:5001 para o telegram poder usar.
+            <ul type="none"> 
+            <li>https://ngrok.com/</li>
+            </ul>
+    </li>
+  <li>Executar o comando ./ngrok http 5001 para conseguir um endereço https.</li>
+  <li>Trocar as variáveis de acesso do telegram.</li>
+      <ol>
+          <li>no arquivo env/bot-telegram.env.</li>
+              <ol>
+                    <li>Trocar o endereço
+                            <p>TELEGRAM_WEBHOOK:endereço_https/webhooks/telegram/webhook</p>
+                   </li>
+                    <li>Copiar e colocar o Token gerado pelo bot father.</li>
+                            <p>TELEGRAM_TOKEN: Token gerado pelo bot father</p>
+                    <li>Inserir o nome do seu bot</li>
+                            <p>TELEGRAM_BOT_USERNAME: "Usuario do seu bot"</li>
+                </ol>
+        </ol>
+    <li> Desse modo o seu arquivo bot-telegram.env deve ficar assim:</li>
+        ```yml
+        TELEGRAM_BOT_USERNAME=nome do bot
+        TELEGRAM_TOKEN=Link Gerado pelo bot father
+        TELEGRAM_WEBHOOK=linkHTTPSdoNgrok/webhooks/telegram/webhook"
+        ```
+</ol>
 
 <strong><em>Antes de seguir adiante. Importante:</strong></em> As variáveis de ambiente são necessárias para o correto funcionamento do bot, por isso não esqueça de exportá-las.
-
-Se ainda não tiver treinado seu bot execute antes:
-
-```sh
-docker run -v $(pwd):/app rasa/rasa:latest-full train --domain ./Rasa/domain.yml --data ./Rasa/data --out ./Rasa/models --config ./Rasa/config.yml
-``` 
-**Atenção**: Necessario possuir o docker.  
-
-Depois dê up o bot para telegram:
+### Telegram
+Para executar o bot no telegram tenha certeza que foi feito o passo anterior e depois execute o comando:
 
 ```sh
-sudo docker-compose up
+sudo make bot-telegram
 ```
+Esse comando vai checar as dependências do bot, treinar o bot e deixar ele online para o telegram.
 
 ### Console
 
-Se ainda não tiver treinado seu bot execute antes:
 ```sh
-docker run -v $(pwd):/app rasa/rasa:latest-full train --domain ./Rasa/domain.yml --data ./Rasa/data --out ./Rasa/models --config ./Rasa/config.yml
-``` 
-
-Depois execute o bot pelo shell:
-```sh
-docker run -it -v $(pwd):/app rasa/rasa shell --m ./Rasa/models --endpoints ./Rasa/endpoints.yml
+sudo make bot-shell
 ```
+Esse comando vai checar as dependências do bot, treinar o bot e executar o bot no terminal.
 
-# Licença
+### Licença
 
 [GPL3](https://github.com/ChatBot-Bino/Chatbot-Bino/blob/master/LICENSE)
