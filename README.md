@@ -17,30 +17,34 @@ modelos podem ser versionados e evoluídos entre bots.
 ### Telegram
 <ol>     
   <li>Baixar o ngrok para poder abrir o link localhost:5001 para o telegram poder usar.
-            <ul type="none"> 
-            <li>https://ngrok.com/</li>
-            </ul>
-    </li>
+      <ul type="none">
+          <li>https://ngrok.com/download</li>
+      </ul>
+  </li>
   <li>Executar o comando ./ngrok http 5001 para conseguir um endereço https.</li>
-  <li>Trocar as variáveis de acesso do telegram.</li>
-      <ol>
-          <li>no arquivo env/bot-telegram.env.</li>
-              <ol>
+  <li>Trocar as variáveis de acesso do telegram.
+      <ul type="none">
+           <li>No arquivo env/bot-telegram.env:
+               <ol>
                     <li>Trocar o endereço
-                            <p>TELEGRAM_WEBHOOK:endereço_https/webhooks/telegram/webhook</p>
-                   </li>
-                    <li>Copiar e colocar o Token gerado pelo bot father.</li>
+                            <p>TELEGRAM_WEBHOOK: endereço_https/webhooks/telegram/webhook</p>
+                    </li>
+                    <li>Copiar e colocar o Token gerado pelo bot father.
                             <p>TELEGRAM_TOKEN: Token gerado pelo bot father</p>
-                    <li>Inserir o nome do seu bot</li>
+                    </li>
+                    <li>Inserir o nome do seu bot
                             <p>TELEGRAM_BOT_USERNAME: "Usuario do seu bot"</li>
-                </ol>
-        </ol>
-    <li> Desse modo o seu arquivo bot-telegram.env deve ficar assim:</li>
-        ```yml
+                    </li>
+               </ol>
+           </li>
+        </ul>
+   </li>
+   <li> Desse modo o seu arquivo bot-telegram.env deve ficar assim: 
+         
         TELEGRAM_BOT_USERNAME=nome do bot
         TELEGRAM_TOKEN=Link Gerado pelo bot father
-        TELEGRAM_WEBHOOK=linkHTTPSdoNgrok/webhooks/telegram/webhook"
-        ```
+        TELEGRAM_WEBHOOK=linkHTTPSdoNgrok/webhooks/telegram/webhook"      
+   </li>
 </ol>
 
 <strong><em>Antes de seguir adiante. Importante:</strong></em> As variáveis de ambiente são necessárias para o correto funcionamento do bot, por isso não esqueça de exportá-las.
