@@ -2,13 +2,14 @@ from rasa_core_sdk import Action
 from pymongo import MongoClient
 import requests
 
+
 class ActionStart(Action):
     def name(self):
         return "action_start"
 
     def run(self, dispatcher, tracker, domain):
         try:
-            ##remover o token do telegram e botar em uma pasta separada para não ir para o github.
+#   remover o token do telegram e botar em uma pasta separada para não ir para o github.
             TELEGRAM_TOKEN = ""
             tracker = tracker.current_state()
             sender_id = tracker['sender_id']
@@ -36,4 +37,5 @@ class ActionStart(Action):
                 collectionsUsers.insert_one(user)
 
         except ValueError:
+            
             dispatcher.utter_message(ValueError)
