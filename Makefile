@@ -1,17 +1,17 @@
 current_dir := $(shell pwd)
 
-bot-clean:
+bot-shell:
 	sudo docker-compose down
 	rm -rf bot/graph.html bot/results/ bot/models/*
 	make build-requirements
-	make build-coach
+	make train
 	sudo make run-shell
 
 bot-telegram:
 	sudo docker-compose down
 	rm -rf bot/graph.html bot/results/ bot/models/*
 	make build-requirements
-	make build-coach
+	make train
 	sudo make run-telegram
 
 ############################## BOILERPLATE ############################## 
@@ -31,7 +31,7 @@ build-bot:
 	docker-compose build bot
 	
 build-coach:
-	docker-compose up coach
+	docker-compose up --build coach
 
 build-analytics:
 	docker-compose up -d elasticsearch
@@ -68,7 +68,7 @@ run-notebooks:
 	sensible-browser --no-sandbox http://localhost:8888
 
 train:
-	docker-compose up coach
+	docker-compose up --build coach
 	docker-compose build bot
 
 validate:

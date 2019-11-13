@@ -1,6 +1,7 @@
 ## Default
  * default
     - utter_default
+
 ## Cumprimentar
 * cumprimentar
     - utter_cumprimentar
@@ -16,11 +17,6 @@
 ## Preocupacao 
 * preocupacao
     - utter_preocupacao
-
-## Concordar
-* concordar
-    - utter_concordar
-
 
 ## Explicacao
 * explicacao
@@ -62,6 +58,3 @@
 * futebol
     - utter_futebol
 
-## Testes
-* teste
-    - action_test

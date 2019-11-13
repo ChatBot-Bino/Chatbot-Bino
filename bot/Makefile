@@ -11,7 +11,7 @@ test-nlu:
 
 # CORE
 train:
-	rasa train -vv --out models/
+	rasa train --domain domain.yml -vv --out models/
 
 # MENSAGEIROS
 shell:

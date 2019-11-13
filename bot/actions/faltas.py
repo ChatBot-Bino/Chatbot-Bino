@@ -1,12 +1,12 @@
 from rasa_core_sdk import Action
 
 
-class ActionTest(Action):
+class ActionFaltas(Action):
     def name(self):
-        return "action_test"
+        return "action_faltas"
 
     def run(self, dispatcher, tracker, domain):
         try:
-            dispatcher.utter_message("Mensagem enviada por uma custom action.")
+            dispatcher.utter_message("Voce digitou /faltas")
         except ValueError:
             dispatcher.utter_message(ValueError)
