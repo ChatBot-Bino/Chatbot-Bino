@@ -5,7 +5,6 @@ actions:
   - utter_tudo_bem
   - utter_preocupacao
   - utter_animar
-  - utter_concordar
   - utter_explicacao
   - utter_segredo
   - utter_risada
@@ -22,10 +21,15 @@ actions:
   - utter_provas
   - utter_trabalhos
   
+  - utter_pergunta_materia
+  
   - action_start
+  - action_faltas
+  - action_materia
   
 entities: 
   - command
+  - materia
   
 intents:
   - futebol
@@ -37,7 +41,6 @@ intents:
   - preocupacao
   - animar
   - otimista
-  - concordar
   - repita
   - despedir
   - explicacao
@@ -60,6 +63,14 @@ intents:
   - trabalhos
 
   - action_start
+  - action_faltas
+  - action_materia
+
+  - informa_materia
+
+slots:
+  materia:
+    type: text
   
 templates:
   utter_default: 
@@ -125,17 +136,7 @@ templates:
       text: |-
           É hora do duelo!
           E infelizmente você caiu na minha carta armadilha usuário hehe.
-  utter_concordar: 
-    - 
-      text: "Concordo com você."
-    - 
-      text: Realmente.
-    - 
-      text: "Também concordo."
-    - 
-      text: "Tenho certeza disso."
-    - 
-      text: Aham.
+
   utter_cumprimentar: 
     - 
       text: "Olá, eu sou o Bino, seu assistente virtual! Precisa de algo?"
@@ -307,3 +308,7 @@ templates:
          Você tem um trabalho de XXXXX para o dia XX/XX. Não deixe para o último dia, hein!
     - text : |-
          O dia XX/XX está chegando! Não se esqueça do trabalho de XXXXX.
+
+  utter_pergunta_materia:
+    - text : |-
+         Qual matéria gostaria de armazenar?
