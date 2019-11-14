@@ -3,8 +3,8 @@
     - action_start
     - utter_start
 
-## Faltas
-* faltas{"command":"faltas"}
+## Action_faltas
+* action_faltas{"command":"faltas"}
     - action_faltas
 
 ## Testa_Slot
