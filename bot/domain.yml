@@ -4,7 +4,6 @@ actions:
   - utter_despedir
   - utter_tudo_bem
   - utter_preocupacao
-  - utter_animar
   - utter_explicacao
   - utter_segredo
   - utter_risada
@@ -39,20 +38,11 @@ intents:
   - cumprimentar
   - tudo_bem
   - preocupacao
-  - animar
-  - otimista
-  - repita
   - despedir
   - explicacao
   - animes1
   - animes2
-  - filmes
-  - curiosidades
-  - poliglota
-  - jogos
   - series
-  - curiosidade
-  - musicas
   - segredo
   - risada
   - xingamento
@@ -78,13 +68,7 @@ templates:
       text: |-
           Desculpe, não entendi o que você escreveu.
           Você poderia reformular a pergunta?
-  utter_animar: 
-    - 
-      text: "Acredite no seu potencial!"
-    - 
-      text: "Você é, o seu melhor!"
-    - 
-      text: "Você consegue!"
+          
   utter_animes1: 
     - 
       text: Nani?!
