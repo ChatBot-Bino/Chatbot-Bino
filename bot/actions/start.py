@@ -18,7 +18,7 @@ class ActionStart(Action):
             data = requests.get(
                 'https://api.telegram.org/bot{}/sendMessage?chat_id={}&text={}'.format(TELEGRAM_TOKEN, sender_id, text)
             ).json()
-            
+
             client = MongoClient("mongo:27017")
             db = client.telegramdb
             collectionsUsers = db.user
