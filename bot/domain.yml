@@ -307,7 +307,7 @@ templates:
     - text : |-
          Você tem um trabalho de XXXXX para o dia XX/XX. Não deixe para o último dia, hein!
     - text : |-
-         O dia XX/XX está chegando! Não se esqueça do trabalho de XXXXX.
+         O dia XX/XX está chegando! Não se esqueça do trabalho de XXXXXX.
 
   utter_pergunta_materia:
     - text : |-
