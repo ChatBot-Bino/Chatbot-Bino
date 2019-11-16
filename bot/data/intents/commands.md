@@ -1,15 +1,7 @@
+## intent:start
+- [start](comando)
+- /[start](comando)
+
 ## intent:help
-- help
-- /help
-
-## intent:atividades
-- atividades
-- /atividades
-
-## intent:provas
-- provas
-- /provas
-
-## intent:trabalhos
-- trabalhos
-- /trabalhos
+- [help](comando)
+- /[help](comando)

@@ -1,0 +1,151 @@
+## intent:gerenciador_faltas
+- falta
+- /falta
+- faltas
+- /faltas
+- ausência
+- /ausência
+- ausencia
+- /ausencia
+- presença
+- /presença
+- comparecimento
+- /comparecimento
+- frequência
+- /frequência
+- frequencia
+- /frequencia
+- gerenciador de falta
+- gerenciador de faltas
+- gerenciador de ausência
+- gerenciador de ausencia
+- gerenciador de presença
+- gerenciador de comparecimento
+- gerenciador de frequência
+- gerenciador de frequencia
+- gerenciar falta
+- gerenciar faltas
+- gerenciar ausência
+- gerenciar ausencia
+- gerenciar presença
+- gerenciar comparecimento
+- gerenciar frequência
+- gerenciar frequencia
+- administrar falta
+- administrar faltas
+- administrar ausência
+- administrar ausencia
+- administrar presença
+- administrar comparecimento
+- administrar frequência
+- administrar frequencia
+- administrador de falta
+- administrador de faltas
+- administrador de ausência
+- administrador de ausencia
+- administrador de presença
+- administrador de comparecimento
+- administrador de frequência
+- administrador de frequencia
+- saber falta
+- saber faltas
+- saber ausência
+- saber ausencia
+- saber presença
+- saber comparecimento
+- saber frequência
+- saber frequencia
+- saber minha falta
+- saber minha faltas
+- saber minha ausência
+- saber minha ausencia
+- saber minha presença
+- saber minha comparecimento
+- saber minha frequência
+- saber minha frequencia
+- como saber falta
+- como saber faltas
+- como saber ausência
+- como saber ausencia
+- como saber presença
+- como saber comparecimento
+- como saber frequência
+- como saber frequencia
+- como saber minha falta
+- como saber minha faltas
+- como saber minha ausência
+- como saber minha ausencia
+- como saber minha presença
+- como saber minha comparecimento
+- como saber minha frequência
+- como saber minha frequencia
+- como faço pra saber falta
+- como faço pra saber faltas
+- como faço pra saber ausência
+- como faço pra saber ausencia
+- como faço pra saber presença
+- como faço pra saber comparecimento
+- como faço pra saber frequência
+- como faço pra saber frequencia
+
+## intent:gerenciador_atividades
+- atividade
+- atividades
+- prova
+- provas
+- trabalho
+- trabalhos
+- calendário
+- calendario
+- /atividade
+- /atividades
+- /prova
+- /provas
+- /trabalho
+- /trabalhos
+- /calendário
+- /calendario
+- gerenciador de atividade
+- gerenciador de atividades
+- gerenciador de prova
+- gerenciador de provas
+- gerenciador de trabalho
+- gerenciador de trabalhos
+- gerenciador de calendário
+- gerenciador de calendario
+- gerenciar atividade
+- gerenciar atividades
+- gerenciar prova
+- gerenciar provas
+- gerenciar trabalho
+- gerenciar trabalhos
+- gerenciar calendário
+- gerenciar calendario
+- administrador de atividade
+- administrador de atividades
+- administrador de prova
+- administrador de provas
+- administrador de trabalho
+- administrador de trabalhos
+- administrador de calendário
+- administrador de calendario
+- administrar atividade
+- administrar atividades
+- administrar prova
+- administrar provas
+- administrar trabalho
+- administrar trabalhos
+- administrar calendário
+- administrar calendario
+- calendario de atividade
+- calendario de atividades
+- calendario de prova
+- calendario de provas
+- calendario de trabalho
+- calendario de trabalhos
+- calendário de atividade
+- calendário de atividades
+- calendário de prova
+- calendário de provas
+- calendário de trabalho
+- calendário de trabalhos

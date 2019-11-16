@@ -1,0 +1,160 @@
+## intent:cumprimentar
+- com licenca
+- Com licença
+- licença
+- Licença
+- posso falar com voce
+- Posso falar com voce
+- posso falar com você
+- Posso falar com você
+- pode me tirar uma duvida
+- Pode me tirar uma duvida
+- pode me tirar uma dúvida
+- Pode me tirar uma dúvida
+- gostaria de tirar uma duvida
+- gostaria de tirar uma dúvida
+- Gostaria de tirar uma duvida
+- Gostaria de tirar uma dúvida
+- bom dia
+- Bom dia
+- boa tarde
+- Boa tarde
+- boa noite
+- Boa noite
+- bonjour
+- bonsoir
+- olá
+- Olá
+- ola
+- Ola
+- oi
+- Oi
+- oiii
+- Oiii
+- oiiii
+- Oiiii
+- oiiiii
+- Oiiiii
+- oiiiiii
+- Oiiiiii
+- oie
+- Oie
+- oiee
+- Oiee
+- ola boa tarde
+- Ola boa tarde
+- hi
+- Hi
+- Fala
+- fala
+- kkk eae man
+- fala tu
+- eae
+
+## intent:despedir
+- tchau obrigada
+- Tchau obrigada
+- tchau obrigado
+- Tchau obrigado
+- tchau
+- Tchau
+- namaste
+- sayonara
+- au revoir
+- até logo
+- Até logo
+- ate logo
+- Ate logo
+- até mais
+- Até mais
+- ate mais
+- Ate mais
+- até breve
+- Até breve
+- ate breve
+- Ate breve
+- até a próxima
+- Até a proxima
+- ate a proxima
+- Ate a proxima
+- falou, valeu
+- Falou, valeu
+- vlw flw
+- Vlw flw
+- beleza
+- Beleza
+- blza
+- Blza
+- blz
+- Blz
+- valew
+- Valew
+- valeu
+- Valeu
+- vlw
+- Vlw
+- flw
+- Flw
+
+## intent:afirmar
+- Sim
+- Yes
+- Isso
+- Com certeza
+- Com ctz
+- Pode pa
+- Sim Sim
+- Afirmativo
+- Ok
+- Okay
+- oquei
+- okei
+- de boa
+- de boas
+- blz
+- beleza
+- tranquilo
+- top
+- Topper
+- topzera
+- toperson
+- topperson
+- Sim, com certeza meu amigo
+- Claro
+- quero
+- quero sim
+- positivo
+
+## intent:negar
+- Nope
+- não
+- not
+- não mesmo
+- nem fodendo
+- claro que não po
+- sai daqui
+- não quero
+- quero não
+- jamais
+- nunca
+- never
+- nunquinha
+- nem a pau
+- nem a pau juvenal
+- não desejo
+- indesejável
+- negativo
+- nem
+- impossível
+- impossivel
+- nao
+- nao quero
+
+## intent:agradecer
+- Muito obrigado
+- Obrigado
+- Muito obrigada
+- Obrigada
+- Valeu
+- Tamo junto
+- Agradecido

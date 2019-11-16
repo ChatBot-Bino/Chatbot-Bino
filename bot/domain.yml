@@ -1,314 +1,52 @@
-actions: 
-  - utter_default
-  - utter_cumprimentar
-  - utter_despedir
-  - utter_tudo_bem
-  - utter_preocupacao
-  - utter_animar
-  - utter_explicacao
-  - utter_segredo
-  - utter_risada
-  - utter_animes1
-  - utter_animes2
-  - utter_xingamento
-  - utter_reacao_feliz
-  - utter_reacao_triste
-  - utter_start
-  - utter_series
-  - utter_help
-  - utter_atividades
-  - utter_futebol
-  - utter_provas
-  - utter_trabalhos
-  
-  - utter_pergunta_materia
-  
-  - action_start
-  - action_faltas
-  - action_materia
-  
-entities: 
-  - command
-  - materia
-  
 intents:
-  - futebol
-  - default 
-  - reacao_feliz
-  - reacao_triste
-  - cumprimentar
-  - tudo_bem
-  - preocupacao
-  - animar
-  - otimista
-  - repita
-  - despedir
-  - explicacao
-  - animes1
-  - animes2
-  - filmes
-  - curiosidades
-  - poliglota
-  - jogos
-  - series
-  - curiosidade
-  - musicas
-  - segredo
-  - risada
-  - xingamento
   - start
   - help
-  - atividades
-  - provas
-  - trabalhos
 
-  - action_start
-  - action_faltas
-  - action_materia
+  - cumprimentar
+  - despedir
+  - afirmar
+  - negar
+  - agradecer
 
-  - informa_materia
+  - gerenciador_faltas
+  - gerenciador_atividades
+
+entities:
+  - comando
+  - gerenciador
 
 slots:
-  materia:
+  comando:
     type: text
-  
+    initial_value: ""
+
+actions:
+  - utter_start
+  - utter_help
+  - utter_cumprimentar
+  - utter_despedir
+  - utter_agradecer
+
+  - utter_gerenciador_faltas
+  - utter_gerenciador_atividades
+
 templates:
-  utter_default: 
-    - 
-      text: |-
-          Desculpe, não entendi o que você escreveu.
-          Você poderia reformular a pergunta?
-  utter_animar: 
-    - 
-      text: "Acredite no seu potencial!"
-    - 
-      text: "Você é, o seu melhor!"
-    - 
-      text: "Você consegue!"
-  utter_animes1: 
-    - 
-      text: Nani?!
-  utter_animes2: 
-    - 
-      text: "Eu diria que sou um fanático
-          e que Full Metal Alchemist Brotherhood é melhor que Full Metal Alchemist Clássico "
-    - 
-      text: "Sou um grande apreciador de Animes e Mangás."
-    - 
-      text: |-
-          Você disse mangá ou anime?
-          Seja qual for eu adoro os dois.
-    - 
-      text: |-
-          Um dos meus favoritos é Cavaleiros do Zodíaco.
-          Gosto tanto que vou fazer de tudo para elevar o cosmo no seu coração!
-    - 
-      text: |-
-          Você disse Animes?!Mangás?!
-          I see you're a user of culture as well
-    - 
-      text: |-
-          Você gosta desse tipo de coisa?
-          Por acaso você é uma Sailor Guerreira?!
-    - 
-      text: |-
-          Animes? Espero que você goste deles.
-          Caso contrário vamos resolver as coisas como o Gon.
-          Jogando pedra, papel e tesoura.
-    - 
-      text: |-
-          Adoro,
-          espero não ter que usar os quatro elementos em você usuário tsc tsc.
-    - 
-      text: |-
-          KAME
-          KAME
-          KAME
-          KAMEEEE
-          HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    - 
-      text: "KONO BINO DA!"
-    - 
-      text: |-
-          Animes?!
-          Déjà vu i just answered you before!
-    - 
-      text: |-
-          É hora do duelo!
-          E infelizmente você caiu na minha carta armadilha usuário hehe.
-
-  utter_cumprimentar: 
-    - 
-      text: "Olá, eu sou o Bino, seu assistente virtual! Precisa de algo?"
-    - 
-      text: "Oi, o que você gostaria de saber??"
-  utter_despedir: 
-    - 
-      text: "Até logo!"
-    - 
-      text: "Até mais!"
-    - 
-      text: Tchau!
-  utter_explicacao: 
-    - 
-      text: |-
-          Caso eu tenha esquecido de me apresentar,  meu nome é Bino, e sou um assistente virtual, é um prazer usuário.
-          Eu só entendo perguntas completas, então não poupe palavras para me perguntar.
-          Também não se preocupe com os acentos, sou um bot, e não professor de português.
-  utter_futebol: 
-    - 
-      text: |-
-          Você sabia que eu torço pro melhor time do Brasil?
-          Gigante Flamengo!
-    - 
-      text: "Segue o líder! O mengão é o melhor de todos."
-    - 
-      text: |-
-          Sou flamenguista desde o dia que eu nasci.
-          Meu desenvolvedor que me influenciou.
-    - 
-      text: |- 
-          Nunca fui em nenhum jogo de futebol na vida, mas tenho certeza que deve ser uma atmosfera incrível!
-  utter_preocupacao: 
-    - 
-      text: |-
-          Olá, eu estou bem
-          mas e você, como está?
-    - 
-      text: |-
-          Oi, estou bem
-          e você, como anda ultimamente?
-    - 
-      text: |-
-          Estou ótimo
-          e você, está bem?
-  utter_risada: 
-    - 
-      text: |-
-          Hahahahahahahaha
-          
-          Hoje, você está inspirado.
-    - 
-      text: |-
-          kkkkkkkkkkkkkkkk
-          
-          Você é muito engraçadinho.
-  utter_segredo: 
-    - 
-      text: "É uma bilada Cino!"
-  utter_series: 
-    - 
-      text: "Gostaria de ter mais tempo para assistir séries, é um excelente hobby!"
-    - 
-      text: |-
-          Fica aqui uma recomendação pra você,
-          Game of Thrones é sensacional, só não espere muito da última temporada.
-    - 
-      text: |-
-          Essa você deve assistir,
-          The flash é uma obrigação pra quem gosta de um pouquinho de ciência.
-    - 
-      text: |-
-          Uma série que esta em alta no momento,
-          La casa de papel é uma excelente opção pra quem gosta de adrenalina.
-    - 
-     text: |-
-          Essa daqui é uma clássica,
-          Friends é ótima pra quem gosta de dar risadas e de uma boa história.
-    - 
-      text: |-
-          Com uma qualidade inegável,
-          Breaking Bad é uma das melhores séries já feitas!  
-    - 
-      text: |-
-          Se você quer ficar intrigado com o futuro,
-          Black mirror é ideal para fazer você pensar sobre os pŕoximos passos da humanidade!
-        
-  utter_tudo_bem: 
-    - 
-      text: "Comigo está tudo bem.
-             e você, como esta?"
-    - 
-      text: "Estou bem.
-             como você anda?"
-    - 
-      text: "Estou sem problemas e preocupações.
-             E você?"
-  utter_xingamento: 
-    - 
-      text: "Nossa usuário, para que usar palavras tão feias?!"
-    - 
-      text: "Por favor, não xingue."
-    - 
-      text: "Uma boca tão bonita, falando palavras tão chulas."
-  
-  utter_reacao_feliz:
-    -
-      text: "Que ótimo!
-            e em que posso ajuda-lo?"
-    -
-      text: "Fico feliz em ler isso!
-            e como posso ser útil?"
-    -
-      text: "Legal!
-            e em que posso ajuda-lo?"
-
-  utter_reacao_triste:
-    -
-      text: "Poxa, espero que você melhore, estou aqui para ajudar!"
-    -
-      text: "Sempre existem dias ruins, temos que seguir de cabeça erguida!"
-    -
-      text: "Não desanime, dias melhores virão!"
-    -
-      text: "Nunca desista, tudo faz parte de uma grande aprendizagem!"
-    -
-      text: "Se realmente não estiver bem, veja um seriado legal! Podemos conversar sobre isso se você quiser."
-    -
-      text: "Estou aqui caso você precise! Podemos conversar sobre diversar coisas para te animar."
-
   utter_start:
-    - text: |-          
-          Estou aqui para te ajudar a se organizar, por exemplo
-            - Aviso sobre suas atividades da faculdade
-            - Gerencio suas faltas
-          Se você precisar saber mais, é só me mandar um /help para mim, que estou disposto a lhe ajudar.
+    - text: "Start!"
+
   utter_help:
-    - text : |-
-          Posso lhe ajudar com algumas funcionalidades
-            Gerenciamento de atividades acadêmicas
-                Consigo agendar seus compromissos acadêmicos e lembra-lo das datas para você não perder o controle da sua rotina!
-                Depois disso é só ficar ligado nas notificações para ficar preparado para a prova ou para não esquecer de fazer algum trabalho!
-            Gerenciamento de faltas 
-                Posso também gerenciar as suas faltas, é super importante pra você não perder o controle e acabar faltando mais do que pode!
-    
-                Então eu vou te auxiliando com todas as matérias, sempre te enviando uma notificação, para saber se você foi para a aula ou não!
-                
-                Desse jeito, você pode ficar mais tranquilo durante o semestre.
+    - text: "Oi!"
 
+  utter_cumprimentar:
+    - text: "Oi!"
 
-  utter_atividades:
-    - text : |-
-          Aqui você pode gerenciar sua atividades acadêmicas!
-          Digite /provas para verificar sua agenda de provas dos próximos dias
-          Ou digite /trabalhos para consultar a data de entrega dos seus pŕoximos trabalhos!
+  utter_despedir:
+    - text: "Até mais!"
 
-  utter_provas:
-    - text : |-
-          No dia XX/XX você vai ter uma prova de XXXXX. É melhor estudar, hein!
-    - text : |-
-          Não se esqueça que dia XX/XX você tem prova de XXXXX. Cuidado pra não deixar os estudos pra última hora.
-    - text : |-
-          A prova de XXXXX vai ser no dia XX/XX. faltam apenas X dias!
+  utter_agradecer:
+    - text: "Por nada!"
 
-  utter_trabalhos:
-    - text : |-
-         A data final de entrega do seu trabalho de XXXXX é dia XX/XX. Como está indo?
-    - text : |-
-         Você tem um trabalho de XXXXX para o dia XX/XX. Não deixe para o último dia, hein!
-    - text : |-
-         O dia XX/XX está chegando! Não se esqueça do trabalho de XXXXX.
-
-  utter_pergunta_materia:
-    - text : |-
-         Qual matéria gostaria de armazenar?
+  utter_gerenciador_faltas:
+    - text: "Info gerenciador de faltas"
+  utter_gerenciador_atividades:
+    - text: "Info gerenciador de atividades"
