@@ -11,9 +11,15 @@ intents:
   - gerenciador_faltas
   - gerenciador_atividades
 
+  - enviar_grade
+  - saber_grade
+  - alterar_grade
+
+  - adicionar_materia
+  - remover_materia
+
 entities:
   - comando
-  - gerenciador
 
 slots:
   comando:
@@ -29,6 +35,13 @@ actions:
 
   - utter_gerenciador_faltas
   - utter_gerenciador_atividades
+
+  - utter_enviar_grade
+  - utter_saber_grade
+  - utter_alterar_grade
+  
+  - utter_adicionar_materia
+  - utter_remover_materia
 
 templates:
   utter_start:
@@ -48,5 +61,21 @@ templates:
 
   utter_gerenciador_faltas:
     - text: "Info gerenciador de faltas"
+  
   utter_gerenciador_atividades:
     - text: "Info gerenciador de atividades"
+
+  utter_enviar_grade:
+    - text: "Guia de como enviar sua grade:"
+
+  utter_saber_grade:
+    - text: "Essas são suas matérias:"
+
+  utter_alterar_grade:
+    - text: "Você quer alterar suas matérias."
+
+  utter_adicionar_materia:
+    - text: "Guia para ADICIONAR matérias."
+
+  utter_remover_materia:
+    - text: "Guia para REMOVER matéria."

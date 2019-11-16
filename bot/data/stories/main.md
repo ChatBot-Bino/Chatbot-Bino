@@ -26,3 +26,22 @@
 * gerenciador_atividades
   - utter_gerenciador_atividades
 
+## enviar_grade
+* enviar_grade
+  - utter_enviar_grade
+
+## saber_grade
+* saber_grade
+  - utter_saber_grade
+
+## alterar_grade
+* alterar_grade
+  - utter_alterar_grade
+
+## adicionar_materia
+* adicionar_materia
+  - utter_adicionar_materia
+
+## remover_materia
+* remover_materia
+  - utter_remover_materia

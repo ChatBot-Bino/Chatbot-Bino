@@ -149,3 +149,339 @@
 - calendário de provas
 - calendário de trabalho
 - calendário de trabalhos
+
+## intent:enviar_grade
+- enviar grade
+- enviar grade horaria
+- enviar grade horária
+- enviar materia
+- enviar matéria
+- enviar materias
+- enviar matérias
+- enviar disciplina
+- enviar disciplinas
+- enviar aula
+- enviar aulas
+- cadastrar grade
+- cadastrar grade horaria
+- cadastrar grade horária
+- cadastrar materia
+- cadastrar matéria
+- cadastrar materias
+- cadastrar matérias
+- cadastrar disciplina
+- cadastrar disciplinas
+- cadastrar aula
+- cadastrar aulas
+- registrar grade
+- registrar grade horaria
+- registrar grade horária
+- registrar materia
+- registrar matéria
+- registrar materias
+- registrar matérias
+- registrar disciplina
+- registrar disciplinas
+- registrar aula
+- registrar aulas
+- salvar grade
+- salvar grade horaria
+- salvar grade horária
+- salvar materia
+- salvar matéria
+- salvar materias
+- salvar matérias
+- salvar disciplina
+- salvar disciplinas
+- salvar aula
+- salvar aulas
+- reenviar grade
+- reenviar grade horaria
+- reenviar grade horária
+- reenviar materia
+- reenviar matéria
+- reenviar materias
+- reenviar matérias
+- reenviar disciplina
+- reenviar disciplinas
+- reenviar aula
+- reenviar aulas
+- mandar grade
+- mandar grade horaria
+- mandar grade horária
+- mandar materia
+- mandar matéria
+- mandar materias
+- mandar matérias
+- mandar disciplina
+- mandar disciplinas
+- mandar aula
+- mandar aulas
+- informar grade
+- informar grade horaria
+- informar grade horária
+- informar materia
+- informar matéria
+- informar materias
+- informar matérias
+- informar disciplina
+- informar disciplinas
+- informar aula
+- informar aulas
+- passar grade
+- passar grade horaria
+- passar grade horária
+- passar materia
+- passar matéria
+- passar materias
+- passar matérias
+- passar disciplina
+- passar disciplinas
+- passar aula
+- passar aulas
+
+## intent:saber_grade
+- ver grade
+- ver grade horaria
+- ver grade horária
+- ver materia
+- ver matéria
+- ver materias
+- ver matérias
+- ver disciplina
+- ver disciplinas
+- ver aula
+- ver aulas
+- olhar grade
+- olhar grade horaria
+- olhar grade horária
+- olhar materia
+- olhar matéria
+- olhar materias
+- olhar matérias
+- olhar disciplina
+- olhar disciplinas
+- olhar aula
+- olhar aulas
+- saber grade
+- saber grade horaria
+- saber grade horária
+- saber materia
+- saber matéria
+- saber materias
+- saber matérias
+- saber disciplina
+- saber disciplinas
+- saber aula
+- saber aulas
+- receber grade
+- receber grade horaria
+- receber grade horária
+- receber materia
+- receber matéria
+- receber materias
+- receber matérias
+- receber disciplina
+- receber disciplinas
+- receber aula
+- receber aulas
+- ler grade
+- ler grade horaria
+- ler grade horária
+- ler materia
+- ler matéria
+- ler materias
+- ler matérias
+- ler disciplina
+- ler disciplinas
+- ler aula
+- ler aulas
+
+## intent:alterar_grade
+- alterar grade
+- alterar grade horaria
+- alterar grade horária
+- alterar materia
+- alterar matéria
+- alterar materias
+- alterar matérias
+- alterar disciplina
+- alterar disciplinas
+- alterar aula
+- alterar aulas
+- mudar grade
+- mudar grade horaria
+- mudar grade horária
+- mudar materia
+- mudar matéria
+- mudar materias
+- mudar matérias
+- mudar disciplina
+- mudar disciplinas
+- mudar aula
+- mudar aulas
+- trocar grade
+- trocar grade horaria
+- trocar grade horária
+- trocar materia
+- trocar matéria
+- trocar materias
+- trocar matérias
+- trocar disciplina
+- trocar disciplinas
+- trocar aula
+- trocar aulas
+- modificar grade
+- modificar grade horaria
+- modificar grade horária
+- modificar materia
+- modificar matéria
+- modificar materias
+- modificar matérias
+- modificar disciplina
+- modificar disciplinas
+- modificar aula
+- modificar aulas
+- substituir grade
+- substituir grade horaria
+- substituir grade horária
+- substituir materia
+- substituir matéria
+- substituir materias
+- substituir matérias
+- substituir disciplina
+- substituir disciplinas
+- substituir aula
+- substituir aulas
+
+## intent:adicionar_materia
+- adicionar materia
+- acrescentar materia
+- colocar materia
+- por materia
+- pôr materia
+- inserir materia
+- incluir materia
+- introduzir materia
+- adicionar materias
+- acrescentar materias
+- colocar materias
+- por materias
+- pôr materias
+- inserir materias
+- incluir materias
+- introduzir materias
+- adicionar matéria
+- acrescentar materia
+- colocar materia
+- por materia
+- pôr materia
+- inserir materia
+- incluir materia
+- introduzir materia
+- adicionar matérias
+- acrescentar matérias
+- colocar matérias
+- por matérias
+- pôr matérias
+- inserir matérias
+- incluir matérias
+- introduzir matérias
+- adicionar disciplina
+- acrescentar disciplina
+- colocar disciplina
+- por disciplina
+- pôr disciplina
+- inserir disciplina
+- incluir disciplina
+- introduzir disciplina
+- adicionar disciplinas
+- acrescentar disciplinas
+- colocar disciplinas
+- por disciplinas
+- pôr disciplinas
+- inserir disciplinas
+- incluir disciplinas
+- introduzir disciplinas
+- adicionar aula
+- acrescentar aula
+- colocar aula
+- por aula
+- pôr aula
+- inserir aula
+- incluir aula
+- introduzir aula
+- adicionar aulas
+- acrescentar aulas
+- colocar aulas
+- por aulas
+- pôr aulas
+- inserir aulas
+- incluir aulas
+- introduzir aulas
+
+## intent:remover_materia
+- subtrair materia
+- tirar materia
+- excluir materia
+- eliminar materia
+- remover materia
+- diminuir materia
+- retirar materia
+- cancelar materia
+- subtrair materias
+- tirar materias
+- excluir materias
+- eliminar materias
+- remover materias
+- diminuir materias
+- retirar materias
+- cancelar materias
+- subtrair matéria
+- tirar materia
+- excluir materia
+- eliminar materia
+- remover materia
+- diminuir materia
+- retirar materia
+- cancelar materia
+- subtrair matérias
+- tirar matérias
+- excluir matérias
+- eliminar matérias
+- remover matérias
+- diminuir matérias
+- retirar matérias
+- cancelar matérias
+- subtrair disciplina
+- tirar disciplina
+- excluir disciplina
+- eliminar disciplina
+- remover disciplina
+- diminuir disciplina
+- retirar disciplina
+- cancelar disciplina
+- subtrair disciplinas
+- tirar disciplinas
+- excluir disciplinas
+- eliminar disciplinas
+- remover disciplinas
+- diminuir disciplinas
+- retirar disciplinas
+- cancelar disciplinas
+- subtrair aula
+- tirar aula
+- excluir aula
+- eliminar aula
+- remover aula
+- diminuir aula
+- retirar aula
+- cancelar aula
+- subtrair aulas
+- tirar aulas
+- excluir aulas
+- eliminar aulas
+- remover aulas
+- diminuir aulas
+- retirar aulas
+- cancelar aulas
