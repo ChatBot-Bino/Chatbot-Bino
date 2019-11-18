@@ -18,6 +18,11 @@ intents:
   - adicionar_materia
   - remover_materia
 
+  - configurar_relatorio
+  - frequencia_relatorio_dia
+  - frequencia_relatorio_semana
+  - frequencia_relatorio_mes
+
 entities:
   - comando
 
@@ -32,9 +37,13 @@ slots:
   confirmacao:
     type: unfeaturized
 
+  frequencia_relatorio:
+    type: unfeaturized
+
 forms:
   - adicionar_materia_form
   - remover_materia_form
+  - configurar_relatorio_form
 
 actions:
   - utter_start
@@ -60,7 +69,11 @@ actions:
   - utter_materia_adicionada
   - utter_materia_removida
 
-  - action_reset_materia
+  - utter_configurar_relatorio
+  - utter_ask_frequencia_relatorio
+  - utter_relatorio_configurado
+
+  - action_reset_slots
 
 
 
@@ -117,4 +130,16 @@ templates:
     - text: "Matéria adicionada!"
 
   utter_materia_removida:
-    - "Matéria removida!"
+    - text: "Matéria removida!"
+
+  utter_configurar_relatorio:
+    - text: "Vamos configurar seus 
+            relatórios de frequência nas aulas."
+
+  utter_ask_frequencia_relatorio:
+    - text: "Com que frequencia quer receber
+            seus relatórios? 
+            Diaria, semanal ou mensalmente?"
+
+  utter_relatorio_configurado:
+    - text: "Relatório configurado!"

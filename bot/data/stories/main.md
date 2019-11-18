@@ -45,7 +45,7 @@
   - adicionar_materia_form
   - form{"name": "adicionar_materia_form"}
   - form{"name": null}
-  - action_reset_materia
+  - action_reset_slots
 
 ## remover_materia
 * remover_materia
@@ -53,5 +53,14 @@
   - remover_materia_form
   - form{"name": "remover_materia_form"}
   - form{"name": null}
-  - action_reset_materia
+  - action_reset_slots
+
+## configurar_relatorio
+* configurar_relatorio
+  - utter_configurar_relatorio
+  - configurar_relatorio_form
+  - form{"name": "configurar_relatorio_form"}
+  - form{"name": null}
+  - action_reset_slots
+
 

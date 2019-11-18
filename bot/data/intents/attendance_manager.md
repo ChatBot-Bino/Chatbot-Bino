@@ -485,3 +485,68 @@
 - diminuir aulas
 - retirar aulas
 - cancelar aulas
+
+## intent:configurar_relatorio
+- configurar relatorio
+- setar relatorio
+- ajustar relatorio
+- alterar relatorio
+- mudar relatorio
+- trocar relatorio
+- modificar relatorio
+- configurar relatório
+- setar relatório
+- ajustar relatório
+- alterar relatório
+- mudar relatório
+- trocar relatório
+- modificar relatório
+- configurar relatorios
+- setar relatorios
+- ajustar relatorios
+- alterar relatorios
+- mudar relatorios
+- trocar relatorios
+- modificar relatorios
+- configurar relatórios
+- setar relatórios
+- ajustar relatórios
+- alterar relatórios
+- mudar relatórios
+- trocar relatórios
+- modificar relatórios
+
+## intent:frequencia_relatorio_dia
+- dia
+- todo dia
+- todos dia
+- todo dias
+- todos dias
+- todos os dia
+- todos os dias
+- diario
+- diário
+- diaria
+- de forma diaria
+- diária
+- de forma diária
+- diariamente
+- quero receber diariamente
+
+## intent:frequencia_relatorio_semana
+- semana
+- toda semana
+- semanal]
+- de forma semanal
+- semanalmente
+- de forma semanalmente
+
+## intent:frequencia_relatorio_mes
+- mes
+- mês
+- todo mes
+- todo mês
+- mensal
+- de forma mensal
+- mensalmente
+- de forma mensal
