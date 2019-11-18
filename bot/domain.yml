@@ -20,15 +20,11 @@ actions:
   - utter_provas
   - utter_trabalhos
   
-  - utter_pergunta_materia
-  
   - action_start
   - action_faltas
-  - action_materia
   
 entities: 
   - command
-  - materia
   
 intents:
   - futebol
@@ -46,7 +42,6 @@ intents:
   - segredo
   - risada
   - xingamento
-  - start
   - help
   - atividades
   - provas
@@ -54,14 +49,7 @@ intents:
 
   - action_start
   - action_faltas
-  - action_materia
 
-  - informa_materia
-
-slots:
-  materia:
-    type: text
-  
 templates:
   utter_default: 
     - 
@@ -292,7 +280,3 @@ templates:
          Você tem um trabalho de XXXXX para o dia XX/XX. Não deixe para o último dia, hein!
     - text : |-
          O dia XX/XX está chegando! Não se esqueça do trabalho de XXXXX.
-
-  utter_pergunta_materia:
-    - text : |-
-         Qual matéria gostaria de armazenar?
