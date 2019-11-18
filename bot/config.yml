@@ -1,6 +1,7 @@
 language : "pt"
 pipeline:
   - name: "WhitespaceTokenizer"
+  - name: "RegexFeaturizer"
   - name: "CRFEntityExtractor"
   - name: "EntitySynonymMapper"
   - name: "CountVectorsFeaturizer"
@@ -10,6 +11,7 @@ policies:
   - name: MemoizationPolicy
   - name: KerasPolicy
   - name: MappingPolicy
+  - name: "FormPolicy"
 
 # TODO: Update this config file with previous configurations
 #policies:

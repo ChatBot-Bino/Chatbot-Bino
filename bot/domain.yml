@@ -25,6 +25,16 @@ slots:
   comando:
     type: text
     initial_value: ""
+  materia:
+    type: unfeaturized
+  horario:
+    type: unfeaturized
+  confirmacao:
+    type: unfeaturized
+
+forms:
+  - adicionar_materia_form
+  - remover_materia_form
 
 actions:
   - utter_start
@@ -42,6 +52,17 @@ actions:
   
   - utter_adicionar_materia
   - utter_remover_materia
+
+  - utter_ask_materia
+  - utter_ask_horario
+  - utter_ask_confirmacao
+
+  - utter_materia_adicionada
+  - utter_materia_removida
+
+  - action_reset_materia
+
+
 
 templates:
   utter_start:
@@ -69,13 +90,31 @@ templates:
     - text: "Guia de como enviar sua grade:"
 
   utter_saber_grade:
-    - text: "Essas são suas matérias:"
+    - text: "MOSTRAR MATÉRIAS"
 
   utter_alterar_grade:
     - text: "Você quer alterar suas matérias."
 
   utter_adicionar_materia:
-    - text: "Guia para ADICIONAR matérias."
+    - text: "Certo, você quer ADICIONAR uma matéria"
+    - text: "Então você quer ADICIONAR uma matéria..."
 
   utter_remover_materia:
-    - text: "Guia para REMOVER matéria."
+    - text: "Ok, você quer REMOVER uma matéria"
+    - text: "Beleza, você quer REMOVER uma matéria"
+
+  utter_ask_materia:
+    - text: "Qual é o nome da matéria?"
+
+  utter_ask_horario:
+    - text: "Qual é o horário de início da matéria?
+            Por favor, responda no formato '12:34'"
+
+  utter_ask_confirmacao:
+    - text: "Quer confirmar?"
+
+  utter_materia_adicionada:
+    - text: "Matéria adicionada!"
+
+  utter_materia_removida:
+    - "Matéria removida!"

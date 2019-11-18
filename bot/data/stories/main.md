@@ -8,6 +8,7 @@
 
 ## cumprimentar
 * cumprimentar
+
   - utter_cumprimentar
 
 ## despedir
@@ -40,8 +41,17 @@
 
 ## adicionar_materia
 * adicionar_materia
-  - utter_adicionar_materia
+  - utter_adicionar_materia 
+  - adicionar_materia_form
+  - form{"name": "adicionar_materia_form"}
+  - form{"name": null}
+  - action_reset_materia
 
 ## remover_materia
 * remover_materia
-  - utter_remover_materia
+  - utter_remover_materia 
+  - remover_materia_form
+  - form{"name": "remover_materia_form"}
+  - form{"name": null}
+  - action_reset_materia
+
