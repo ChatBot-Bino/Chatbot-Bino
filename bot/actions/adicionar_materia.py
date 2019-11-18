@@ -1,10 +1,8 @@
-from typing import Dict, Text, Any, List, Union, Optional
+from typing import Dict, Text, Any, List, Union
 
-from rasa_core_sdk import ActionExecutionRejection
 from rasa_core_sdk import Tracker
-from rasa_core_sdk.events import SlotSet
 from rasa_core_sdk.executor import CollectingDispatcher
-from rasa_core_sdk.forms import FormAction, REQUESTED_SLOT
+from rasa_core_sdk.forms import FormAction
 
 import re
 
@@ -34,7 +32,7 @@ class AdicionarMateriaForm(FormAction):
 
         return {"materia": [self.from_text()],
                 "horario": [self.from_text()]}
-    
+
     def validate_horario(
         self,
         value: Text,
@@ -52,7 +50,6 @@ class AdicionarMateriaForm(FormAction):
             # user will be asked for the slot again
             return {"horario": None}
 
-    
     def submit(self,
                dispatcher: CollectingDispatcher,
                tracker: Tracker,

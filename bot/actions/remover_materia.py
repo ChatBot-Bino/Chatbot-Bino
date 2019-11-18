@@ -1,12 +1,8 @@
-from typing import Dict, Text, Any, List, Union, Optional
+from typing import Dict, Text, Any, List, Union
 
-from rasa_core_sdk import ActionExecutionRejection
 from rasa_core_sdk import Tracker
-from rasa_core_sdk.events import SlotSet
 from rasa_core_sdk.executor import CollectingDispatcher
-from rasa_core_sdk.forms import FormAction, REQUESTED_SLOT
-
-import re
+from rasa_core_sdk.forms import FormAction
 
 
 class RemoverMateriaForm(FormAction):
@@ -34,7 +30,7 @@ class RemoverMateriaForm(FormAction):
         return {"materia": [self.from_text()],
                 "confirmacao": [self.from_intent(intent='afirmar', value=True),
                                 self.from_intent(intent='negar', value=False)]}
-    
+
     def submit(self,
                dispatcher: CollectingDispatcher,
                tracker: Tracker,
