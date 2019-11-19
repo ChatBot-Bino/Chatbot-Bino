@@ -4,6 +4,7 @@ actions:
   - utter_despedir
   - utter_tudo_bem
   - utter_preocupacao
+  - utter_animar
   - utter_explicacao
   - utter_segredo
   - utter_risada
@@ -20,11 +21,16 @@ actions:
   - utter_provas
   - utter_trabalhos
   
+  - utter_pergunta_materia
+  
   - action_start
   - action_faltas
+  - action_materia
   
 entities: 
   - command
+  - materia
+  - faltas
   
 intents:
   - futebol
@@ -34,29 +40,53 @@ intents:
   - cumprimentar
   - tudo_bem
   - preocupacao
+  - animar
+  - otimista
+  - repita
   - despedir
   - explicacao
   - animes1
   - animes2
+  - filmes
+  - curiosidades
+  - poliglota
+  - jogos
   - series
+  - curiosidade
+  - musicas
   - segredo
   - risada
   - xingamento
+  - start
   - help
   - atividades
   - provas
   - trabalhos
-
+  - faltas
+  
   - action_start
   - action_faltas
+  - action_materia
 
+  - informa_materia
+
+slots:
+  materia:
+    type: text
+  
 templates:
   utter_default: 
     - 
       text: |-
           Desculpe, não entendi o que você escreveu.
           Você poderia reformular a pergunta?
-          
+  utter_animar: 
+    - 
+      text: "Acredite no seu potencial!"
+    - 
+      text: "Você é, o seu melhor!"
+    - 
+      text: "Você consegue!"
   utter_animes1: 
     - 
       text: Nani?!
@@ -280,3 +310,7 @@ templates:
          Você tem um trabalho de XXXXX para o dia XX/XX. Não deixe para o último dia, hein!
     - text : |-
          O dia XX/XX está chegando! Não se esqueça do trabalho de XXXXX.
+
+  utter_pergunta_materia:
+    - text : |-
+         Qual matéria gostaria de armazenar?

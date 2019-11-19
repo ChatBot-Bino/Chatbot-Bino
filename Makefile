@@ -72,8 +72,7 @@ train:
 	docker-compose build bot
 
 validate:
-	make train
-	docker-compose run --rm coach rasa data validate --fail-on-warnings --domain domain.yml --data data/ -vv
+	docker-compose run --rm coach rasa data validate --domain domain.yml --data data/ -vv
 
 visualize:
 	docker-compose run --rm  -v $(current_dir)/bot:/coach coach rasa visualize --domain domain.yml --stories data/stories.md --config config.yml --nlu data/nlu.md --out ./graph.html -vv
