@@ -2,7 +2,6 @@ from rasa_core_sdk import Action
 from pymongo import MongoClient
 import requests
 
-
 class ActionStart(Action):
     def name(self):
         return "action_start"
@@ -10,10 +9,9 @@ class ActionStart(Action):
     def run(self, dispatcher, tracker, domain):
         try:
             # remover o token do telegram e botar em uma pasta separada para não ir para o github.
-            TELEGRAM_TOKEN = ""
             tracker = tracker.current_state()
             sender_id = tracker['sender_id']
-
+            TELEGRAM_TOKEN = "962521399:AAGyRWTL9kAmjcgFn6mem_DxDyeXcbMRppA"
             text = "Olá, eu sou o Bino, seu assistente virtual!"
             data = requests.get(
                 'https://api.telegram.org/bot{}/sendMessage?chat_id={}&text={}'.format(TELEGRAM_TOKEN, sender_id, text)

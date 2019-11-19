@@ -20,17 +20,19 @@ actions:
   - utter_futebol
   - utter_provas
   - utter_trabalhos
-  
+  - utter_meMandaAtv
   - utter_pergunta_materia
   
   - action_start
   - action_faltas
   - action_materia
+  - action_addAtv
   
 entities: 
   - command
   - materia
   - faltas
+  - addAtv
   
 intents:
   - futebol
@@ -57,18 +59,17 @@ intents:
   - segredo
   - risada
   - xingamento
-  - start
-  - help
-  - atividades
   - provas
   - trabalhos
-  - faltas
   
-  - action_start
-  - action_faltas
-  - action_materia
 
-  - informa_materia
+  - start
+  - help
+  - faltas
+  - addAtv
+
+  - Adicionar_Atividade
+  - Adicionar_materia
 
 slots:
   materia:
@@ -314,3 +315,8 @@ templates:
   utter_pergunta_materia:
     - text : |-
          Qual matéria gostaria de armazenar?
+
+  utter_meMandaAtv:
+    - text: Me manda a atividade que você quer adicionar.
+    - text: Pode me mandar.
+    - text: Manda o nome da atividade ai.
