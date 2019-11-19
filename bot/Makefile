@@ -30,3 +30,7 @@ run-api:
 # ACTIONS
 run-actions:
 	rasa run actions --actions actions -vv
+
+# Validate
+validate:
+	docker run --rm botbino/bot rasa data validate --fail-on-warnings --domain domain.yml --data data/ -vv
