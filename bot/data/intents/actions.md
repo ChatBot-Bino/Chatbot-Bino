@@ -18,16 +18,6 @@
 - trabalhos
 - /trabalhos
 
-## intent:Adicionar_materia
-- A minha matéria é [Robótica](materia)
-- minha matéria é [MDS](materia)
-- Claro, [Orientação a Objetos](materia)
-- Sim, anota ai: [FSO](materia)
-- Ok, a minha matéria é [GEPEQ](materia)
-- Blz [APC](materia)
-- [APC](materia)
-- [materia](materia)
-
 ## intent:Adicionar_Atividade
 - /addAtv
 - addAtv

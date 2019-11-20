@@ -7,10 +7,6 @@
 * faltas{"command":"faltas"}
     - action_faltas
 
-## Adicionar_Materia
-* Adicionar_materia
-    - action_materia
-
 ## Adicionar_Atividade
 * Adicionar_Atividade{"command":"addAtv"}
     - utter_meMandaAtv
