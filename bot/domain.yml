@@ -12,6 +12,7 @@ intents:
   - gerenciador_atividades
 
   - enviar_grade
+  - grade_enviada
   - saber_grade
   - alterar_grade
 
@@ -23,10 +24,43 @@ intents:
   - frequencia_relatorio_semana
   - frequencia_relatorio_mes
 
+  - grade_nao_enviada
+  - grade_desatualizada
+  - grade_atualizada
+
+  - ver_relatorio
+
+
+
 entities:
   - comando
 
 slots:
+  
+  gerenciador_faltas_status:
+    type: categorical
+    values:
+      - primeira_vez
+      - uso_confirmado
+    initial_value: "primeira_vez"
+
+  grade_status:
+    type: categorical
+    values:
+      - grade_nao_enviada
+      - grade_desatualizada
+      - grade_atualizada
+    initial_value: "grade_nao_enviada"
+
+  relatorio_status:
+    type: categorical
+    values:
+      - relatorio_nao_configurado
+      - relatorio_diario
+      - relatorio_semanal
+      - relatorio_mensal
+    initial_value: "relatorio_nao_configurado"
+  
   comando:
     type: text
     initial_value: ""
@@ -39,6 +73,10 @@ slots:
   frequencia_relatorio:
     type: unfeaturized
 
+  grade_enviada:
+    type: bool
+    initial_value: false
+
 forms:
   - adicionar_materia_form
   - remover_materia_form
@@ -49,11 +87,16 @@ actions:
   - utter_cumprimentar
   - utter_despedir
   - utter_agradecer
+  - utter_comemorar
+  - utter_tudo_certo
 
   - utter_gerenciador_faltas
   - utter_gerenciador_atividades
 
-  - utter_enviar_grade
+  - utter_ask_confirmar_uso
+  - utter_deixar_pra_depois
+
+  - utter_guia_enviar_grade
   - utter_saber_grade
   - utter_alterar_grade
   
@@ -68,16 +111,24 @@ actions:
   - utter_materia_removida
 
   - utter_configurar_relatorio
+  - utter_checar_grade
+  - utter_grade_desatualizada
+  - utter_ask_sabe_enviar_grade
   - utter_ask_frequencia_relatorio
   - utter_relatorio_configurado
   - utter_configurado_dia
   - utter_configurado_semana
   - utter_configurado_mes
+  - utter_tempo_ver_relatorio
 
+  - utter_ask_grade
+
+  - action_checar_primeira_vez
+  - action_set_uso_confirmado
+  - action_receber_grade
+  - action_checar_grade
   - action_configurar_relatorio
   - action_reset_slots
-
-
 
 templates:
   utter_start:
@@ -95,14 +146,33 @@ templates:
   utter_agradecer:
     - text: "Por nada!"
 
+  utter_comemorar:
+    - text: "Uhuuuul!"
+    - text: "Obaaa!"
+    - text: "Yaaay"
+
+  utter_tudo_certo:
+    - text: "Tudo certo"
+    - text: "Certinho!"
+    - text: "Tudo belezinha :)"
+
   utter_gerenciador_faltas:
     - text: "Info gerenciador de faltas"
   
   utter_gerenciador_atividades:
     - text: "Info gerenciador de atividades"
 
-  utter_enviar_grade:
-    - text: "Guia de como enviar sua grade:"
+  utter_ask_confirmar_uso:
+    - text: "E aí, topa experimentar?"
+
+  utter_guia_enviar_grade:
+    - text: "Para me enviar sua grade horária, basta você
+            fazer login no Matrícula Web, acessar o link: 
+            https://matriculaweb.unb.br/graduacao/sec/gradehoraria.aspx,
+            clicar em 'Imprimir' e me enviar o PDF ;)"
+
+  utter_grade_desatualizada:
+    - text: "A grade que você enviou não é desse semestre!"
 
   utter_saber_grade:
     - text: "MOSTRAR MATÉRIAS"
@@ -134,6 +204,10 @@ templates:
   utter_materia_removida:
     - text: "Matéria removida!"
 
+  utter_checar_grade:
+    - text: "Só deixa eu checar sua grade..."
+    - text: "Um segundinho pra checar sua grade..."
+
   utter_configurar_relatorio:
     - text: "Vamos configurar seus 
             relatórios de frequência nas aulas."
@@ -154,4 +228,13 @@ templates:
 
   utter_configurado_mes:
     - text: "Você receberá relatórios MENSAIS!"
+  
+  utter_tempo_ver_relatorio:
+    - text: "Você quer ver o relatório de quanto tempo?"
+
+  utter_ask_grade:
+    - text: "Preciso que você me envie sua grade horária :)"
+  
+  utter_deixar_pra_depois:
+    - text: "Tudo bem, a gente deixa pra depois :c"
 

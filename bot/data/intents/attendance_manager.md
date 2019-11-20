@@ -240,6 +240,18 @@
 - passar aula
 - passar aulas
 
+
+
+
+## intent:grade_enviada
+- grade_enviada
+
+## intent:grade_desatualizada
+- grade_desatualizada
+
+## intent:grade_atualizada
+- grade_atualizada
+
 ## intent:saber_grade
 - ver grade
 - ver grade horaria
@@ -550,3 +562,25 @@
 - de forma mensal
 - mensalmente
 - de forma mensal
+
+## intent:ver_relatorio
+- ver relatorio
+- olhar relatorio
+- saber relatorio
+- receber relatorio
+- ler relatorio
+- ver relatório
+- olhar relatório
+- saber relatório
+- receber relatório
+- ler relatório
+- ver relatorios
+- olhar relatorios
+- saber relatorios
+- receber relatorios
+- ler relatorios
+- ver relatórios
+- olhar relatórios
+- saber relatórios
+- receber relatórios
+- ler relatórios
