@@ -17,7 +17,6 @@
     - action_listen
     - action_addAtv
 
-
 ## Help
 * help{"command":"help"}
     - utter_help

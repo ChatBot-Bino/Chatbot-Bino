@@ -1,4 +1,4 @@
-from typing import Any, Text, Dict
+from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -9,9 +9,7 @@ class ActionMateria(Action):
     def name(self):
         return "action_materia"
 
-    def run(self, dispatcher: CollectingDispatcher, 
-            tracker: Tracker, 
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         materia = tracker.get_slot('materia')
 

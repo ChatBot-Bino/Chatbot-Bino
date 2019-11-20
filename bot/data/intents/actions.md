@@ -30,6 +30,7 @@
 
 ## intent:Adicionar_Atividade
 - /addAtv
+- addAtv
 - Adicionar compromisso
 - novo compromisso
 - quero adicionar um novo compromisso
@@ -45,5 +46,3 @@
 - nova atividade
 - me adiciona uma nova atividade
 - atividade
-
-
