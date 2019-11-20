@@ -1,6 +1,5 @@
 from rasa_core_sdk import Action
-# from pymongo import MongoClient
-# import requests
+from pymongo import MongoClient
 
 
 class ActionAddAtv(Action):
@@ -9,9 +8,15 @@ class ActionAddAtv(Action):
 
     def run(self, dispatcher, tracker, domain):
         try:
+            tracker = tracker.current_state()
+            sender_id = tracker['sender_id']
+            client = MongoClient("mongo:27017")
+            db = client.telegramdb
+            collectionsUsers = db.user
 
-            Materia = tracker.latest_message.get('text')
-            dispatcher.utter_message(Materia)
+            Atividade = tracker.latest_message.get('text')
+
+            collectionsUsers.update_one({'SenderID': sender_id}, {'$push': {'activities': Atividade}})
 
         except ValueError:
             dispatcher.utter_message(ValueError)
