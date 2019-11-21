@@ -8,10 +8,10 @@
     - action_faltas
 
 ## Adicionar_Atividade
-* Adicionar_Atividade{"command":"addAtv"}
-    - utter_meMandaAtv
+* adicionar_atividade{"command":"adicionar"}
+    - utter_atividades
     - action_listen
-    - action_addAtv
+    - action_adicionar
 
 ## Help
 * help{"command":"help"}

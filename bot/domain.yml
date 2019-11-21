@@ -4,7 +4,6 @@ actions:
   - utter_despedir
   - utter_tudo_bem
   - utter_preocupacao
-  - utter_animar
   - utter_explicacao
   - utter_segredo
   - utter_risada
@@ -20,16 +19,15 @@ actions:
   - utter_futebol
   - utter_provas
   - utter_trabalhos
-  - utter_meMandaAtv
   
   - action_start
   - action_faltas
-  - action_addAtv
+  - action_adicionar
   
 entities: 
   - command
   - faltas
-  - addAtv
+  - adicionar
   
 intents:
   - futebol
@@ -39,19 +37,12 @@ intents:
   - cumprimentar
   - tudo_bem
   - preocupacao
-  - animar
-  - otimista
-  - repita
   - despedir
   - explicacao
   - animes1
   - animes2
   - filmes
-  - curiosidades
-  - poliglota
-  - jogos
   - series
-  - curiosidade
   - musicas
   - segredo
   - risada
@@ -62,9 +53,9 @@ intents:
   - start
   - help
   - faltas
-  - addAtv
+  - adicionar
 
-  - Adicionar_Atividade
+  - adicionar_atividade
   
 templates:
   utter_default: 
@@ -72,17 +63,15 @@ templates:
           Desculpe, não entendi o que você escreveu.
           Você poderia reformular a pergunta?
 
-  utter_animar: 
-    - text: "Acredite no seu potencial!"
-    - text: "Você é, o seu melhor!"
-    - text: "Você consegue!"
-
   utter_animes1: 
-    - text: Nani?!
+    - text: |-
+          Nani?!
   utter_animes2: 
-    - text: "Eu diria que sou um fanático
-          e que Full Metal Alchemist Brotherhood é melhor que Full Metal Alchemist Clássico "
-    - text: "Sou um grande apreciador de Animes e Mangás."
+    - text: |-
+          Eu diria que sou um fanático
+          e que Full Metal Alchemist Brotherhood é melhor que Full Metal Alchemist Clássico 
+    - text: |-
+          Sou um grande apreciador de Animes e Mangás.
     - text: |-
           Você disse mangá ou anime?
           Seja qual for eu adoro os dois.
@@ -108,7 +97,8 @@ templates:
           KAME
           KAMEEEE
           HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    - text: "KONO BINO DA!"
+    - text: |-
+          KONO BINO DA!
     - text: |-
           Animes?!
           Déjà vu i just answered you before!
@@ -117,13 +107,18 @@ templates:
           E infelizmente você caiu na minha carta armadilha usuário hehe.
 
   utter_cumprimentar: 
-    - text: "Olá, eu sou o Bino, seu assistente virtual! Precisa de algo?"
-    - text: "Oi, o que você gostaria de saber??"
+    - text: |-
+          Olá, eu sou o Bino, seu assistente virtual! Precisa de algo?
+    - text: |-
+          Oi, o que você gostaria de saber?
   
   utter_despedir: 
-    - text: "Até logo!"
-    - text: "Até mais!"
-    - text: Tchau!
+    - text: |-
+           Até logo!
+    - text: |-
+           Até mais!
+    - text: |-
+           Tchau!
   
   utter_explicacao: 
     - text: |-
@@ -135,7 +130,8 @@ templates:
     - text: |-
           Você sabia que eu torço pro melhor time do Brasil?
           Gigante Flamengo!
-    - text: "Segue o líder! O mengão é o melhor de todos."
+    - text: |-
+          Segue o líder! O mengão é o melhor de todos.
     - text: |-
           Sou flamenguista desde o dia que eu nasci.
           Meu desenvolvedor que me influenciou.
@@ -164,10 +160,12 @@ templates:
           Você é muito engraçadinho.
   
   utter_segredo: 
-    - text: "É uma bilada Cino!"
+    - text: |-
+          É uma bilada Cino!
   
   utter_series: 
-    - text: "Gostaria de ter mais tempo para assistir séries, é um excelente hobby!"
+    - text: |-
+          Gostaria de ter mais tempo para assistir séries, é um excelente hobby!
     - text: |-
           Fica aqui uma recomendação pra você,
           Game of Thrones é sensacional, só não espere muito da última temporada.
@@ -188,33 +186,48 @@ templates:
           Black mirror é ideal para fazer você pensar sobre os pŕoximos passos da humanidade!
         
   utter_tudo_bem: 
-    - text: "Comigo está tudo bem.
-             e você, como esta?"
-    - text: "Estou bem.
-             como você anda?"
-    - text: "Estou sem problemas e preocupações.
-             E você?"
+    - text: |-
+          Comigo está tudo bem.
+          e você, como esta?
+    - text: |-
+          Estou bem.
+          como você anda?
+    - text: |-
+          Estou sem problemas e preocupações.
+          e você?
   
   utter_xingamento: 
-    - text: "Nossa usuário, para que usar palavras tão feias?!"
-    - text: "Por favor, não xingue."
-    - text: "Uma boca tão bonita, falando palavras tão chulas."
+    - text: |-
+          Nossa usuário, para que usar palavras tão feias?!
+    - text: |-
+          Por favor, não xingue.
+    - text: |-
+          Uma boca tão bonita, falando palavras tão chulas.
   
   utter_reacao_feliz:
-    - text: "Que ótimo!
-            e em que posso ajuda-lo?"
-    - text: "Fico feliz em ler isso!
-            e como posso ser útil?"
-    - text: "Legal!
-            e em que posso ajuda-lo?"
+    - text: |-
+          Que ótimo!
+          e em que posso ajuda-lo?
+    - text: |-
+          Fico feliz em ler isso!
+          e como posso ser útil?
+    - text: |-
+          Legal!
+          e em que posso ajuda-lo?
 
   utter_reacao_triste:
-    - text: "Poxa, espero que você melhore, estou aqui para ajudar!"
-    - text: "Sempre existem dias ruins, temos que seguir de cabeça erguida!"
-    - text: "Não desanime, dias melhores virão!"
-    - text: "Nunca desista, tudo faz parte de uma grande aprendizagem!"
-    - text: "Se realmente não estiver bem, veja um seriado legal! Podemos conversar sobre isso se você quiser."
-    - text: "Estou aqui caso você precise! Podemos conversar sobre diversar coisas para te animar."
+    - text: |-
+          Poxa, espero que você melhore, estou aqui para ajudar!
+    - text: |-
+          Sempre existem dias ruins, temos que seguir de cabeça erguida!
+    - text: |-
+          Não desanime, dias melhores virão!
+    - text: |-
+          Nunca desista, tudo faz parte de uma grande aprendizagem!
+    - text: |-
+          Se realmente não estiver bem, veja um seriado legal! Podemos conversar sobre isso se você quiser.
+    - text: |-
+          Estou aqui caso você precise! Podemos conversar sobre diversar coisas para te animar.
 
   utter_start:
     - text: |-          
@@ -225,22 +238,16 @@ templates:
   
   utter_help:
     - text : |-
-          Posso lhe ajudar com algumas funcionalidades
-            Gerenciamento de atividades acadêmicas
+          Posso lhe ajudar com algumas funcionalidades:
+            
+            Gerenciamento de atividades acadêmicas:
                 Consigo agendar seus compromissos acadêmicos e lembra-lo das datas para você não perder o controle da sua rotina!
                 Depois disso é só ficar ligado nas notificações para ficar preparado para a prova ou para não esquecer de fazer algum trabalho!
-            Gerenciamento de faltas 
-                Posso também gerenciar as suas faltas, é super importante pra você não perder o controle e acabar faltando mais do que pode!
-    
-                Então eu vou te auxiliando com todas as matérias, sempre te enviando uma notificação, para saber se você foi para a aula ou não!
-                
-                Desse jeito, você pode ficar mais tranquilo durante o semestre.
 
-  utter_atividades:
-    - text : |-
-          Aqui você pode gerenciar sua atividades acadêmicas!
-          Digite /provas para verificar sua agenda de provas dos próximos dias
-          Ou digite /trabalhos para consultar a data de entrega dos seus pŕoximos trabalhos!
+            Gerenciamento de faltas:
+                Posso também gerenciar as suas faltas, é super importante pra você não perder o controle e acabar faltando mais do que pode!
+                Então eu vou te auxiliando com todas as matérias, sempre te enviando uma notificação, para saber se você foi para a aula ou não!
+                Desse jeito, você pode ficar mais tranquilo durante o semestre.
 
   utter_provas:
     - text : |-
@@ -258,7 +265,10 @@ templates:
     - text : |-
          O dia XX/XX está chegando! Não se esqueça do trabalho de XXXXX.
 
-  utter_meMandaAtv:
-    - text: Me manda a atividade que você quer adicionar.
-    - text: Pode me mandar.
-    - text: Manda o nome da atividade ai.
+  utter_atividades:
+    - text: |-
+         Me manda a atividade que você quer adicionar.
+    - text: |-
+         Que atividade gostaria de adicionar?
+    - text: |-
+         Manda o nome da atividade.

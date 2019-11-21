@@ -18,21 +18,6 @@
 - trabalhos
 - /trabalhos
 
-## intent:Adicionar_Atividade
-- /addAtv
-- addAtv
-- Adicionar compromisso
-- novo compromisso
-- quero adicionar um novo compromisso
-- adiciona um compromisso
-- add compromisso
-- add comp
-- compromisso novo
-- compromisso
-- atividade
-- nova Atividade
-- add ativ
-- adicionar uma nova atividade
-- nova atividade
-- me adiciona uma nova atividade
-- atividade
+## intent:adicionar_atividade
+- /adicionar
+- adicionar

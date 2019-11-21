@@ -4,7 +4,7 @@ from pymongo import MongoClient
 
 class ActionAddAtv(Action):
     def name(self):
-        return "action_addAtv"
+        return "action_adicionar"
 
     def run(self, dispatcher, tracker, domain):
         try:
@@ -14,7 +14,7 @@ class ActionAddAtv(Action):
             db = client.telegramdb
             collectionsUsers = db.user
 
-            Atividade = tracker['latest_message']['text']
+            Atividade = (tracker.latest_message)['text']
 
             newAtv = {
                 'TituloDaAtv': Atividade
