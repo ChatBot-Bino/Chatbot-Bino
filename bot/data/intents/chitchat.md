@@ -49,17 +49,17 @@
 - fala
 
 ## intent:despedir
-- tchau obrigada
-- Tchau obrigada
+- [tchau] obrigada (despedir)
+- [Tchau] obrigada (despedir)
 - tchau obrigado
 - Tchau obrigado
 - tchau
 - Tchau
-- namaste
-- sayonara
-- au revoir
-- até logo
-- Até logo
+- [namaste] (despedir)
+- [sayonara] (despedir)
+- [au revoir] (despedir)
+- [até] logo (despedir)
+- [Até] logo (despedir)
 - ate logo
 - Ate logo
 - até mais
@@ -74,10 +74,10 @@
 - Até a proxima
 - ate a proxima
 - Ate a proxima
-- falou, valeu
-- Falou, valeu
-- flw vlw
-- Flw vlw
+- [falou], valeu (despedir)
+- [Falou], valeu (despedir)
+- [flw] vlw (despedir)
+- [Flw] vlw (despedir)
 - beleza
 - Beleza
 - blza
@@ -90,8 +90,8 @@
 - Valeu
 - vlw
 - Vlw
-- flw
-- Flw
+- [flw] (despedir)
+- [Flw] (despedir)
 
 ## intent:tudo_bem
 - como vai voce
@@ -169,39 +169,39 @@
 - hahahahaha
 
 ## intent:animes1
-- Omae Wa Mou Shindeiru
-- omae wa mou shindeiru
+- [Omae] Wa Mou Shindeiru (animes1)
+- [omae] wa mou shindeiru (animes1)
 
 ## intent:animes2
-- Anime
-- anime
-- mangá
-- Mangá
+- [Anime] (animes2)
+- [anime] (animes2)
+- [mangá] (animes2) 
+- [Mangá] (animes2)
 
 ## intent:xingamento
 - Me Mama
 - me mama
-- mama
+- [mama] (xingamento)
 - Mama
 - Me mama
 - me Mama
-- vai se fuder
+- vai se [fuder] (xingamento)
 - fodace
-- quero que você se foda
-- caguei
+- quero que você se [foda] (xingamento)
+- [caguei] (xingamento)
 - se fuder
-- foda-se
-- vai tomar no cu
+- [foda-se] (xingamento)
+- vai tomar no [cu] (xingamento)
 - toma no cu
 - cu
-- filho da puta
+- filho da [puta] (xingamento)
 - filha da puta
 - fila da puta
-- ti fuder
+- ti [fuder] (xingamento)
 - te fuder
 - Te fuder
 - Ti fuder
-- Desgraçado
+- [Desgraçado] (xingamento)
 - Seu desgraçado
 - desgraçado
 - seu desgraçado
@@ -269,18 +269,18 @@
 - Desanimada
 
 ## intent:series
-- serie
-- Serie
-- seriado
-- Seriado
-- series
-- Series
-- gosto de series
+- [serie] (series)
+- [Serie] (series)
+- [seriado] (series)
+- [Seriado] (series)
+- [series] (series)
+- [Series] (series)
+- gosto de [series] (series)
 - assistir series
 - ver series
 
 ## intent:futebol
-- futebol
-- Futebol
-- gosta futebol
-- esporte
+- [futebol] (futebol)
+- [Futebol] (futebol)
+- gosta [futebol] (futebol)
+- [esporte] (futebol)

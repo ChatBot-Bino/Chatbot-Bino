@@ -28,6 +28,13 @@ entities:
   - command
   - faltas
   - adicionar
+  - cumprimentar
+  - animes1
+  - animes2
+  - xingamento
+  - futebol
+  - series
+  - despedir
   
 intents:
   - futebol
