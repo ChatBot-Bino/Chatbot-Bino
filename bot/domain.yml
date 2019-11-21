@@ -113,7 +113,6 @@ actions:
   - utter_configurar_relatorio
   - utter_checar_grade
   - utter_grade_desatualizada
-  - utter_ask_sabe_enviar_grade
   - utter_ask_frequencia_relatorio
   - utter_relatorio_configurado
   - utter_configurado_dia
@@ -122,7 +121,9 @@ actions:
   - utter_tempo_ver_relatorio
 
   - utter_ask_grade
-
+  
+  - action_checar_uso_gerenciador_faltas
+  - action_checar_afirmacao
   - action_checar_primeira_vez
   - action_set_uso_confirmado
   - action_receber_grade

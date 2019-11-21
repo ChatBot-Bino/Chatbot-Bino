@@ -23,18 +23,16 @@ class ActionConfigurarRelatorio(Action):
         
         """
 
-        intent = tracker.latest_message['intent'].get('name')
+        last_intent = tracker.latest_message['intent'].get('name')
 
-        if (intent == "frequencia_relatorio_dia"):
-            frequencia = "relatorio_diario"
-
-        elif (intent == "frequencia_relatorio_semana"):
-            frequencia = "relatorio_semanal"
-
-        elif (intent == "frequencia_relatorio_mes"):
-            frequencia = "relatorio_mensal"
+        if (last_intent == "frequencia_relatorio_dia"):
+            return [SlotSet("relatorio_status", "relatorio_diario")]
         
-        else:
-            frequencia = "relatorio_nao_configurado"
+        if (last_intent == "frequencia_relatorio_semana"):
+            return [SlotSet("relatorio_status", "relatorio_semanal")]
 
-        return [SlotSet("frequencia_relatorio", frequencia)]
+        if (last_intent == "frequencia_relatorio_mes"):
+            return [SlotSet("relatorio_status", "relatorio_mensal")]
+
+        return []
+        

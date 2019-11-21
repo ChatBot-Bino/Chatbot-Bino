@@ -8,9 +8,10 @@ pipeline:
   - name: "EmbeddingIntentClassifier"
 
 policies:
-  - name: MemoizationPolicy
-  - name: KerasPolicy
-  - name: MappingPolicy
+  - name: "MemoizationPolicy"
+  - name: "KerasPolicy"
+    max_history: 0
+  - name: "MappingPolicy"
   - name: "FormPolicy"
 
 # TODO: Update this config file with previous configurations
