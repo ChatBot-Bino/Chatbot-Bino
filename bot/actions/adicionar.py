@@ -14,11 +14,16 @@ class ActionAddAtv(Action):
             db = client.telegramdb
             collectionsUsers = db.user
 
-            Atividade = (tracker.latest_message)['text']
+            Atividade = tracker.latest_message['text']
+            dispatcher.utter_message(Atividade)
 
-            newAtv = {
-                'TituloDaAtv': Atividade
-            }
-            collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': newAtv}})
+            # newAtv = {
+            #     "TituloDaAtv": Atividade,
+            #     "Data": "Nenhuma Data",
+            #     "OBS": "Nenhum"
+            # }
+
+            # collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': newAtv}})
+
         except ValueError:
             dispatcher.utter_message(ValueError)
