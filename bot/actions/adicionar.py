@@ -14,7 +14,7 @@ class ActionAddAtv(Action):
             client = MongoClient("mongo:27017")
             db = client.telegramdb
             collectionsUsers = db.user
-            
+
             Atividade = tracker['latest_message']['text']
 
             newAtv = {
