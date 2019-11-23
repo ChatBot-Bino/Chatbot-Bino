@@ -1,15 +1,23 @@
-## intent:action_start
+## intent:start
 - /start
 - start
 
-## intent:action_faltas
+## intent:faltas
 - /faltas
 - faltas
 
-## intent:informa_materia
-- A minha matéria é Robótica
-- minha matéria é MDS
-- Claro, Orientação a Objetos
-- Sim, anota ai: FSO
-- Ok, a minha matéria é GEPEQ
-- Blz APC
+## intent:help
+- help
+- /help
+
+## intent:provas
+- provas
+- /provas
+
+## intent:trabalhos
+- trabalhos
+- /trabalhos
+
+## intent:adicionar_atividade
+- /adicionar
+- adicionar

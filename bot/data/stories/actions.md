@@ -7,6 +7,20 @@
 * faltas{"command":"faltas"}
     - action_faltas
 
-## Testa_Slot
-* informa_materia
-    - action_materia
+## Adicionar_Atividade
+* adicionar_atividade{"command":"adicionar"}
+    - utter_atividades
+    - action_listen
+    - action_adicionar
+
+## Help
+* help{"command":"help"}
+    - utter_help
+
+## Provas
+* provas{"command":"provas"}
+    - utter_provas
+
+## Trabalhos
+* trabalhos{"command":"trabalhos"}
+    - utter_trabalhos

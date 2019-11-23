@@ -5,8 +5,6 @@ services:
   mongo:
     container_name: mongodb
     image: mongo
-    depends_on:
-      - mongo-express
     ports: 
       - 27017:27017
     volumes: 
@@ -14,6 +12,8 @@ services:
 
   mongo-express:
     image: mongo-express
+    depends_on:
+      - mongo
     container_name: mongo-express
     ports:
       - 8081:8081
@@ -58,6 +58,7 @@ services:
       - ./bot/actions:/bot/actions
     depends_on:
       - mongo
+      - mongo-express #Retirar o mongo-express por questão de segurança.
     command: sh -c "make run-actions"
 
   # ============================ WebChat Bot =================================
