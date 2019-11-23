@@ -31,9 +31,9 @@ class ActionStart(Action):
                 user = {
                     'SenderID': sender_id,
                     'first_name': first_name,
-                    'classes': {},
-                    'exams': {},
-                    'activities': {}
+                    'classes': [],
+                    'exams': [],
+                    'activities': []
                 }
                 collectionsUsers.insert_one(user)
 
