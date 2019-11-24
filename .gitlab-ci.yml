@@ -4,8 +4,9 @@ stages:
   - test style
   - build requirements
   - build coach
-  - build
   - test stories
+  - build
+
 
 
 #############################################################
@@ -56,6 +57,24 @@ build coach:
 
 
 #############################################################
+############### TEST STORIES ################################
+#############################################################
+test stories:
+  stage: test stories
+  image: docker
+  tags:
+    - docker
+  services:
+    - docker:dind
+  script:
+    - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
+    - docker run botbino/coach make validate .
+  only:
+    - master
+  environment: homolog
+
+
+#############################################################
 ############### BUILD BOT ###################################
 #############################################################
 build bot:
@@ -69,24 +88,6 @@ build bot:
     - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
     - docker build -f docker/bot.Dockerfile -t botbino/bot:latest .
     - docker push botbino/bot:latest
-  only:
-    - master
-  environment: homolog
-  
-  
-#############################################################
-############### TEST STORIES ################################
-#############################################################
-test stories:
-  stage: test stories
-  image: docker
-  tags:
-    - docker
-  services:
-    - docker:dind
-  script:
-    - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
-    - docker run botbino/bot make validate .
   only:
     - master
   environment: homolog
