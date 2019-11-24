@@ -160,39 +160,84 @@
 * grade_atualizada
   - action_checar_grade
   - slot{"grade_status": "grade_atualizada"}
+  - action_checar_relatorio_status
+  - slot{"relatorio_status": "relatorio_nao_configurado"}
   - utter_tudo_certo
   - utter_configurar_relatorio
   - utter_ask_frequencia_relatorio
 
-## 2.3.1 gerenciador_faltas + uso_confirmado + grade_atualizada + relatorio_diario
+## 2.3.1 gerenciador_faltas + uso_confirmado + grade_atualizada + relatorio_nao_configurado + relatorio_diario
 * gerenciador_faltas
   - slot{"gerenciador_faltas_status": "uso_confirmado"}
   - utter_gerenciador_faltas
 * grade_atualizada
   - action_checar_grade
   - slot{"grade_status": "grade_atualizada"}
+  - action_checar_relatorio_status
+  - slot{"relatorio_status": "relatorio_nao_configurado"}
   - utter_tudo_certo
   - utter_configurar_relatorio
   - utter_ask_frequencia_relatorio
 * frequencia_relatorio_dia
   - action_configurar_relatorio
-  - slot{"frequencia_relatorio": "dia"}
+  - slot{"relatorio_status": "relatorio_diario"}
   - utter_configurado_dia
 
-## 2.3.2 gerenciador_faltas + uso_confirmado + grade_atualizada + relatorio_semanal
+## 2.3.2 gerenciador_faltas + uso_confirmado + grade_atualizada + relatorio_nao_configurado + relatorio_semanal
 * gerenciador_faltas
   - slot{"gerenciador_faltas_status": "uso_confirmado"}
   - utter_gerenciador_faltas
 * grade_atualizada
   - action_checar_grade
   - slot{"grade_status": "grade_atualizada"}
+  - action_checar_relatorio_status
+  - slot{"relatorio_status": "relatorio_nao_configurado"}
   - utter_tudo_certo
   - utter_configurar_relatorio
   - utter_ask_frequencia_relatorio
 * frequencia_relatorio_semana
   - action_configurar_relatorio
-  - slot{"frequencia_relatorio": "semana"}
+  - slot{"relatorio_status": "relatorio_semanal"}
   - utter_configurado_semana
+
+## 2.3.3 gerenciador_faltas + uso_confirmado + grade_atualizada + relatorio_nao_configurado + relatorio_mensal
+* gerenciador_faltas
+  - slot{"gerenciador_faltas_status": "uso_confirmado"}
+  - utter_gerenciador_faltas
+* grade_atualizada
+  - action_checar_grade
+  - slot{"grade_status": "grade_atualizada"}
+  - action_checar_relatorio_status
+  - slot{"relatorio_status": "relatorio_nao_configurado"}
+  - utter_tudo_certo
+  - utter_configurar_relatorio
+  - utter_ask_frequencia_relatorio
+* frequencia_relatorio_mes
+  - action_configurar_relatorio
+  - slot{"relatorio_status": "relatorio_mensal"}
+  - utter_configurado_mes
+
+## 2.3.3 gerenciador_faltas + uso_confirmado + grade_atualizada + relatorio_diario
+* gerenciador_faltas
+  - slot{"gerenciador_faltas_status": "uso_confirmado"}
+  - utter_gerenciador_faltas
+* grade_atualizada
+  - action_checar_grade
+  - slot{"grade_status": "grade_atualizada"}
+  - action_checar_relatorio_status
+  - slot{"relatorio_status": "relatorio_diario"}
+  - utter_gerenciador_faltas
+
+## 2.3.3 gerenciador_faltas + uso_confirmado + grade_atualizada + relatorio_semanal
+* gerenciador_faltas
+  - slot{"gerenciador_faltas_status": "uso_confirmado"}
+  - utter_gerenciador_faltas
+* grade_atualizada
+  - action_checar_grade
+  - slot{"grade_status": "grade_atualizada"}
+  - action_checar_relatorio_status
+  - slot{"relatorio_status": "relatorio_semanal"}
+  - utter_gerenciador_faltas
 
 ## 2.3.3 gerenciador_faltas + uso_confirmado + grade_atualizada + relatorio_mensal
 * gerenciador_faltas
@@ -201,11 +246,9 @@
 * grade_atualizada
   - action_checar_grade
   - slot{"grade_status": "grade_atualizada"}
-  - utter_tudo_certo
-  - utter_configurar_relatorio
-  - utter_ask_frequencia_relatorio
-* frequencia_relatorio_mes
-  - action_configurar_relatorio
-  - slot{"frequencia_relatorio": "mes"}
-  - utter_configurado_mes
+  - action_checar_relatorio_status
+  - slot{"relatorio_status": "relatorio_mensal"}
+  - utter_gerenciador_faltas
+
+
 

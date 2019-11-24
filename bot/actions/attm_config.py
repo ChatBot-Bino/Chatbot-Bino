@@ -1,5 +1,6 @@
 from rasa_sdk import Action
 from rasa_sdk.events import SlotSet
+from rasa_sdk.events import FollowupAction
 
 class ActionChecarUsoGerenciadorFaltas(Action):
     def name(self):
@@ -10,7 +11,7 @@ class ActionChecarUsoGerenciadorFaltas(Action):
         last_intent = tracker.latest_message['intent'].get('name')
 
         if (last_intent == None):
-            return [SlotSet("gerenciador_faltas_status", tracker.get_slot("gerenciador_faltas_status"))]
+            return [FollowupAction("action_default_fallback")]
 
         elif (last_intent == "negar"):
             return [SlotSet("gerenciador_faltas_status", "primeira_vez")]
@@ -19,7 +20,7 @@ class ActionChecarUsoGerenciadorFaltas(Action):
             return [SlotSet("gerenciador_faltas_status", "uso_confirmado")]
         
         else:
-            return [SlotSet("gerenciador_faltas_status", tracker.get_slot("gerenciador_faltas_status"))]
+            return [FollowupAction("action_default_fallback")]
 
 
 class ActionSetUsoConfirmado(Action):
