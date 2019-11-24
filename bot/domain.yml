@@ -1,5 +1,4 @@
 actions: 
-  - utter_default
   - utter_cumprimentar
   - utter_despedir
   - utter_tudo_bem
@@ -38,7 +37,6 @@ entities:
   
 intents:
   - futebol
-  - default 
   - reacao_feliz
   - reacao_triste
   - cumprimentar
@@ -48,9 +46,7 @@ intents:
   - explicacao
   - animes1
   - animes2
-  - filmes
   - series
-  - musicas
   - segredo
   - risada
   - xingamento
@@ -60,7 +56,6 @@ intents:
   - start
   - help
   - faltas
-  - adicionar
 
   - adicionar_atividade
   

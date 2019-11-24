@@ -1,8 +1,3 @@
-## Default
- * default
-    - action_default_fallback
-    - utter_default
-
 ## Cumprimentar
 * cumprimentar
     - utter_cumprimentar
