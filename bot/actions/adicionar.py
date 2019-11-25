@@ -17,6 +17,8 @@ class ActionAddAtv(Action):
 
             Atividade = tracker['latest_message']['text']
 
+            
+
             newAtv = {
                 "TituloDaAtv": Atividade,
                 'Data': "Nenhuma Salva",
