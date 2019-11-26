@@ -15,6 +15,9 @@ actions:
   - utter_series
   - utter_help
   - utter_atividades
+  - utter_atividades_tipo
+  - utter_atividades_data
+  - utter_atividades_obs
   - utter_futebol
   - utter_provas
   - utter_trabalhos
@@ -267,10 +270,33 @@ templates:
     - text : |-
          O dia XX/XX está chegando! Não se esqueça do trabalho de XXXXX.
 
+  utter_atividades_tipo:
+    - text: |-
+         Me manda o tipo atividade que você quer adicionar.
+    - text: |-
+         Qual tipo de atividade gostaria de adicionar?
+    - text: |-
+         Manda o tipo da atividade.
+
+  utter_atividades_data:
+    - text: |-
+         Me manda a a data da sua atividade, por favor.
+    - text: |-
+         Qual a data da atividade que você gostaria de adicionar?
+    - text: |-
+         Manda a data da atividade.
+
+  utter_atividades_obs:
+    - text: |-
+         Gostaria de fazer alguma observação sobre a sua atividade?
+    - text: |-
+         Quer acrescentar alguma informação a mais na sua atividade?
+    - text: |-
+         Digita aí uma observação da sua atividade pra eu poder guardar aqui.
+
+
   utter_atividades:
     - text: |-
-         Me manda a atividade que você quer adicionar.
-    - text: |-
-         Que atividade gostaria de adicionar?
-    - text: |-
-         Manda o nome da atividade.
+         teste
+
+
