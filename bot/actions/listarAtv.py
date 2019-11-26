@@ -17,11 +17,12 @@ class ActionAddAtv(Action):
 
             activities = collectionsUsers.find_one({'SenderID': sender_id})
             dispatcher.utter_message("Suas atividades salvas são essas:")
+
             for dataArray in activities['activities']:
                 NomeDaAtv = "Nome: " + dataArray['TituloDaAtv'] + "\n"
-                OBS = NomeDaAtv + "OBS: " + dataArray['OBS'] + "\n"
-                DataAtv = OBS + "Data: " + dataArray['Data'] + "\n"
-                dispatcher.utter_message(DataAtv)
+                OBS = "OBS: " + dataArray['OBS'] + "\n"
+                Text = NomeDaAtv + OBS + "Data: " + dataArray['Data'] + "\n"
+                dispatcher.utter_message(Text)
 
             client.close
         except ValueError:
