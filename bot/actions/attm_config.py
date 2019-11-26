@@ -10,17 +10,14 @@ class ActionChecarUsoGerenciadorFaltas(Action):
         
         last_intent = tracker.latest_message['intent'].get('name')
 
-        if (last_intent == None):
-            return [FollowupAction("action_default_fallback")]
-
-        elif (last_intent == "negar"):
+        if (last_intent == "negar"):
             return [SlotSet("gerenciador_faltas_status", "primeira_vez")]
 
         elif (last_intent == "afirmar"):
             return [SlotSet("gerenciador_faltas_status", "uso_confirmado")]
         
         else:
-            return [FollowupAction("action_default_fallback")]
+            return []
 
 
 class ActionSetUsoConfirmado(Action):

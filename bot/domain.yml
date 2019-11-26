@@ -1,42 +1,38 @@
-intents:
-  - start
-  - help
-
+intents: 
+  # Geral
   - cumprimentar
   - despedir
   - afirmar
   - negar
   - agradecer
 
+  # Gerenciadores
   - gerenciador_faltas
-  - gerenciador_atividades
 
+  # Grade horária
   - enviar_grade
   - grade_enviada
   - saber_grade
   - alterar_grade
-
-  - adicionar_materia
-  - remover_materia
-
-  - configurar_relatorio
-  - frequencia_relatorio_dia
-  - frequencia_relatorio_semana
-  - frequencia_relatorio_mes
-
+  # *Intents para debug (remover):
   - grade_nao_enviada
   - grade_desatualizada
   - grade_atualizada
 
+  # Alterar disciplina manualmente
+  - adicionar_materia
+  - remover_materia
+
+  # Relatórios
+  - configurar_relatorio
   - ver_relatorio
-
-
-
-entities:
-  - comando
+  - frequencia_relatorio_dia
+  - frequencia_relatorio_semana
+  - frequencia_relatorio_mes
 
 slots:
   
+  # Define se é a primeira vez ou não do usuário
   gerenciador_faltas_status:
     type: categorical
     values:
@@ -44,6 +40,7 @@ slots:
       - uso_confirmado
     initial_value: "primeira_vez"
 
+  # Define o status de atualização da grade horária
   grade_status:
     type: categorical
     values:
@@ -52,6 +49,7 @@ slots:
       - grade_atualizada
     initial_value: "grade_nao_enviada"
 
+  # Define o status de configuração do relatório
   relatorio_status:
     type: categorical
     values:
@@ -60,26 +58,17 @@ slots:
       - relatorio_semanal
       - relatorio_mensal
     initial_value: "relatorio_nao_configurado"
-  
-  comando:
-    type: text
-    initial_value: ""
-  materia:
-    type: unfeaturized
-  horario:
-    type: unfeaturized
-  confirmacao:
-    type: unfeaturized
-
-  grade_enviada:
-    type: bool
-    initial_value: false
 
 forms:
+  # Form para ADICIONAR uma disciplina manualmente
   - adicionar_materia_form
+
+  # Form para REMOVER uma disciplina manualmente
   - remover_materia_form
 
 actions:
+
+  # Geral
   - utter_default
   - utter_start
   - utter_help
@@ -88,48 +77,38 @@ actions:
   - utter_agradecer
   - utter_comemorar
   - utter_tudo_certo
+  - action_checar_afirmacao
 
+  # Gerenciador de faltas
   - utter_gerenciador_faltas
-  - utter_gerenciador_atividades
-
   - utter_ask_confirmar_uso
+  - action_set_uso_confirmado
+  - action_checar_uso_gerenciador_faltas
   - utter_deixar_pra_depois
 
+  # Grade horária
   - utter_guia_enviar_grade
+  - utter_ask_grade
+  - action_receber_grade
   - utter_saber_grade
   - utter_alterar_grade
-  
-  - utter_adicionar_materia
-  - utter_remover_materia
-
-  - utter_ask_materia
-  - utter_ask_horario
-  - utter_ask_confirmacao
-
-  - utter_materia_adicionada
-  - utter_materia_removida
-
-  - utter_configurar_relatorio
   - utter_checar_grade
+  - action_get_grade_status
   - utter_grade_desatualizada
+  - action_mostrar_materias
+
+  # Alterar disciplinas manualmente
+
+  # Relatórios
+  - utter_configurar_relatorio
+  - action_set_relatorio_status
   - utter_ask_frequencia_relatorio
-  - utter_relatorio_configurado
   - utter_configurado_dia
   - utter_configurado_semana
   - utter_configurado_mes
-  - utter_tempo_ver_relatorio
-
-  - utter_ask_grade
-  
+  - utter_set_relatorio_status_default_semanal
+  - utter_ver_relatorio
   - action_checar_relatorio_status
-  - action_checar_uso_gerenciador_faltas
-  - action_checar_afirmacao
-  - action_checar_primeira_vez
-  - action_set_uso_confirmado
-  - action_receber_grade
-  - action_checar_grade
-  - action_configurar_relatorio
-  - action_reset_slots
 
 templates:
   utter_default:
@@ -161,11 +140,12 @@ templates:
     - text: "Tudo belezinha :)"
 
   utter_gerenciador_faltas:
-    - text: "Info gerenciador de faltas"
+    - text: "Através do meu gerenciador de faltas, 
+            vou anotar sua frequência nas disciplinas. 
+            Vou perguntar se você foi às aulas, 
+            anotar no meu caderninho e enviar relatórios diários, 
+            semanais ou mensais para que você nunca se perca! :)"
   
-  utter_gerenciador_atividades:
-    - text: "Info gerenciador de atividades"
-
   utter_ask_confirmar_uso:
     - text: "E aí, topa experimentar?"
 
@@ -191,6 +171,9 @@ templates:
   utter_remover_materia:
     - text: "Ok, você quer REMOVER uma matéria"
     - text: "Beleza, você quer REMOVER uma matéria"
+  
+  utter_qual_materia_remover:
+    - Qual matéria você deseja remover?
 
   utter_ask_materia:
     - text: "Qual é o nome da matéria?"
@@ -221,9 +204,6 @@ templates:
             seus relatórios? 
             Diaria, semanal ou mensalmente?"
 
-  utter_relatorio_configurado:
-    - text: "Relatório configurado!"
-
   utter_configurado_dia:
     - text: "Você receberá relatórios DIÁRIOS!"
 
@@ -232,6 +212,9 @@ templates:
 
   utter_configurado_mes:
     - text: "Você receberá relatórios MENSAIS!"
+
+  utter_set_relatorio_status_default_semanal:
+    - text: "Configurei seus relatórios para serem entregues semanalmente por padrão. Caso queira, é só me pedir para alterar os relatórios ;)"
   
   utter_tempo_ver_relatorio:
     - text: "Você quer ver o relatório de quanto tempo?"
@@ -242,3 +225,5 @@ templates:
   utter_deixar_pra_depois:
     - text: "Tudo bem, a gente deixa pra depois :c"
 
+  utter_materias:
+    - text: "Essas são suas matérias: ..."

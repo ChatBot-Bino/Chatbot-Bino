@@ -43,7 +43,7 @@ class ActionChecarRelatorioStatus(Action):
 
 class ActionConfigurarRelatorio(Action):
     def name(self):
-        return "action_configurar_relatorio"
+        return "action_set_relatorio_status"
 
     def run(self, dispatcher, tracker, domain):
 
@@ -67,11 +67,12 @@ class ActionConfigurarRelatorio(Action):
         if (last_intent == "frequencia_relatorio_dia"):
             return [SlotSet("relatorio_status", "relatorio_diario")]
         
-        if (last_intent == "frequencia_relatorio_semana"):
+        elif (last_intent == "frequencia_relatorio_semana"):
             return [SlotSet("relatorio_status", "relatorio_semanal")]
 
-        if (last_intent == "frequencia_relatorio_mes"):
+        elif (last_intent == "frequencia_relatorio_mes"):
             return [SlotSet("relatorio_status", "relatorio_mensal")]
-
-        return []
+        else:
+            dispatcher.utter_template("utter_set_relatorio_status_default_semanal", tracker)
+            return [SlotSet("relatorio_status", "relatorio_semanal")]
         

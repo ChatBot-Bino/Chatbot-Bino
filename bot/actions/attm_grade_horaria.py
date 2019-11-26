@@ -32,7 +32,7 @@ class ActionReceberGrade(Action):
         # ======== Debugging ========
         # grade_status = "grade_nao_enviada"
         # grade_status = "grade_desatualizada"
-        grade_status = "grade_atualizada"
+        grade_status = "grade_nao_enviada"
 
         if (grade_status == "grade_desatualizada"):
             
@@ -47,10 +47,10 @@ class ActionReceberGrade(Action):
             return [SlotSet("grade_status", "grade_nao_enviada")]
 
 
-class ActionChecarGrade(Action):
+class ActionGetGradeStatus(Action):
     
     def name(self):
-        return "action_checar_grade"
+        return "action_get_grade_status"
 
     def run(self, dispatcher, tracker, domain):
 
@@ -66,11 +66,7 @@ class ActionChecarGrade(Action):
             2.2. 'grade_atualizada', caso o semestre esteja correto
 
         """
-        
-        # ================ Debugging ================ #
-        intent = tracker.latest_message['intent'].get('name')
-
-        return [SlotSet("grade_status", intent)]
+        return [SlotSet("grade_status", "grade_atualizada")]
 
 class AdicionarMateriaForm(FormAction):
     """Example of a custom form action"""
@@ -139,7 +135,7 @@ class RemoverMateriaForm(FormAction):
     def required_slots(tracker: Tracker) -> List[Text]:
         """Lista de slots que o form deve preencher"""
 
-        return ["materia", "confirmacao"]
+        return ["remover_materia", "confirmar"]
 
     def slot_mappings(self):
         # type: () -> Dict[Text: Union[Dict, List[Dict]]]
@@ -149,9 +145,25 @@ class RemoverMateriaForm(FormAction):
             - a whole message
             or a list of them, where a first match will be picked"""
 
-        return {"materia": [self.from_text()],
-                "confirmacao": [self.from_intent(intent='afirmar', value=True),
+        return {"remover_materia": [self.from_text()],
+                "confirmar": [self.from_intent(intent='afirmar', value=True),
                                 self.from_intent(intent='negar', value=False)]}
+
+    def request_next_slot(self,
+                      dispatcher,  # type: CollectingDispatcher
+                      tracker,  # type: Tracker
+                      domain  # type: Dict[Text, Any]
+                      ):
+        # type: (...) -> Optional[List[Dict]]
+        """
+            Request the next slot and utter template if needed,
+            else return None
+        """
+
+        intent = tracker.latest_message['intent'].get('name')
+
+        if intent == ('negar' or 'cancelar'):
+            return self.deactivate()
 
     def submit(self,
                dispatcher: CollectingDispatcher,
@@ -163,3 +175,19 @@ class RemoverMateriaForm(FormAction):
         # utter submit template
         dispatcher.utter_template('utter_materia_removida', tracker)
         return []
+
+class ActionMostrarMateria(Action):
+    
+    def name(self):
+        return "action_mostrar_materias"
+
+    def run(self, dispatcher, tracker, domain):
+
+        """
+        
+        Algoritmo para mostrar as matérias do usuário
+
+        """
+
+            
+        return [dispatcher.utter_template("utter_materias", tracker)]

@@ -38,8 +38,7 @@
   - utter_comemorar
   - utter_ask_grade
   - utter_guia_enviar_grade
-* grade_enviada
-  - action_receber_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_desatualizada"}
   - utter_grade_desatualizada
 
@@ -55,8 +54,7 @@
   - utter_comemorar
   - utter_ask_grade
   - utter_guia_enviar_grade
-* grade_enviada
-  - action_receber_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_atualizada"}
   - utter_tudo_certo
   - utter_configurar_relatorio
@@ -73,14 +71,13 @@
   - utter_comemorar
   - utter_ask_grade
   - utter_guia_enviar_grade
-* grade_enviada
-  - action_receber_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_atualizada"}
   - utter_tudo_certo
   - utter_configurar_relatorio
   - utter_ask_frequencia_relatorio
 * frequencia_relatorio_dia
-  - action_configurar_relatorio
+  - action_set_relatorio_status
   - slot{"frequencia_relatorio": "dia"}
   - utter_configurado_dia
 
@@ -95,14 +92,13 @@
   - utter_comemorar
   - utter_ask_grade
   - utter_guia_enviar_grade
-* grade_enviada
-  - action_receber_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_atualizada"}
   - utter_tudo_certo
   - utter_configurar_relatorio
   - utter_ask_frequencia_relatorio
 * frequencia_relatorio_semana
-  - action_configurar_relatorio
+  - action_set_relatorio_status
   - slot{"frequencia_relatorio": "semana"}
   - utter_configurado_semana
 
@@ -117,28 +113,22 @@
   - utter_comemorar
   - utter_ask_grade
   - utter_guia_enviar_grade
-* grade_enviada
-  - action_receber_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_atualizada"}
   - utter_tudo_certo
   - utter_configurar_relatorio
   - utter_ask_frequencia_relatorio
 * frequencia_relatorio_mes
-  - action_configurar_relatorio
+  - action_set_relatorio_status
   - slot{"frequencia_relatorio": "mes"}
   - utter_configurado_mes
-
-## 2. gerenciador_faltas + uso_confirmado
-* gerenciador_faltas
-  - slot{"gerenciador_faltas_status": "uso_confirmado"}
-  - utter_gerenciador_faltas
 
 ## 2.1 gerenciador_faltas + uso_confirmado + grade_nao_enviada
 * gerenciador_faltas
   - slot{"gerenciador_faltas_status": "uso_confirmado"}
   - utter_gerenciador_faltas
 * grade_nao_enviada
-  - action_checar_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_nao_enviada"}
   - utter_ask_grade
   - utter_guia_enviar_grade
@@ -148,7 +138,7 @@
   - slot{"gerenciador_faltas_status": "uso_confirmado"}
   - utter_gerenciador_faltas
 * grade_desatualizada
-  - action_checar_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_desatualizada"}
   - utter_grade_desatualizada
   - utter_guia_enviar_grade
@@ -158,7 +148,7 @@
   - slot{"gerenciador_faltas_status": "uso_confirmado"}
   - utter_gerenciador_faltas
 * grade_atualizada
-  - action_checar_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_atualizada"}
   - action_checar_relatorio_status
   - slot{"relatorio_status": "relatorio_nao_configurado"}
@@ -171,7 +161,7 @@
   - slot{"gerenciador_faltas_status": "uso_confirmado"}
   - utter_gerenciador_faltas
 * grade_atualizada
-  - action_checar_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_atualizada"}
   - action_checar_relatorio_status
   - slot{"relatorio_status": "relatorio_nao_configurado"}
@@ -179,7 +169,7 @@
   - utter_configurar_relatorio
   - utter_ask_frequencia_relatorio
 * frequencia_relatorio_dia
-  - action_configurar_relatorio
+  - action_set_relatorio_status
   - slot{"relatorio_status": "relatorio_diario"}
   - utter_configurado_dia
 
@@ -188,7 +178,7 @@
   - slot{"gerenciador_faltas_status": "uso_confirmado"}
   - utter_gerenciador_faltas
 * grade_atualizada
-  - action_checar_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_atualizada"}
   - action_checar_relatorio_status
   - slot{"relatorio_status": "relatorio_nao_configurado"}
@@ -196,7 +186,7 @@
   - utter_configurar_relatorio
   - utter_ask_frequencia_relatorio
 * frequencia_relatorio_semana
-  - action_configurar_relatorio
+  - action_set_relatorio_status
   - slot{"relatorio_status": "relatorio_semanal"}
   - utter_configurado_semana
 
@@ -205,7 +195,7 @@
   - slot{"gerenciador_faltas_status": "uso_confirmado"}
   - utter_gerenciador_faltas
 * grade_atualizada
-  - action_checar_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_atualizada"}
   - action_checar_relatorio_status
   - slot{"relatorio_status": "relatorio_nao_configurado"}
@@ -213,7 +203,7 @@
   - utter_configurar_relatorio
   - utter_ask_frequencia_relatorio
 * frequencia_relatorio_mes
-  - action_configurar_relatorio
+  - action_set_relatorio_status
   - slot{"relatorio_status": "relatorio_mensal"}
   - utter_configurado_mes
 
@@ -222,7 +212,7 @@
   - slot{"gerenciador_faltas_status": "uso_confirmado"}
   - utter_gerenciador_faltas
 * grade_atualizada
-  - action_checar_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_atualizada"}
   - action_checar_relatorio_status
   - slot{"relatorio_status": "relatorio_diario"}
@@ -233,7 +223,7 @@
   - slot{"gerenciador_faltas_status": "uso_confirmado"}
   - utter_gerenciador_faltas
 * grade_atualizada
-  - action_checar_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_atualizada"}
   - action_checar_relatorio_status
   - slot{"relatorio_status": "relatorio_semanal"}
@@ -244,11 +234,8 @@
   - slot{"gerenciador_faltas_status": "uso_confirmado"}
   - utter_gerenciador_faltas
 * grade_atualizada
-  - action_checar_grade
+  - action_get_grade_status
   - slot{"grade_status": "grade_atualizada"}
   - action_checar_relatorio_status
   - slot{"relatorio_status": "relatorio_mensal"}
   - utter_gerenciador_faltas
-
-
-
