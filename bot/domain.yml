@@ -22,14 +22,19 @@ actions:
   - utter_provas
   - utter_trabalhos
   
+  - utter_atividades
+
   - action_start
   - action_faltas
   - action_adicionar
+  - action_listarAtv
   
 entities: 
   - command
   - faltas
   - adicionar
+  - listarAtv
+
   - cumprimentar
   - animes1
   - animes2
@@ -61,6 +66,7 @@ intents:
   - faltas
 
   - adicionar_atividade
+  - Listar
   
 templates:
   utter_default: 
@@ -295,8 +301,7 @@ templates:
          Digita aí uma observação da sua atividade pra eu poder guardar aqui.
 
 
-  utter_atividades:
-    - text: |-
-         teste
-
-
+  utter_listar:
+    - text: "{ActName}:"
+      text2: "Data: {Data}"
+      text3: "OBS:.{OBS}."

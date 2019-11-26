@@ -24,3 +24,7 @@
 ## Trabalhos
 * trabalhos{"command":"trabalhos"}
     - utter_trabalhos
+
+## Listar Atv
+* Listar{"command":"listarAtv"}
+    - action_listarAtv

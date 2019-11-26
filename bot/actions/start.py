@@ -37,6 +37,7 @@ class ActionStart(Action):
                     'activities': []
                 }
                 collectionsUsers.insert_one(user)
-
+                
+            client.close
         except ValueError:
             dispatcher.utter_message(ValueError)

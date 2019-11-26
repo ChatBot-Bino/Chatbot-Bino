@@ -4,7 +4,7 @@ from pymongo import MongoClient
 
 class ActionAddAtv(Action):
     def name(self):
-        return "action_adicionar"
+        return "action_listarAtv"
 
     def run(self, dispatcher, tracker, domain):
         try:
@@ -15,7 +15,15 @@ class ActionAddAtv(Action):
             db = client.telegramdb
             collectionsUsers = db.user
 
-            
+            activities = collectionsUsers.find_one({'SenderID': sender_id})
+            dispatcher.utter_message("Suas atividades salvas são essas:")
+            for dataArray in activities['activities']:
+                NomeDaAtv = "Nome: " + dataArray['TituloDaAtv'] + "\n"
+                OBS = NomeDaAtv + "OBS: " + dataArray['OBS'] + "\n"
+                DataAtv = OBS + "Data: " + dataArray['Data'] + "\n"
+                dispatcher.utter_message(DataAtv)
 
+            
+            client.close
         except ValueError:
             dispatcher.utter_message(ValueError)

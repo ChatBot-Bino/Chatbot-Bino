@@ -16,9 +16,6 @@ class ActionAddAtv(Action):
             collectionsUsers = db.user
 
             Atividade = tracker['latest_message']['text']
-
-            
-
             newAtv = {
                 "TituloDaAtv": Atividade,
                 'Data': "Nenhuma Salva",
@@ -26,6 +23,6 @@ class ActionAddAtv(Action):
             }
 
             collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': newAtv}})
-
+            client.close
         except ValueError:
             dispatcher.utter_message(ValueError)

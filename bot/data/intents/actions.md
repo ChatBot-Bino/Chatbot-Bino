@@ -21,3 +21,7 @@
 ## intent:adicionar_atividade
 - /adicionar
 - adicionar
+
+## intent:Listar
+- /listarAtv
+- listarAtv
