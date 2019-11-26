@@ -21,8 +21,6 @@ actions:
   - utter_futebol
   - utter_provas
   - utter_trabalhos
-  
-  - utter_atividades
 
   - action_start
   - action_faltas

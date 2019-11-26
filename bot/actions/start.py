@@ -22,7 +22,7 @@ class ActionStart(Action):
                 dispatcher.utter_message(text)
             else:
                 # remover o token do telegram e botar em uma pasta separada para não ir para o github.
-                TELEGRAM_TOKEN = "962521399:AAGyRWTL9kAmjcgFn6mem_DxDyeXcbMRppA"                
+                TELEGRAM_TOKEN = "962521399:AAGyRWTL9kAmjcgFn6mem_DxDyeXcbMRppA"
                 data = requests.get(
                     'https://api.telegram.org/bot{}/sendMessage?chat_id={}&text={}'.format(TELEGRAM_TOKEN, sender_id, text)
                 ).json()
@@ -37,7 +37,7 @@ class ActionStart(Action):
                     'activities': []
                 }
                 collectionsUsers.insert_one(user)
-                
+
             client.close
         except ValueError:
             dispatcher.utter_message(ValueError)

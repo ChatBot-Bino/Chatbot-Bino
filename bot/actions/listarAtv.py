@@ -23,7 +23,6 @@ class ActionAddAtv(Action):
                 DataAtv = OBS + "Data: " + dataArray['Data'] + "\n"
                 dispatcher.utter_message(DataAtv)
 
-            
             client.close
         except ValueError:
             dispatcher.utter_message(ValueError)
