@@ -16,7 +16,8 @@ class ActionListarAtv(Action):
             collectionsUsers = db.user
 
             activities = collectionsUsers.find_one({'SenderID': sender_id})
-            dispatcher.utter_message("Suas atividades salvas são essas:")
+            Name = activities['first_name']
+            dispatcher.utter_message(Name + ", suas atividades salvas são essas:")
 
             for dataArray in activities['activities']:
                 NomeDaAtv = "Nome: " + dataArray['TituloDaAtv'] + "\n"

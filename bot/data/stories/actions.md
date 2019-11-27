@@ -12,8 +12,10 @@
     - utter_atividades_tipo
     - action_listen
     - action_adicionar
+    - utter_adicionarData
     - action_listen
     - action_adicionarData
+    - utter_adicionarOBS
     - action_listen
     - action_adicionarOBS
 
