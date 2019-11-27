@@ -16,7 +16,7 @@ class ActionAddOBS(Action):
             collectionsUsers = db.user
 
             NewOBS = tracker['latest_message']['text']
-            if(re.match(r"[nNaãAÃoOp]+", NewOBS)):
+            if(re.fullmatch(r"[nNaãAÃoOp]+", NewOBS)):
                 activities = collectionsUsers.find_one({'SenderID': sender_id})['activities']
                 TituloAnterior = collectionsUsers.find_one({'SenderID': sender_id})['VTitulo']
                 DataAnterior = collectionsUsers.find_one({'SenderID': sender_id})['VData']

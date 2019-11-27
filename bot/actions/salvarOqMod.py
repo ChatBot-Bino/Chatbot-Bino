@@ -18,13 +18,13 @@ class ActionSalvarOqMod(Action):
             Mod2save = tracker['latest_message']['text']
 
             dispatcher.utter_message("Ok")
-            if(re.match(r"[atvATVatividadeATIVIDADE]+", Mod2save)):
+            if(re.fullmatch(r"\b(\w*NOME\w*)\b|\b\b(\w*nome\w*)\b|\b\b(\w*Nome\w*)\b|\b", Mod2save)):
                 Mod2save = "TituloDaAtv"
                 dispatcher.utter_message("Agora me manda o novo nome da atividade.")
-            elif(re.match(r"[obsOBSobservacaoobservação]+", Mod2save)):
+            elif(re.fullmatch(r"[obsOBSobservacaoobservação]+", Mod2save)):
                 Mod2save = "OBS"
                 dispatcher.utter_message("Agora me manda a nova observação.")
-            elif(re.match(r"[dataDataATA]+", Mod2save)):
+            elif(re.fullmatch(r"[dataDataATA]+", Mod2save)):
                 Mod2save = "Data"
                 dispatcher.utter_message("Agora me manda a nova data")
             else:

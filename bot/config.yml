@@ -1,18 +1,16 @@
-language : "pt"
-pipeline:
- - name: "WhitespaceTokenizer"
- - name: "CRFEntityExtractor"
- - name: "EntitySynonymMapper"
- - name: "CountVectorsFeaturizer"
- - name: "EmbeddingIntentClassifier"
+language: pt
+pipeline: 
+ - name: WhitespaceTokenizer
+ - name: CRFEntityExtractor
+ - name: EntitySynonymMapper
+ - name: CountVectorsFeaturizer
+ - name: EmbeddingIntentClassifier
 
-policies:
+policies: 
  - name: MappingPolicy
  - name: "KerasPolicy"
    featurizer:
-   - name: MaxHistoryTrackerFeaturizer
-     max_history: 10
+   - name: FullDialogueTrackerFeaturizer
      state_featurizer:
        - name: BinarySingleStateFeaturizer
- - name: MemoizationPolicy
-   
+ - name: "MemoizationPolicy"

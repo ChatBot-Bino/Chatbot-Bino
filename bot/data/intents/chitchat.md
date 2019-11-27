@@ -125,14 +125,6 @@
 - Eae, blz
 - eae, blz
 
-## intent:explicacao
-- como funciona
-- Como funciona
-- e como funciona
-- O que é você
-- não entendi
-- nao entendi
-
 ## intent:segredo
 - é uma cilada
 - É uma cilada

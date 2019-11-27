@@ -14,10 +14,6 @@
 * preocupacao
     - utter_preocupacao
 
-## Explicacao
-* explicacao
-    - utter_explicacao
-
 ## Segredo
 * segredo
     - utter_segredo

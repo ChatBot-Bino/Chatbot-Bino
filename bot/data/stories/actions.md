@@ -29,17 +29,16 @@
 
 ## RemoverAtv
 * remover_atividade{"command":"removerAtv"}
-    - action_listar2rmOrModAtv
+    - action_listar2rm
     - action_listen
-    - action_salvarNomeAtv
+    - action_salvarNomeAtv2rm
     - action_listen
-    - action_salvarDataAtv
-    - action_listen
+    - action_salvarDataAtv2rm
     - action_removerAtv
 
 ## ModificarAtv
 * modificar_atividade{"command":"modificarAtv"}
-    - action_listar2rmOrModAtv
+    - action_listar2ModAtv
     - action_listen
     - action_salvarNomeAtv
     - action_listen
@@ -48,4 +47,3 @@
     - action_salvarOqMod
     - action_listen
     - action_salvarNewInfoMod
-    - action_modAtv
