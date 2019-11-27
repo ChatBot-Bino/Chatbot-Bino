@@ -1,6 +1,6 @@
 from rasa_core_sdk import Action
 from pymongo import MongoClient
-import re
+
 
 class ActionAddOBS(Action):
     def name(self):
@@ -25,13 +25,13 @@ class ActionAddOBS(Action):
                 if(OBS['TituloDaAtv'] == TituloAnterior and OBS['Data'] == DataAnterior):
                     activities = OBS
                     collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
-                            "$pull":{
-                                'activities': {
-                                    'TituloDaAtv': TituloAnterior,
-                                    'Data': DataAnterior
-                                    }
-                                }
-                            })
+                        "$pull": {
+                            'activities': {
+                                'TituloDaAtv': TituloAnterior,
+                                'Data': DataAnterior
+                            }
+                        }
+                    })
                     activities['OBS'] = NewOBS
                     collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': activities}})
                     StopIteration

@@ -2,6 +2,7 @@ from rasa_core_sdk import Action
 from pymongo import MongoClient
 import re
 
+
 class ActionAddDate(Action):
     def name(self):
         return "action_adicionarData"
@@ -23,12 +24,12 @@ class ActionAddDate(Action):
                     if(Data['TituloDaAtv'] == TituloAnterior):
                         activities = Data
                         collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
-                                "$pull":{
-                                    'activities': {
-                                        'TituloDaAtv': TituloAnterior
-                                        }
-                                    }
-                                })
+                            "$pull": {
+                                'activities': {
+                                    'TituloDaAtv': TituloAnterior
+                                }
+                            }
+                        })
                         activities['Data'] = NewData
                         collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'VData': NewData}})
                         collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': activities}})

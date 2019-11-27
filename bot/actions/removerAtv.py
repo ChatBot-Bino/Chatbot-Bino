@@ -28,18 +28,18 @@ class ActionRmAtv(Action):
 
             if quantidade > 1:
                 collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
-                "$pull":{
-                    'activities': {
-                        'TituloDaAtv': TituloParaRemover,
-                        'Data': DataParaRemover
+                    "$pull": {
+                        'activities': {
+                            'TituloDaAtv': TituloParaRemover,
+                            'Data': DataParaRemover
                         }
                     }
                 })
             else:
                 collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
-                "$pull":{
-                    'activities': {
-                        'TituloDaAtv': TituloParaRemover
+                    "$pull": {
+                        'activities': {
+                            'TituloDaAtv': TituloParaRemover
                         }
                     }
                 })
