@@ -35,6 +35,11 @@ class ActionAddOBS(Action):
                         })
                         activities['OBS'] = 'Nenhum obs salvo.'
                         collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': activities}})
+                        dispatcher.utter_message("Adicionei essa atividade para você:")
+                        NomeDaAtv = "Nome: " + activities['TituloDaAtv'] + "\n"
+                        OBS = "OBS: " + activities['OBS'] + "\n"
+                        Text = NomeDaAtv + OBS + "Data: " + activities['Data'] + "\n"
+                        dispatcher.utter_message(Text)
                         StopIteration
             else:
                 activities = collectionsUsers.find_one({'SenderID': sender_id})['activities']
@@ -54,6 +59,11 @@ class ActionAddOBS(Action):
                         })
                         activities['OBS'] = NewOBS
                         collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': activities}})
+                        dispatcher.utter_message("Adicionei essa atividade para você:")
+                        NomeDaAtv = "Nome: " + activities['TituloDaAtv'] + "\n"
+                        OBS = "OBS: " + activities['OBS'] + "\n"
+                        Text = NomeDaAtv + OBS + "Data: " + activities['Data'] + "\n"
+                        dispatcher.utter_message(Text)
                         StopIteration
             client.close
         except ValueError:

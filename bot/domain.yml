@@ -71,8 +71,8 @@ templates:
 
   utter_atividades_tipo:
     - text: |-
-         Me manda o tipo atividade que você quer adicionar.
+         Me manda o nome atividade que você quer adicionar.
     - text: |-
-         Qual tipo de atividade gostaria de adicionar?
+         Qual nome de atividade gostaria de adicionar?
     - text: |-
-         Manda o tipo da atividade.
+         Manda o nome da atividade.
