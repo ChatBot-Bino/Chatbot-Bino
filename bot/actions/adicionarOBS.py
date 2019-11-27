@@ -1,6 +1,6 @@
 from rasa_core_sdk import Action
 from pymongo import MongoClient
-
+import re
 
 class ActionAddOBS(Action):
     def name(self):
@@ -16,25 +16,44 @@ class ActionAddOBS(Action):
             collectionsUsers = db.user
 
             NewOBS = tracker['latest_message']['text']
+            if(re.match(r"[nNaãAÃoOp]+", NewOBS)):
+                activities = collectionsUsers.find_one({'SenderID': sender_id})['activities']
+                TituloAnterior = collectionsUsers.find_one({'SenderID': sender_id})['VTitulo']
+                DataAnterior = collectionsUsers.find_one({'SenderID': sender_id})['VData']
 
-            activities = collectionsUsers.find_one({'SenderID': sender_id})['activities']
-            TituloAnterior = collectionsUsers.find_one({'SenderID': sender_id})['VTitulo']
-            DataAnterior = collectionsUsers.find_one({'SenderID': sender_id})['VData']
-
-            for OBS in activities:
-                if(OBS['TituloDaAtv'] == TituloAnterior and OBS['Data'] == DataAnterior):
-                    activities = OBS
-                    collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
-                        "$pull": {
-                            'activities': {
-                                'TituloDaAtv': TituloAnterior,
-                                'Data': DataAnterior
+                for OBS in activities:
+                    if(OBS['TituloDaAtv'] == TituloAnterior and OBS['Data'] == DataAnterior):
+                        activities = OBS
+                        collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
+                            "$pull": {
+                                'activities': {
+                                    'TituloDaAtv': TituloAnterior,
+                                    'Data': DataAnterior
+                                }
                             }
-                        }
-                    })
-                    activities['OBS'] = NewOBS
-                    collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': activities}})
-                    StopIteration
+                        })
+                        activities['OBS'] = 'Nenhum obs salvo.'
+                        collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': activities}})
+                        StopIteration
+            else:
+                activities = collectionsUsers.find_one({'SenderID': sender_id})['activities']
+                TituloAnterior = collectionsUsers.find_one({'SenderID': sender_id})['VTitulo']
+                DataAnterior = collectionsUsers.find_one({'SenderID': sender_id})['VData']
+
+                for OBS in activities:
+                    if(OBS['TituloDaAtv'] == TituloAnterior and OBS['Data'] == DataAnterior):
+                        activities = OBS
+                        collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
+                            "$pull": {
+                                'activities': {
+                                    'TituloDaAtv': TituloAnterior,
+                                    'Data': DataAnterior
+                                }
+                            }
+                        })
+                        activities['OBS'] = NewOBS
+                        collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': activities}})
+                        StopIteration
             client.close
         except ValueError:
             dispatcher.utter_message(ValueError)

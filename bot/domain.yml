@@ -21,7 +21,7 @@ actions:
   - utter_provas
   - utter_trabalhos
   - utter_adicionarData
-  - utter_adicionaOBS
+  - utter_adicionarOBS
   - action_start
   - action_faltas
 
@@ -75,10 +75,11 @@ templates:
   utter_adicionarData:
     - text: |-
           Qual a data da sua atividade?
-          
-  utter_adicionaOBS:
+
+  utter_adicionarOBS:
     - text: |-
           Tem alguma observação sobre essa atividade?
+          Se sim qual a observação.
 
   utter_default: 
     - text: |-
