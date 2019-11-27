@@ -2,6 +2,7 @@ from rasa_core_sdk import Action
 from pymongo import MongoClient
 import re
 
+
 class ActionSalvarOqMod(Action):
     def name(self):
         return "action_salvarOqMod"
@@ -34,7 +35,6 @@ class ActionSalvarOqMod(Action):
 
             collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'Vmod': Mod2save}})
 
-            
             client.close
         except ValueError:
             dispatcher.utter_message(ValueError)

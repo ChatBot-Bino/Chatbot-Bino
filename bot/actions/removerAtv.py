@@ -19,7 +19,7 @@ class ActionRmAtv(Action):
             Data2rm = collectionsUsers.find_one({'SenderID': sender_id})['VData']
 
             activities = collectionsUsers.find_one({'SenderID': sender_id})['activities']
-            
+
             AtividadeRemovida = False
 
             for data in activities:

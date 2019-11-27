@@ -3,12 +3,8 @@
     - action_start
     - utter_start
 
-## Faltas
-* faltas{"command":"faltas"}
-    - action_faltas
-
-## Adicionar_Atividade
-* adicionar_atividade{"command":"adicionar"}
+## adicionar_atividade
+* adicionar_atividade{"command":"adicionar_atividade"}
     - utter_atividades_tipo
     - action_listen
     - action_adicionar
@@ -23,12 +19,12 @@
 * help{"command":"help"}
     - utter_help
 
-## ListarAtv
-* Listar{"command":"listarAtv"}
+## listar
+* listar{"command":"listar"}
     - action_listarAtv
 
-## RemoverAtv
-* remover_atividade{"command":"removerAtv"}
+## remover_atividade
+* remover_atividade{"command":"remover_atividade"}
     - action_listar2rm
     - action_listen
     - action_salvarNomeAtv2rm
@@ -36,8 +32,8 @@
     - action_salvarDataAtv2rm
     - action_removerAtv
 
-## ModificarAtv
-* modificar_atividade{"command":"modificarAtv"}
+## modificar_atividade
+* modificar_atividade{"command":"modificar_atividade"}
     - action_listar2ModAtv
     - action_listen
     - action_salvarNomeAtv

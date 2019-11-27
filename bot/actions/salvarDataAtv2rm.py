@@ -2,6 +2,7 @@ from rasa_core_sdk import Action
 from pymongo import MongoClient
 import re
 
+
 class ActionSalvarDataAtv2rm(Action):
     def name(self):
         return "action_salvarDataAtv2rm"
@@ -15,7 +16,6 @@ class ActionSalvarDataAtv2rm(Action):
             db = client.telegramdb
             collectionsUsers = db.user
 
-            Name = collectionsUsers.find_one({'SenderID': sender_id})['first_name']
             Data2Save = tracker['latest_message']['text']
 
             TituloSaved = collectionsUsers.find_one({'SenderID': sender_id})['VTitulo']

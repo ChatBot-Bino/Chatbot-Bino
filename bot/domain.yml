@@ -8,8 +8,6 @@ actions:
   - utter_animes1
   - utter_animes2
   - utter_xingamento
-  - utter_reacao_feliz
-  - utter_reacao_triste
   - utter_start
   - utter_series
   - utter_help
@@ -36,9 +34,6 @@ actions:
 
 entities: 
   - command
-  - faltas
-  - adicionar
-  - listarAtv
 
   - cumprimentar
   - animes1
@@ -50,8 +45,6 @@ entities:
   
 intents:
   - futebol
-  - reacao_feliz
-  - reacao_triste
   - cumprimentar
   - tudo_bem
   - preocupacao
@@ -68,9 +61,8 @@ intents:
   
   - start
   - help
-  - faltas
 
-  - Listar
+  - listar
   - adicionar_atividade
   - remover_atividade
   - modificar_atividade
@@ -225,31 +217,6 @@ templates:
     - text: |-
           Uma boca tão bonita, falando palavras tão chulas.
   
-  utter_reacao_feliz:
-    - text: |-
-          Que ótimo!
-          e em que posso ajuda-lo?
-    - text: |-
-          Fico feliz em ler isso!
-          e como posso ser útil?
-    - text: |-
-          Legal!
-          e em que posso ajuda-lo?
-
-  utter_reacao_triste:
-    - text: |-
-          Poxa, espero que você melhore, estou aqui para ajudar!
-    - text: |-
-          Sempre existem dias ruins, temos que seguir de cabeça erguida!
-    - text: |-
-          Não desanime, dias melhores virão!
-    - text: |-
-          Nunca desista, tudo faz parte de uma grande aprendizagem!
-    - text: |-
-          Se realmente não estiver bem, veja um seriado legal! Podemos conversar sobre isso se você quiser.
-    - text: |-
-          Estou aqui caso você precise! Podemos conversar sobre diversar coisas para te animar.
-
   utter_start:
     - text: |-          
           Estou aqui para te ajudar a se organizar, por exemplo
@@ -262,13 +229,14 @@ templates:
           Posso lhe ajudar com algumas funcionalidades:
             
             Gerenciamento de atividades acadêmicas:
-                Consigo agendar seus compromissos acadêmicos e lembra-lo das datas para você não perder o controle da sua rotina!
-                Depois disso é só ficar ligado nas notificações para ficar preparado para a prova ou para não esquecer de fazer algum trabalho!
+                Consigo agendar seus compromissos acadêmicos para você não perder o controle da sua rotina!
 
-            Gerenciamento de faltas:
-                Posso também gerenciar as suas faltas, é super importante pra você não perder o controle e acabar faltando mais do que pode!
-                Então eu vou te auxiliando com todas as matérias, sempre te enviando uma notificação, para saber se você foi para a aula ou não!
-                Desse jeito, você pode ficar mais tranquilo durante o semestre.
+                Para adicionar uma atividade, digite /adicionar_atividade.
+                Para modificar uma atividade, digite /modificar_atividade.
+                Para remover uma atividade digite /remover_atividade.
+                E para saber quais atividades você possui, digite /listar.
+
+                Depois disso é só ficar ligado nas notificações para ficar preparado para a prova ou para não esquecer de fazer algum trabalho!
 
   utter_atividades_tipo:
     - text: |-

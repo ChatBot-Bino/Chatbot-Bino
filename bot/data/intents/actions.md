@@ -19,17 +19,17 @@
 - /trabalhos
 
 ## intent:adicionar_atividade
-- /adicionar
-- adicionar
+- /adicionar_atividade
+- adicionar_atividade
 
-## intent:Listar
-- /listarAtv
-- listarAtv
+## intent:listar
+- /listar
+- listar
 
 ## intent:remover_atividade
-- /removerAtv
-- removerAtv
+- /remover_atividade
+- remover_atividade
 
 ## intent:modificar_atividade
-- /modificarAtv
-- modificarAtv
+- /modificar_atividade
+- modificar_atividade

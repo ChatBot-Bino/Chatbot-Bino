@@ -2,6 +2,7 @@ from rasa_core_sdk import Action
 from pymongo import MongoClient
 import re
 
+
 class ActionAddOBS(Action):
     def name(self):
         return "action_adicionarOBS"

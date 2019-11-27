@@ -17,7 +17,7 @@ class ActionListar2rm(Action):
 
             activities = collectionsUsers.find_one({'SenderID': sender_id})
             Name = activities['first_name']
-   
+
             for dataArray in activities['activities']:
                 NomeDaAtv = "Nome: " + dataArray['TituloDaAtv'] + "\n"
                 OBS = "OBS: " + dataArray['OBS'] + "\n"
