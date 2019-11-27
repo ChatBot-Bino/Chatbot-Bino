@@ -37,7 +37,9 @@ class ActionStart(Action):
                     'activities': [],
                     'VData': None,
                     'VTitulo': None,
-                    'VObs': None
+                    'VObs': None,
+                    'VNewMod': None,
+                    'Vmod': None
                 }
                 collectionsUsers.insert_one(user)
 
