@@ -15,35 +15,33 @@ class ActionRmAtv(Action):
             db = client.telegramdb
             collectionsUsers = db.user
 
-            # TODO: Colocar os slots referentes a essas 2 variaveis.
-            TituloParaRemover = ""
-            DataParaRemover = ""
-            quantidade = 0
+            Titulo2rm = collectionsUsers.find_one({'SenderID': sender_id})['VTitulo']
+            Data2rm = collectionsUsers.find_one({'SenderID': sender_id})['VData']
 
             activities = collectionsUsers.find_one({'SenderID': sender_id})['activities']
+            
+            AtividadeRemovida = False
 
             for data in activities:
-                if(data['TituloDaAtv'] == TituloParaRemover):
-                    quantidade += 1
-
-            if quantidade > 1:
-                collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
-                    "$pull": {
-                        'activities': {
-                            'TituloDaAtv': TituloParaRemover,
-                            'Data': DataParaRemover
+                if(data['TituloDaAtv'] == Titulo2rm and data['Data'] == Data2rm):
+                    collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
+                        "$pull": {
+                            'activities': {
+                                'TituloDaAtv': Titulo2rm,
+                                'Data': Data2rm
+                            }
                         }
-                    }
-                })
+                    })
+                    AtividadeRemovida = True
+                    StopIteration
+
+            Name = collectionsUsers.find_one({'SenderID': sender_id})['first_name']
+
+            if not AtividadeRemovida:
+                Name = collectionsUsers.find_one({'SenderID': sender_id})['first_name']
+                dispatcher.utter_message(Name + ", não achei essa atividade nas suas atividades salvas.")
             else:
-                collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
-                    "$pull": {
-                        'activities': {
-                            'TituloDaAtv': TituloParaRemover
-                        }
-                    }
-                })
-
+                dispatcher.utter_message(Name + ", pronto atividade removida.")
             client.close
         except ValueError:
             dispatcher.utter_message(ValueError)

@@ -15,13 +15,10 @@ class ActionSalvarNomeAtv(Action):
             db = client.telegramdb
             collectionsUsers = db.user
 
-            Titulo2Rm = tracker['latest_message']['text']
+            Data2Rm = tracker['latest_message']['text']
 
-            Name = collectionsUsers.find_one({'SenderID': sender_id})['first_name']
-
-            collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'VTitulo': Titulo2Rm}})
+            collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'VData': Data2Rm}})
             dispatcher.utter_message("Ok")
-            dispatcher.utter_message(Name + ", agora me manda a data dessa atividade.")
             client.close
         except ValueError:
             dispatcher.utter_message(ValueError)

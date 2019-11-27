@@ -310,6 +310,20 @@ templates:
     - text: |-
          Quer acrescentar alguma informação a mais na sua atividade?
     - text: |-
+         você precisar saber mais, é só me mandar um /help para mim, que estou disposto a lhe ajudar.
+  
+  utter_help:
+    - text : |-
+          Posso lhe ajudar com algumas funcionalidades:
+            
+            Gerenciamento de atividades acadêmicas:
+                Consigo agendar seus compromissos acadêmicos e lembra-lo das datas para você não perder o controle da sua rotina!
+                Depois disso é só ficar ligado nas notificações para ficar preparado para a prova ou para não esquecer de fazer algum trabalho!
+
+            Gerenciamento de faltas:
+                Posso também gerenciar as suas faltas, é super importante pra você não perder o controle e acabar faltando mais do que pode!
+                Então eu vou te auxiliando com todas as matérias, sempre te enviando uma notificação, para saber se você foi para a aula ou não!
+          
          Digita aí uma observação da sua atividade pra eu poder guardar aqui.
 
 
