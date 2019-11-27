@@ -2,9 +2,9 @@ from rasa_core_sdk import Action
 from pymongo import MongoClient
 import re
 
-class ActionSalvarNomeAtv(Action):
+class ActionSalvarOqMod(Action):
     def name(self):
-        return "action_salvarNomeAtv"
+        return "action_salvarOqMod"
 
     def run(self, dispatcher, tracker, domain):
         try:
@@ -27,6 +27,10 @@ class ActionSalvarNomeAtv(Action):
             elif(re.match(r"[dataDataATA]+", Mod2save)):
                 Mod2save = "Data"
                 dispatcher.utter_message("Agora me manda a nova data")
+            else:
+                Mod2save = "Inválido"
+                dispatcher.utter_message("O tipo que você digitou não existe.")
+                dispatcher.utter_message("Escreva algo coisa para continuar")
 
             collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'Vmod': Mod2save}})
 

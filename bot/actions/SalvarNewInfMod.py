@@ -2,9 +2,9 @@ from rasa_core_sdk import Action
 from pymongo import MongoClient
 
 
-class ActionSalvarNomeAtv(Action):
+class ActionSalvarNewInfMod(Action):
     def name(self):
-        return "action_salvarNomeAtv"
+        return "action_salvarNewInfoMod"
 
     def run(self, dispatcher, tracker, domain):
         try:

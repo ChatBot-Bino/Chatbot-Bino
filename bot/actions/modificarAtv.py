@@ -19,22 +19,25 @@ class ActionModAtv(Action):
             Mod2Change = collectionsUsers.find_one({'SenderID': sender_id})['Vmod']
             NewMod = collectionsUsers.find_one({'SenderID': sender_id})['VNewMod']
 
-            activities = collectionsUsers.find_one({'SenderID': sender_id})['activities']
+            if Mod2Change != "Inválido":
 
-            for data in activities:
-                if(data['TituloDaAtv'] == TituloDaMod and data['Data'] == DataDaMod):
-                    NewAtv = data
-                    collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
-                        "$pull": {
-                            'activities': {
-                                'TituloDaAtv': TituloDaMod,
-                                'Data': DataDaMod
+                activities = collectionsUsers.find_one({'SenderID': sender_id})['activities']
+
+                for data in activities:
+                    if(data['TituloDaAtv'] == TituloDaMod and data['Data'] == DataDaMod):
+                        NewAtv = data
+                        collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
+                            "$pull": {
+                                'activities': {
+                                    'TituloDaAtv': TituloDaMod,
+                                    'Data': DataDaMod
+                                }
                             }
-                        }
-                    })
-                    NewAtv[Mod2Change] = NewMod
-                    collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': NewAtv}})
-                    StopIteration
+                        })
+                        NewAtv[Mod2Change] = NewMod
+                        collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': NewAtv}})
+                        StopIteration
+            
             client.close
         except ValueError:
             dispatcher.utter_message(ValueError)
