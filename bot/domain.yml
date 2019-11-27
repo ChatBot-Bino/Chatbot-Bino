@@ -18,10 +18,14 @@ actions:
   - utter_atividades_data
   - utter_atividades_obs
   - utter_futebol
-  - utter_provas
-  - utter_trabalhos
   - utter_adicionarData
   - utter_adicionarOBS
+  - utter_removerAtv_titulo
+  - utter_removerAtv_data
+  - utter_modificar_titulo
+  - utter_modificar_data
+  - utter_modificar_oque
+  - utter_modificar_novo
   - action_start
   - action_faltas
 
@@ -68,8 +72,10 @@ intents:
   - help
   - faltas
 
-  - adicionar_atividade
   - Listar
+  - adicionar_atividade
+  - remover_atividade
+  - modificar_atividade
   
 templates:
   utter_adicionarData:
@@ -272,22 +278,6 @@ templates:
                 Então eu vou te auxiliando com todas as matérias, sempre te enviando uma notificação, para saber se você foi para a aula ou não!
                 Desse jeito, você pode ficar mais tranquilo durante o semestre.
 
-  utter_provas:
-    - text : |-
-          No dia XX/XX você vai ter uma prova de XXXXX. É melhor estudar, hein!
-    - text : |-
-          Não se esqueça que dia XX/XX você tem prova de XXXXX. Cuidado pra não deixar os estudos pra última hora.
-    - text : |-
-          A prova de XXXXX vai ser no dia XX/XX. faltam apenas X dias!
-
-  utter_trabalhos:
-    - text : |-
-         A data final de entrega do seu trabalho de XXXXX é dia XX/XX. Como está indo?
-    - text : |-
-         Você tem um trabalho de XXXXX para o dia XX/XX. Não deixe para o último dia, hein!
-    - text : |-
-         O dia XX/XX está chegando! Não se esqueça do trabalho de XXXXX.
-
   utter_atividades_tipo:
     - text: |-
          Me manda o tipo atividade que você quer adicionar.
@@ -296,38 +286,29 @@ templates:
     - text: |-
          Manda o tipo da atividade.
 
-  utter_atividades_data:
+  utter_removerAtv_titulo:
     - text: |-
-         Me manda a a data da sua atividade, por favor.
-    - text: |-
-         Qual a data da atividade que você gostaria de adicionar?
-    - text: |-
-         Manda a data da atividade.
+         Que atividade gostaria de remover?
 
-  utter_atividades_obs:
+   utter_removerAtv_date:
     - text: |-
-         Gostaria de fazer alguma observação sobre a sua atividade?
+         Qual a data da atividade que gostaria de remover?
+
+   utter_modificar_titulo:
     - text: |-
-         Quer acrescentar alguma informação a mais na sua atividade?
+         Que atividade gostaria de modificar?
+   
+   utter_modificar_data:
     - text: |-
-         você precisar saber mais, é só me mandar um /help para mim, que estou disposto a lhe ajudar.
-  
-  utter_help:
-    - text : |-
-          Posso lhe ajudar com algumas funcionalidades:
-            
-            Gerenciamento de atividades acadêmicas:
-                Consigo agendar seus compromissos acadêmicos e lembra-lo das datas para você não perder o controle da sua rotina!
-                Depois disso é só ficar ligado nas notificações para ficar preparado para a prova ou para não esquecer de fazer algum trabalho!
+         Qual a data da atividade que você gostaria de modificar?
 
-            Gerenciamento de faltas:
-                Posso também gerenciar as suas faltas, é super importante pra você não perder o controle e acabar faltando mais do que pode!
-                Então eu vou te auxiliando com todas as matérias, sempre te enviando uma notificação, para saber se você foi para a aula ou não!
-          
-         Digita aí uma observação da sua atividade pra eu poder guardar aqui.
-
-
-  utter_listar:
-    - text: "{ActName}:"
-      text2: "Data: {Data}"
-      text3: "OBS:.{OBS}."
+   utter_modificar_oque:
+    - text: |-
+         O que gostaria de modificar:
+            - Atividade(Atv);
+            - Data(Data);
+            - Observação(OBS);
+   
+   utter_modificar_novo:
+    - text: |-
+         Escreva a modificação:

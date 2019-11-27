@@ -1,49 +1,49 @@
-# from rasa_core_sdk import Action
-# from pymongo import MongoClient
+from rasa_core_sdk import Action
+from pymongo import MongoClient
 
 
-# class ActionModAtv(Action):
-#     def name(self):
-#         return "action_modAtv"
+class ActionModAtv(Action):
+    def name(self):
+        return "action_modAtv"
 
-#     def run(self, dispatcher, tracker, domain):
-#         try:
-#             tracker = tracker.current_state()
+    def run(self, dispatcher, tracker, domain):
+        try:
+            tracker = tracker.current_state()
 
-#             sender_id = tracker['sender_id']
-#             client = MongoClient("mongo:27017")
-#             db = client.telegramdb
-#             collectionsUsers = db.user
+            sender_id = tracker['sender_id']
+            client = MongoClient("mongo:27017")
+            db = client.telegramdb
+            collectionsUsers = db.user
 
-#             # TODO: Colocar os slots referentes a essas 2 variaveis.
-#             TituloParaAlterar = ""
-#             DataParaAlterar = ""
-#             quantidade = 0
+            # TODO: Colocar os slots referentes a essas 2 variaveis.
+            TituloParaAlterar = ""
+            DataParaAlterar = ""
+            quantidade = 0
 
-#             activities = collectionsUsers.find_one({'SenderID': sender_id})['activities']
+            activities = collectionsUsers.find_one({'SenderID': sender_id})['activities']
 
-#             for data in activities:
-#                 if(data['TituloDaAtv'] == TituloParaRemover):
-#                     quantidade += 1
+            for data in activities:
+                if(data['TituloDaAtv'] == TituloParaRemover):
+                    quantidade += 1
 
-#             if quantidade > 1:
-#                 collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
-#                     "$pull": {
-#                         'activities': {
-#                             'TituloDaAtv': TituloParaRemover,
-#                             'Data': DataParaRemover
-#                         }
-#                     }
-#                 })
-#             else:
-#                 collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
-#                     "$pull": {
-#                         'activities': {
-#                             'TituloDaAtv': TituloParaRemover
-#                         }
-#                     }
-#                 })
+            if quantidade > 1:
+                collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
+                    "$pull": {
+                        'activities': {
+                            'TituloDaAtv': TituloParaRemover,
+                            'Data': DataParaRemover
+                        }
+                    }
+                })
+            else:
+                collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
+                    "$pull": {
+                        'activities': {
+                            'TituloDaAtv': TituloParaRemover
+                        }
+                    }
+                })
 
-#             client.close
-#         except ValueError:
-#             dispatcher.utter_message(ValueError)
+            client.close
+        except ValueError:
+            dispatcher.utter_message(ValueError)

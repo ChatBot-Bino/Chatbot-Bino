@@ -25,3 +25,11 @@
 ## intent:Listar
 - /listarAtv
 - listarAtv
+
+## intent:remover_atividade
+- /removerAtv
+- removerAtv
+
+## intent:modificar_atividade
+- /modificarAtv
+- modificarAtv

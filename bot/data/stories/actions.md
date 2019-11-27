@@ -23,14 +23,28 @@
 * help{"command":"help"}
     - utter_help
 
-## Provas
-* provas{"command":"provas"}
-    - utter_provas
-
-## Trabalhos
-* trabalhos{"command":"trabalhos"}
-    - utter_trabalhos
-
-## Listar Atv
+## ListarAtv
 * Listar{"command":"listarAtv"}
     - action_listarAtv
+
+## RemoverAtv
+* remover_atividade{"command":"removerAtv"}
+    - action_listar2rmAtv
+    - utter_removerAtv_titulo
+    - action_listen
+    - utter_removerAtv_data
+    - action_listen
+    - action_removerAtv
+
+## ModificarAtv
+* modificar_atividade{"command":"modificarAtv"}
+    -
+    - utter_modificar_titulo
+    - action_listen
+    - utter_modificar_data
+    - action_listen
+    - utter_modificar_oque
+    - action_listen
+    - utter_modificar_novo
+    - action_listen
+    - action_modAtv
