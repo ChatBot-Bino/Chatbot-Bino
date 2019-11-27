@@ -2,9 +2,9 @@ from rasa_core_sdk import Action
 from pymongo import MongoClient
 
 
-class ActionAddAtv(Action):
+class ActionRmAtv(Action):
     def name(self):
-        return "action_listarAtv"
+        return "action_removerAtv"
 
     def run(self, dispatcher, tracker, domain):
         try:

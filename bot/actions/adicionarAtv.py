@@ -16,11 +16,17 @@ class ActionAddAtv(Action):
             collectionsUsers = db.user
 
             Atividade = tracker['latest_message']['text']
+
+            collectionsUsers.update_one({'SenderID': sender_id},{'$set': {'VTitulo': Atividade}})
             newAtv = {
                 "TituloDaAtv": Atividade,
                 'Data': "Nenhuma Salva",
                 'OBS': "Nenhum OBS"
             }
+            
+            collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'VData': "Nenhuma Salva"}})
+            collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'VObs': "Nenhum OBS"}})
+            collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'VTitulo': Atividade}})
 
             collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': newAtv}})
             client.close

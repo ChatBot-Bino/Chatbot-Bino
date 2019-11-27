@@ -8,7 +8,11 @@ pipeline:
 
 policies:
  - name: MappingPolicy
- - name: KerasPolicy
- - name: FallbackPolicy
+ - name: "KerasPolicy"
+   featurizer:
+   - name: MaxHistoryTrackerFeaturizer
+     max_history: 10
+     state_featurizer:
+       - name: BinarySingleStateFeaturizer
  - name: MemoizationPolicy
    

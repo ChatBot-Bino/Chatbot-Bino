@@ -34,7 +34,10 @@ class ActionStart(Action):
                     'SenderID': sender_id,
                     'first_name': first_name,
                     'classes': [],
-                    'activities': []
+                    'activities': [],
+                    'VData': None,
+                    'VTitulo': None,
+                    'VObs': None
                 }
                 collectionsUsers.insert_one(user)
 

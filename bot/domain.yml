@@ -14,7 +14,6 @@ actions:
   - utter_start
   - utter_series
   - utter_help
-  - utter_atividades
   - utter_atividades_tipo
   - utter_atividades_data
   - utter_atividades_obs
@@ -24,8 +23,13 @@ actions:
 
   - action_start
   - action_faltas
+
+  - action_adicionarOBS
   - action_adicionar
   - action_listarAtv
+  - action_adicionarData
+  - action_modAtv
+  - action_removerAtv
   
 entities: 
   - command

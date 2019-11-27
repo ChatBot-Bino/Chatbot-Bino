@@ -9,9 +9,13 @@
 
 ## Adicionar_Atividade
 * adicionar_atividade{"command":"adicionar"}
-    - utter_atividades
+    - utter_atividades_tipo
     - action_listen
     - action_adicionar
+    - action_listen
+    - action_adicionarData
+    - action_listen
+    - action_adicionarOBS
 
 ## Help
 * help{"command":"help"}

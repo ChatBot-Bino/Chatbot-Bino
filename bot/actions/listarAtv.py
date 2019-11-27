@@ -2,7 +2,7 @@ from rasa_core_sdk import Action
 from pymongo import MongoClient
 
 
-class ActionAddAtv(Action):
+class ActionListarAtv(Action):
     def name(self):
         return "action_listarAtv"
 
