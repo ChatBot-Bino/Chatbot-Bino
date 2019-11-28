@@ -15,11 +15,11 @@ train:
 
 # MENSAGEIROS
 shell:
-	rasa shell -m models/ -vv --endpoints endpoints.yml --enable-api --port 5004 --cors "*"
+	rasa shell -m models/ -vv --endpoints endpoints.yml --port 5004 --cors "*"
 
 telegram:
 	rasa run -m models/ -vv --port 5001 --credentials credentials.yml \
-	--enable-api --endpoints endpoints.yml 
+	--endpoints endpoints.yml 
 
 webchat:
 	rasa run -m models/ -vv --endpoints endpoints.yml --credentials credentials.yml --port 5005 --cors '*'

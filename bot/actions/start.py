@@ -15,12 +15,14 @@ class ActionStart(Action):
             db = client.telegramdb
             collectionsUsers = db.user
 
+            text = "Olá, eu sou o Bino, seu assistente virtual!"
+
             if(sender_id == "default"):
                 first_name = "Rasa Shell"
+                dispatcher.utter_message(text)
             else:
                 # remover o token do telegram e botar em uma pasta separada para não ir para o github.
                 TELEGRAM_TOKEN = "962521399:AAGyRWTL9kAmjcgFn6mem_DxDyeXcbMRppA"
-                text = "Olá, eu sou o Bino, seu assistente virtual!"
                 data = requests.get(
                     'https://api.telegram.org/bot{}/sendMessage?chat_id={}&text={}'.format(TELEGRAM_TOKEN, sender_id, text)
                 ).json()
@@ -32,10 +34,15 @@ class ActionStart(Action):
                     'SenderID': sender_id,
                     'first_name': first_name,
                     'classes': [],
-                    'exams': [],
-                    'activities': []
+                    'activities': [],
+                    'VData': None,
+                    'VTitulo': None,
+                    'VObs': None,
+                    'VNewMod': None,
+                    'Vmod': None
                 }
                 collectionsUsers.insert_one(user)
 
+            client.close
         except ValueError:
             dispatcher.utter_message(ValueError)
