@@ -51,8 +51,7 @@ templates:
   utter_start:
     - text: |-          
           Estou aqui para te ajudar a se organizar, por exemplo
-            - Aviso sobre suas atividades da faculdade
-            - Gerencio suas faltas
+            - Gerencio sobre suas atividades da faculdade
           Se você precisar saber mais, é só me mandar um /help para mim, que estou disposto a lhe ajudar.
   
   utter_help:

@@ -17,14 +17,16 @@ class ActionListarAtv(Action):
 
             activities = collectionsUsers.find_one({'SenderID': sender_id})
             Name = activities['first_name']
-            dispatcher.utter_message(Name + ", suas atividades salvas são essas:")
+            if len(activities['activities']):
+                dispatcher.utter_message(Name + ", suas atividades salvas são essas:")
 
-            for dataArray in activities['activities']:
-                NomeDaAtv = "Nome: " + dataArray['TituloDaAtv'] + "\n"
-                OBS = "OBS: " + dataArray['OBS'] + "\n"
-                Text = NomeDaAtv + OBS + "Data: " + dataArray['Data'] + "\n"
-                dispatcher.utter_message(Text)
-
+                for dataArray in activities['activities']:
+                    NomeDaAtv = "Nome: " + dataArray['TituloDaAtv'] + "\n"
+                    OBS = "OBS: " + dataArray['OBS'] + "\n"
+                    Text = NomeDaAtv + OBS + "Data: " + dataArray['Data'] + "\n"
+                    dispatcher.utter_message(Text)
+            else:
+                dispatcher.utter_message(Name + ", você não tem nenhuma atividade salva.")
             client.close
         except ValueError:
             dispatcher.utter_message(ValueError)
