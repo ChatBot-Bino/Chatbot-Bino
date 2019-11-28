@@ -51,7 +51,7 @@ templates:
   utter_start:
     - text: |-          
           Estou aqui para te ajudar a se organizar, por exemplo
-          Gerencio suas atividades da faculdade
+          Gerencio suas atividades da faculdade\n
           Se você precisar saber mais, é só me mandar um /help para mim, que estou disposto a lhe ajudar.
   
   utter_help:
@@ -65,8 +65,6 @@ templates:
                 Para modificar uma atividade, digite /modificar_atividade.
                 Para remover uma atividade digite /remover_atividade.
                 E para saber quais atividades você possui, digite /listar.
-
-                Depois disso é só ficar ligado nas notificações para ficar preparado para a prova ou para não esquecer de fazer algum trabalho!
 
   utter_atividades_tipo:
     - text: |-
