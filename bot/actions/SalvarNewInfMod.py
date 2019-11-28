@@ -19,19 +19,25 @@ class ActionSalvarNewInfMod(Action):
 
             collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'VNewMod': NewInfo}})
 
+            # Pegando do DB todos os dados que a pessoa quer mudar.
             TituloDaMod = collectionsUsers.find_one({'SenderID': sender_id})['VTitulo']
             DataDaMod = collectionsUsers.find_one({'SenderID': sender_id})['VData']
             Mod2Change = collectionsUsers.find_one({'SenderID': sender_id})['Vmod']
             NewMod = NewInfo
+
             valido = False
+            # If com o objetivo de checar se a opção de campo do usuario foi escolhida entre Nome, OBS e Data.
             if Mod2Change != "Inválido":
-                activities = collectionsUsers.find_one({'SenderID': sender_id})['activities']
+                activities = collectionsUsers.find_one({'SenderID': sender_id})['activities'] # Pegando o array de atividades do usuario
                 for data in activities:
                     if(data['TituloDaAtv'] == TituloDaMod and data['Data'] == DataDaMod):
                         valido = True
+
                         dispatcher.utter_message("Achei e ja mudei para você.")
                         dispatcher.utter_message("Agora ela está assim:")
+
                         NewAtv = data
+
                         collectionsUsers.find_one_and_update({'SenderID': sender_id}, {
                             "$pull": {
                                 'activities': {
@@ -41,6 +47,8 @@ class ActionSalvarNewInfMod(Action):
                             }
                         })
                         NewAtv[Mod2Change] = NewMod
+
+                        # Imprimindo a atividade nova 
                         collectionsUsers.update_one({'SenderID': sender_id}, {'$addToSet': {'activities': NewAtv}})
                         NomeDaAtv = "Nome: " + NewAtv['TituloDaAtv'] + "\n"
                         OBS = "OBS: " + NewAtv['OBS'] + "\n"

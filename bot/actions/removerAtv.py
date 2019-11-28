@@ -14,7 +14,7 @@ class ActionRmAtv(Action):
             client = MongoClient("mongo:27017")
             db = client.telegramdb
             collectionsUsers = db.user
-
+            # Pegando oque o usuario quer remover das atividades.
             Titulo2rm = collectionsUsers.find_one({'SenderID': sender_id})['VTitulo']
             Data2rm = collectionsUsers.find_one({'SenderID': sender_id})['VData']
 

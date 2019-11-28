@@ -9,6 +9,8 @@ class ActionStart(Action):
 
     def run(self, dispatcher, tracker, domain):
         try:
+            # Esse bloco de codico serve para se conectar ao MongoDB e usar a collection user que esta os dados.
+            # Ele se repete por todas as custon actions.
             tracker = tracker.current_state()
             sender_id = tracker['sender_id']
             client = MongoClient("mongo:27017")
@@ -16,7 +18,8 @@ class ActionStart(Action):
             collectionsUsers = db.user
 
             text = "Olá, eu sou o Bino, seu assistente virtual!"
-
+            # A parte daqui para baixo se tem a parte de criar o usuario no banco de dados.
+            # Com o nome e o senderId da pessoa.
             if(sender_id == "default"):
                 first_name = "Rasa Shell"
                 dispatcher.utter_message(text)

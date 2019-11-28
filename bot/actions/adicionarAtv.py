@@ -23,10 +23,8 @@ class ActionAddAtv(Action):
                 'Data': "Nenhuma data salva",
                 'OBS': "Nenhum OBS"
             }
-
+            
             collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'VData': "Nenhuma data salva"}})
-            collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'Vmod': None}})
-            collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'VNewMod': None}})
             collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'VObs': "Nenhum OBS"}})
             collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'VTitulo': Atividade}})
 

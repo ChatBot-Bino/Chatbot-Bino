@@ -9,6 +9,7 @@ class ActionSalvarDataAtv(Action):
 
     def run(self, dispatcher, tracker, domain):
         try:
+            # Mesma coisa que o salvarDataAtv2rm mas para a storie de modificar uma atividade
             tracker = tracker.current_state()
 
             sender_id = tracker['sender_id']

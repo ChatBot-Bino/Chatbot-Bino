@@ -10,7 +10,6 @@ class ActionSalvarOqMod(Action):
     def run(self, dispatcher, tracker, domain):
         try:
             tracker = tracker.current_state()
-
             sender_id = tracker['sender_id']
             client = MongoClient("mongo:27017")
             db = client.telegramdb
@@ -19,6 +18,7 @@ class ActionSalvarOqMod(Action):
             Mod2save = tracker['latest_message']['text']
 
             dispatcher.utter_message("Ok")
+            # Bloco de regex para poder descobrir qual campo o usuario quer mudar.
             if(re.fullmatch(r"\b(\w*NOME\w*)\b|\b\b(\w*nome\w*)\b|\b\b(\w*Nome\w*)\b|\b", Mod2save)):
                 Mod2save = "TituloDaAtv"
                 dispatcher.utter_message("Agora me manda o novo nome da atividade.")

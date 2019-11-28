@@ -14,14 +14,14 @@ class ActionSalvarNomeAtv2rm(Action):
             client = MongoClient("mongo:27017")
             db = client.telegramdb
             collectionsUsers = db.user
-
+            # Essa custon action serve para poder salvar no Banco de Dados o nome de atividade que a pessoa quer remover.
             Titulo2Save = tracker['latest_message']['text']
 
             Name = collectionsUsers.find_one({'SenderID': sender_id})['first_name']
 
             collectionsUsers.update_one({'SenderID': sender_id}, {'$set': {'VTitulo': Titulo2Save}})
             dispatcher.utter_message("Ok")
-            dispatcher.utter_message(Name + ", agora me manda a data dessa atividade.")
+            dispatcher.utter_message(Name + ", agora me manda a data dessa atividade. No formato DD/MM/YYYY")
             client.close
         except ValueError:
             dispatcher.utter_message(ValueError)
